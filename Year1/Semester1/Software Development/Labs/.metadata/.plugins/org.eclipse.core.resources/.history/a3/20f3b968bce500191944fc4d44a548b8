@@ -1,0 +1,44 @@
+//Import java class
+import java.util.Scanner;
+public class P2_5 
+{
+
+	public static void main(String[] args) 
+	{
+		//Take in input 
+		Scanner in = new Scanner(System.in);
+		
+		//Take in input num1
+		System.out.print("Please enter your First Number: ");
+		int num1 = in.nextInt();
+		
+		//Take in input num1
+		System.out.print("Please enter your Second Number: ");
+		int num2 = in.nextInt();
+		
+		//Input
+		System.out.println("Your Numbers Are:\n"+num1+ "\n" +num2);
+				
+		//Print out output
+		System.out.println("The sum is ");	
+		System.out.println(num1 + num2);
+		
+		System.out.println("The differnece is ");	
+		System.out.println(num1 - num2);
+		
+		System.out.println("The product is ");	
+		System.out.println(num1 * num2);
+		
+		System.out.println("The average is ");	
+		System.out.println((num1+num2)/2);
+		
+		System.out.println("The distance is ");	
+		System.out.println(num1 + num2);
+		
+		System.out.println("The maximum is ");	
+		System.out.println(num1 + num2);
+		
+		System.out.println("The minimum is ");	
+		System.out.println(num1 + num2);
+	}
+}

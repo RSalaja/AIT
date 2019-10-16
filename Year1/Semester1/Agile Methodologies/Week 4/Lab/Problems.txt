@@ -1,0 +1,17 @@
+Problem 1:
+Design, implement and test an application that calculates the cost per 100 kilometers of running a car and 
+how far a car can go with a full tank of petrol based on the following information being provided:
+1. The number of litres of petrol in the tank.
+2. The fuel efficiency in kilometers per litre.
+3. The price of petrol per litre.
+
+Problem 2:
+Design, implement and test an application that reads two times in military format (0900, 1730) and calculates
+the number of hours and minutes between the two times.
+
+Employ:
+1. Simplified software development process (employed in last week's practical).
+
+(litres/fuel efficiency) * price
+
+(cost per 100 kilometers/litres) * price

@@ -1,0 +1,33 @@
+body
+{
+	background-color:#gray;
+	font-family:articulate;
+}
+.greenboldtext
+{ 
+	color: green;
+	font-weight: bold;
+	font-family:articulate;
+	font-size: 16pt;
+}
+p
+{
+	text-align:left;
+	font-family:arial;
+	font-size: 12pt;
+}
+h1
+{
+	background-color:yellow;
+	text-align:center;
+	color:green;
+	font-family:Century Gothic;	
+}
+h2
+{
+	background-color:rgb(208,228,215);
+	text-align:center;
+	color:blue;
+	font-family:tahoma;	
+}
+

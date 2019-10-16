@@ -1,0 +1,11 @@
+                    <div><a href="../Legends/Bangalore.html">Bangalore <img src="  ..\images/bangalore.png"></a></div>
+                    <div> <a href="../Legends/Bloodhound.html">Bloodhound<img src="  ..\images/bloodhound.png"></a></div>
+                    <div> <a href="../Legends/Caustic.html">Caustic<img src="  ..\images/caustic.png"></a></div>
+                    <div> <a href="../Legends/Crypto.html">Crypto<img src="  ..\images/crypto.png"></a></div>
+                    <div> <a href="../Legends/Gibraltar.html">Gibraltar<img src="  ..\images/gibby.png"></a></div>
+                    <div> <a href="../Legends/Lifeline.html">Lifeline<img src="  ..\images/lifeline.png"></a></div>
+                    <div> <a href="../Legends/Mirage.html">Mirage<img src="  ..\images/mirage.png"></a></div>
+                    <div> <a href="../Legends/Octane.html">Octane<img src="  ..\images/octane.png"></a></div>
+                    <div> <a href="../Legends/Pathfinder.html">Pathfinder<img src="  ..\images/pathfinder.png"></a></div>
+                    <div> <a href="../Legends/Wattson.html">Wattson<img src="  ..\images/wattson.png"></a></div>
+                    <div> <a href="../Legends/Wraith.html">Wraith<img src="  ..\images/wraith.png"></a></div>

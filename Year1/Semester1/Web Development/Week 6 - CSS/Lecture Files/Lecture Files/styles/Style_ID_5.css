@@ -1,0 +1,26 @@
+#para1
+{
+	text-align:center;
+	font-family:corbel;
+	font-size: 14pt;
+	color: red;
+}
+p
+{
+	text-align:left;
+	font-family:arial;
+	font-size: 12pt;
+}
+h1
+{
+	text-align:center;
+	color:green;
+	font-family:Century Gothic;	
+}
+h2
+{
+	text-align:center;
+	color:blue;
+	font-family:tahoma;	
+}
+

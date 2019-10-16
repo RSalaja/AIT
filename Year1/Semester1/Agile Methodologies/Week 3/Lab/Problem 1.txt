@@ -1,0 +1,24 @@
+Week 3 - Practical
+Problem 1:
+
+Write a program that reads and adds two integers together. Print the sum to a console window.
+
+Process (for solving a problem):
+
+1. Develop and document your User Stories/Acceptance Criteria - Use easybacklog.com.
+
+2. Design your test(s) - Use Test Design Template excel sheet.
+
+3. Write your program in Java - Use textpad.
+
+4. Run your tests.
+
+5. If your test(s) fail, then fix the program and rerun your test(s) until the test(s) pass.
+
+Problem 2:
+
+Write a program that reads and multiplies three integers together. Print the result to a console window.
+
+Process (for solving a problem):
+
+* See above steps

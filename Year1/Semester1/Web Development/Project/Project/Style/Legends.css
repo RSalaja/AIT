@@ -1,0 +1,156 @@
+/* Core Settings */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 3rem;
+  font-family: ApexFontBold;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/*Nav-Bar*/
+.navigation-bar {
+  margin: 0;
+  float: left;
+  background-color: rgba(51, 51, 51, 0.5);
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 2px solid black;
+  overflow: hidden;
+  float: left;
+  z-index: 3;
+  top: 0px;
+  position: absolute;
+}
+.navigation-bar a {
+  float: left;
+  margin: 0;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-shadow: 2px 2px #111;
+}
+.navigation-bar a:hover {
+  color: rgba(218, 41, 41, 0.637);
+  text-shadow: 2px 2px #111;
+  
+}
+
+/* Image Background */
+.showcase {
+  z-index: -1;
+  background-image: url("../images/apexLegends.png");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.showcase-content-heading h1 {
+  background-color: #333;
+  border-bottom: 2px solid black;
+  font-size: 50px;
+  margin-bottom: 0%;
+  text-shadow: 2px 2px #111;
+  color: #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.showcase-content-heading p {
+  font-size: 1.5rem;
+  padding: 1rem;
+  display: block;
+  text-shadow: 2px 2px #111;
+  color: #ddd;
+  background-color: rgba(218, 41, 41, 0.637);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Legends Layout*/
+.flex-container {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-flow: row wrap;
+  text-decoration: none;
+}
+.flex-container a {
+  text-align: center;
+  line-height: 75px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.flex-container a:visited {
+  color: #ddd;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 2px 2px #111;
+}
+.flex-container img {
+  height: 400px;
+}
+.flex-container h3 {
+  padding: 0%;
+  margin: 0%;
+  color: #ddd;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 2px 2px #111;
+}
+.flex-container h3:hover {
+  font-size: 2rem;
+}
+
+/* Footer */
+.footer{
+  background-color: #111;
+  color: #ddd;
+  text-align: left;
+  font-size: 1rem;
+  margin: 0%;
+  padding: 1rem;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 500px) {
+  header.navigation-bar {
+    display: flex;
+  }
+
+  .flex-container img:hover {
+    height: 410px;
+  }
+
+  header.navigation-bar a {
+    margin: 0%;
+    padding: 14px 21px;
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: 2px 2px #111;
+  }
+}
+
+/* Import Font */
+@font-face {
+  font-family: ApexFontRegular;
+  src: url(font/ApexMk2/ApexMk2-Regular.otf);
+}
+@font-face {
+  font-family: ApexFontLight;
+  src: url(font/ApexMk2/ApexMk2-LightCondensed.otf);
+}
+@font-face {
+  font-family: ApexFontBold;
+  src: url(font/ApexMk2/ApexMk2-BoldExtended.otf);
+}
+
+

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class P2_5 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner in = new Scanner(System.in);
+		System.out.print("Please enter 2 Numbers: ");
+		int num1 = in.nextInt();
+		int num2 = in.nextInt();
+		System.out.printf("Sum: %17" , (num1+num2));
+		System.out.printf("Differnece: %17" , (num1 - num2));	
+		System.out.printf("Product: %17"  , (num1 * num2));	
+		System.out.printf("Average: %17" , (num1+num2)/2.0);	
+		System.out.printf("Distance: %17" , (Math.abs(num1 - num2)));	
+		System.out.printf("Maximum: %17" , (Math.max(num1, num2)));	
+		System.out.printf("Minimum: %17" , (Math.max(num1, num2)));	
+		
+	}
+}
+

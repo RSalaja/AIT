@@ -1,0 +1,13 @@
+<img src="Menu.PNG" width="586" height="571" border="0" usemap="#map" />
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:kfitzgerald -->
+<area shape="circle" coords="293,77,64" alt="Hobbies Page" href="hobbies.html" />
+<area shape="circle" coords="508,290,66" alt="Class Time Tables" href="timetables.html" />
+<area shape="circle" coords="293,508,59" alt="My Pcitures" href="pictures.html" />
+<area shape="circle" coords="77,297,63" alt="Contact me" href="contact.html" />
+</map>
