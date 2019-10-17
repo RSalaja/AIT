@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Problem3",
+            "request": "launch",
+            "mainClass": "Week5.Problem3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Problem2",
+            "request": "launch",
+            "mainClass": "Week5.Problem2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Problem1",
+            "request": "launch",
+            "mainClass": "Week5.Problem1"
+        }
+    ]
+}

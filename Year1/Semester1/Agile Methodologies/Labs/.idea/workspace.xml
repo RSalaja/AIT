@@ -18,20 +18,29 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1RVVSFK2gq8U3yUJT1PVkPxCzVC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\salaj\Desktop\AgileMethodologiesLabs\src\Week2\Problem" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\salaj\Desktop\AgileMethodologiesLabs\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\salaj\Documents\GitHub\AIT\Year1\Semester1\Agile Methodologies\Labs\src\Week4" />
+      <recent name="C:\Users\salaj\Documents\GitHub\AIT\Year1\Semester1\Agile Methodologies\Labs\src\Week3" />
+      <recent name="C:\Users\salaj\Documents\GitHub\AIT\Year1\Semester1\Agile Methodologies\Labs\src\Week2" />
+      <recent name="C:\Users\salaj\Documents\GitHub\AIT\Year1\Semester1\Agile Methodologies\Labs\src\Week1" />
+      <recent name="C:\Users\salaj\Desktop\AgileMethodologiesLabs\src\Week2\Problem" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -128,5 +137,16 @@
       <updated>1569752247920</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
