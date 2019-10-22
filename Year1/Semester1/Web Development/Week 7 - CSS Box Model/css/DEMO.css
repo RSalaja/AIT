@@ -1,0 +1,39 @@
+html{
+    background-color: #88a300
+}
+
+header{
+    border-radius: 10px 10px 0px 0px;
+    background-color: white;
+    padding: 2px;
+    padding-left: 10px; 
+    align-content: center;
+    width: 750px;
+    margin: auto;
+}
+
+h1,h3{
+    color: orange
+}
+
+
+section{
+    margin: auto;
+    margin-top: 1%;
+    background-color: white;
+    padding: 2px;
+    padding-left: 10px; 
+    align-content: center;
+    width: 750px;
+}
+footer{
+    margin: auto;
+    margin-top: 1%;
+    background-color: white;
+    padding: 2px;
+    padding-left: 10px; 
+    align-content: center;
+    width: 750px;
+    text-align: right;
+    border-radius: 0px 0px 10px 10px;
+}

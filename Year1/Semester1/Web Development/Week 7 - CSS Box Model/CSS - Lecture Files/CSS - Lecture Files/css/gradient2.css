@@ -1,0 +1,8 @@
+html  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(
+    45deg, green 0%, green 33%, white 33%, white 66%,
+           gold 66%, gold 100%);
+}

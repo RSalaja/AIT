@@ -1,0 +1,40 @@
+/* the styles for the body element */
+body {
+	padding: 5px;
+	width: 800px;
+	margin:0 auto;
+	border:1px solid black;
+}
+/*styles for the page division */
+header{
+	border:1px dashed green;
+	margin: 20px;
+}
+/*styles used in the header 
+division */
+h1, h3 {
+	margin: 10px;
+	border:1px solid purple;
+}
+h2 {
+	margin: 20px;
+	padding: 10px;
+	border:1px solid black;
+}
+section  { 	
+	border:1px dashed black; 
+	margin:20px;
+}
+section ul{	
+	border:1px solid orange; 
+	margin:20px;
+}
+section p{	
+	border:1px solid blue;
+	margin:20px;
+}
+footer{
+	text-align:right;
+	margin: 20px;
+	border:1px dashed red;
+}

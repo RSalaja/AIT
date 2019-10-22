@@ -1,0 +1,22 @@
+body{ 
+    border: 3px dotted black; 
+    margin: 10px; 
+}
+section, #section{
+    border:  2px solid red;
+    width:   500px;  
+    margin:  20px;          /* all four sides */
+    padding: 10px;          /* all four sides */ 
+}
+h1, p{
+    border: 3px dashed green;
+    padding: 10px; 
+}
+h1{
+    margin: .5em 0 .25em;
+    padding-left: 15px; 
+}
+p{
+    margin: 0;              /* all four sides */
+    padding-left: 15px; 
+}

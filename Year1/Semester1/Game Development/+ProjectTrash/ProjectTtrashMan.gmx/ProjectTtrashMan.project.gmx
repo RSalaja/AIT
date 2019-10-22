@@ -6,7 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="Movement">
+    <sprites name="PlayerMovement">
       <sprite>sprites\sprite_playerdown</sprite>
       <sprite>sprites\sprite_walkright</sprite>
       <sprite>sprites\sprite_walkleft</sprite>
@@ -14,11 +14,23 @@
       <sprite>sprites\sprite_shawdow</sprite>
     </sprites>
     <sprite>sprites\sprite_wall</sprite>
-    <sprites name="Attack">
+    <sprites name="PlayerAttack">
       <sprite>sprites\sprite_attackdown</sprite>
       <sprite>sprites\sprite_attackright</sprite>
       <sprite>sprites\sprite_attackleft</sprite>
       <sprite>sprites\sprite_attackup</sprite>
+    </sprites>
+    <sprites name="BoxAttack">
+      <sprite>sprites\sprite_boxattack</sprite>
+      <sprite>sprites\sprite_boxattackup</sprite>
+      <sprite>sprites\sprite_boxattackdown</sprite>
+      <sprite>sprites\sprite_slime</sprite>
+    </sprites>
+    <sprites name="BoxMovement">
+      <sprite>sprites\sprite_box</sprite>
+      <sprite>sprites\sprite_boxright</sprite>
+      <sprite>sprites\sprite_boxup</sprite>
+      <sprite>sprites\sprite_boxdown</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -32,10 +44,12 @@
     <script>scripts\scr_dash_state.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\object_lifeform_parent</object>
     <object>objects\object_player</object>
     <object>objects\object_wall</object>
     <object>objects\object_view</object>
     <object>objects\object_dash_effect</object>
+    <object>objects\object_box</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

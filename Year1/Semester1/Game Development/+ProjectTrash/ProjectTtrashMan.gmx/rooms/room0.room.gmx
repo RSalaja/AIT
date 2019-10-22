@@ -138,6 +138,7 @@
     <instance objName="object_wall" x="416" y="288" name="inst_CE538102" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_player" x="288" y="160" name="inst_8CF4A9DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_view" x="64" y="64" name="inst_5F8D4648" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_box" x="96" y="256" name="inst_2977CB4F" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

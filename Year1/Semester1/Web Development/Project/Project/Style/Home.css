@@ -14,14 +14,14 @@ body {
 
 /*Nav-Bar*/
 .navigation-bar {
-  margin: 0;
+  margin: auto;
+  text-align: left;
   float: left;
   background-color: rgba(51, 51, 51, 0.5);
   overflow: hidden;
   width: 100%;
   border-bottom: 2px solid black;
   overflow: hidden;
-  float: left;
   z-index: 3;
   top: 0px;
   position: absolute;
