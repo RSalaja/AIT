@@ -14,12 +14,6 @@
       <sprite>sprites\sprite_shawdow</sprite>
     </sprites>
     <sprite>sprites\sprite_wall</sprite>
-    <sprites name="PlayerAttack">
-      <sprite>sprites\sprite_attackdown</sprite>
-      <sprite>sprites\sprite_attackright</sprite>
-      <sprite>sprites\sprite_attackleft</sprite>
-      <sprite>sprites\sprite_attackup</sprite>
-    </sprites>
     <sprites name="BoxAttack">
       <sprite>sprites\sprite_boxattack</sprite>
       <sprite>sprites\sprite_boxattackup</sprite>
@@ -34,7 +28,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
+    <background>background\background6</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
