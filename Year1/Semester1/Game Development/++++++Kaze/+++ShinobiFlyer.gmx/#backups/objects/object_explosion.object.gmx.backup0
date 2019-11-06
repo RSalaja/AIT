@@ -1,0 +1,7 @@
+// 2019-11-02 14:44:19
+#event create
+image_speed = random_range(1,2);
+
+
+#event other_animation_end
+instance_destroy();

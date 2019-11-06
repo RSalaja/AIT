@@ -3,7 +3,7 @@
   <spriteName>sprite_player</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>sprite_player</maskName>
@@ -71,126 +71,39 @@ enum pState
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var key_left = keyboard_check(ord("A")) || keyboard_check(vk_left);
-var key_right = keyboard_check(ord("D")) || keyboard_check(vk_right);
-var key_jump = keyboard_check_pressed(ord("W")) || keyboard_check(vk_space);
-var key_up = keyboard_check_pressed(ord("Q"))
-var key_down = keyboard_check_pressed(ord("E"))
-var left_click = mouse_check_button_pressed(mb_left)
-var left_released = mouse_check_button_released(mb_left)
+            <string>//Get Input
+scr_getInput();
 
-var right_click = mouse_check_button_pressed(mb_right)
 
-grounded = (place_meeting(x,y+1,object_wall));
-
+//  Players' State  //
 switch (state)
-{    
-   case pState.normal:
-   {
-        var dir = key_right - key_left;
-        hsp += dir * walkAcceleration;
+    {   
+     
+       // Normal //
+       case pState.normal:
+           {
+                //  Movement  //
+                scr_movement();
         
-        if (dir ==0)
-        {
-            var hsp_fric = hsp_fric_ground;
-            if(!grounded) hsp_fric = hsp_fric_air;
-            hsp = Approach(hsp,0,hsp_fric);
-        }
-        hsp = clamp(hsp,-walkSpeed,walkSpeed);
-        
-        //Vertical Movement
-        vsp += grv
-        
-        //Ground Jump
-        if (key_jump) &amp;&amp; (grounded)
-        {
-            grounded = false;
-            vsp_frac = 0;
-            vsp = -jumpspeed;
-        }
-
-        if (mouse_check_button(mb_middle))
-        {
-            grappleX = mouse_x;
-            grappleY = mouse_y; 
-            ropeX = x;
-            ropeY = y;
-            ropeAngleVelocity = 0;
-            ropeAngle = point_direction(grappleX,grappleY,x,y);
-            ropeLength = 20;
-            state = pState.swing;
-        }
-        
-   }
-   break;
-   
-   case pState.swing:
-   {
-        var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle);
-        _ropeAngleAcceleration += (key_right - key_left) * 0.08;
-        ropeLength += (key_down - key_up) * 2;
-        ropeLength = max(ropeLength,0);
-        
-        ropeAngleVelocity += _ropeAngleAcceleration;
-        ropeAngle += ropeAngleVelocity;
-        ropeAngleVelocity *= 0.99;
-        
-        ropeX = grappleX + lengthdir_x(ropeLength, ropeAngle);
-        ropeY = grappleY + lengthdir_y(ropeLength, ropeAngle);
-        hsp = ropeX - x;
-        vsp = ropeY - y;
-        
-        if (left_released)
-        {
-            state = pState.normal;
-            vsp_frac = 0;
-            vsp = -jumpspeed;
-        }
-   
-      
-   }
-   break;
-}
-
-hsp += hsp_frac;
-vsp += vsp_frac;
-hsp_frac = frac(hsp);
-vsp_frac = frac(vsp);
-hsp -= hsp_frac;
-vsp -= vsp_frac;
-
-//Horiziontal Collision
-if (place_meeting(x+hsp,y,object_wall))
-{
-   var hstep = sign(hsp);
-   hsp = 0;
-   hsp_frac = 0;
-   while (!place_meeting(x+hstep,y,object_wall)) x += hstep;
-   if (state == pState.swing)
-    {
-        ropeAngle = point_direction(grappleX,grappleY,x,y)
-        ropeAngleVelocity = 0;
+           }
+           break;
+       
     }
-}
-x = x + hsp;
 
-//Verical Collision
-if (place_meeting(x,y+vsp,object_wall))
-{
-    var vstep = sign(vsp);
-    vsp = 0;
-    vsp_frac = 0;
-    while (!place_meeting(x,y+vstep,object_wall)) y += vstep;
-    if (state == pState.swing)
-    {
-        ropeAngle = point_direction(grappleX,grappleY,x,y)
-        ropeAngleVelocity = 0;
-    }
-}
-y = y + vsp;
+
+
+//  Collision  //
+scr_collision();
+
 
 //Animation
 scr_animation();
+
+//Parralax
+background_x[0] = view_xview/1.2;
+background_x[1] = view_xview/1.6;
+background_x[2] = view_xview/2.0;
+background_x[3] = view_xview/2.2;
 
 </string>
           </argument>
