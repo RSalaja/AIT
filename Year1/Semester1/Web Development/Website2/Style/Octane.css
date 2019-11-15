@@ -1,0 +1,229 @@
+/* Core settings */
+* {
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../images/wallpaper.png");
+  margin: 0;
+  font-size: 3rem;
+  font-family: ApexFontBold;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden;
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  padding: 15px;
+  width: 100%;
+  color: #333;
+  font-family: ApexFontRegular;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+/*Nav-Bar*/
+.navigation-bar {
+  margin: 0;
+  float: left;
+  background-color: rgba(51, 51, 51, 0.5);
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 2px solid black;
+  overflow: hidden;
+  float: left;
+  z-index: 3;
+  top: 0px;
+  position: absolute;
+}
+.navigation-bar a {
+  float: left;
+  margin: 0;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-shadow: 2px 2px #111;
+}
+.navigation-bar a:hover {
+  color: rgba(218, 41, 41, 0.637);
+  text-shadow: 2px 2px #111;
+  
+}
+
+/* Image Background */
+.showcase {
+  z-index: -1;
+  background-image: url("../images/octanehead.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+  padding: 0 20px;
+  margin: 0%;
+  border-bottom: 4px solid rgb(218, 41, 41);
+  box-shadow: 2 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.showcase-content-heading h1 {
+  display: inline;
+  background-color: rgba(51, 51, 51, 0.74);
+  border-bottom: 4px solid rgb(218, 41, 41);
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 0%;
+  text-shadow: 2px 2px #111;
+  color: #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.showcase-content-heading p {
+  font-size: 1.5rem;
+  padding: 1rem;
+  display: block;
+  text-shadow: 2px 2px #111;
+  color: #ddd;
+  background-color: rgba(218, 41, 41, 0.637);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Section A */
+.content-wrap {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 1.2rem;
+  padding: 1em 1em 1em;
+}
+.content-text {
+  font-size: 1.2rem;
+  font-family: ApexFontRegular;
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.details {
+  font-size: 1.2rem;
+  font-family: ApexFontRegular;
+  text-align: left;
+  justify-content: left;
+  float: none;
+}
+.content-title {
+  display: block;
+  background-color: black;
+  border-bottom: 4px solid rgb(218, 41, 41);
+  font-size: 2rem;
+  padding: 1rem;
+  text-shadow: 2px 2px #111;
+  color: #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Section B */
+.ability{
+  color: #ddd;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+.ability-text{
+  margin-top:10% ;
+  background-color: #111;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #ddd;
+}
+.ability-text h2{
+  background-color: #ddd;
+  color: #111;
+  border-bottom: 4px solid rgb(218, 41, 41);
+}
+.ability-text p{
+  padding: 0rem 1rem 1rem;
+}
+.ability-text h3{
+  margin: 0%;
+}
+.ability-text img{
+  width: 100px;
+}
+.ability-wrap{
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 1.2rem;
+  padding: 1em 1em 1em;
+}
+
+/* Footer */
+.footer{
+  background-color: #111;
+  color: #ddd;
+  text-align: left;
+  font-size: 1rem;
+  margin: 0%;
+  padding: 1rem;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 500px) {
+  header.navigation-bar {
+    display: flex;
+  }
+
+.content-text{
+  margin-left: 5px ;
+  margin-right: 5px ;
+}
+
+.showcase{
+  background-position: left;
+  left: 500px;
+}
+
+  header.navigation-bar a {
+    margin: 0%;
+    padding: 14px 21px;
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: 2px 2px #111;
+  }
+}
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+@media (min-width: 700px) {
+  .content-wrap, ul {
+    grid-column: 2/4;
+  }
+}
+
+/* Fonts import */
+@font-face {
+  font-family: ApexFontRegular;
+  src: url(font/ApexMk2/ApexMk2-Regular.otf);
+}
+@font-face {
+  font-family: ApexFontLight;
+  src: url(font/ApexMk2/ApexMk2-LightCondensed.otf);
+}
+@font-face {
+  font-family: ApexFontBold;
+  src: url(font/ApexMk2/ApexMk2-BoldExtended.otf);
+}
+
+
