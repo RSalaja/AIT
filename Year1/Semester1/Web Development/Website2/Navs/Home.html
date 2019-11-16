@@ -1,70 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Apex Legends</title>
-    <link rel="icon" href="..\images\apexIcon.png" type="image/jpg" sizes="32x32">
-    <meta charset="utf-8">
-    <meta name="description" content="apex legends information">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="..\Style\Home.css">
-</head>
+<title>Apex Legends</title>
+<meta charset="UTF-8">
+<link rel="icon" href="..\images\apexIcon.png" type="image/jpg" sizes="32x32">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="Home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<body background="  ../images/wallpaper.jpg">
-    <header class="navigation-bar">
-        <nav>
-                <a href="Home.html">Home</a>
-                <a href="Legends.html">Legends</a>
-                <div><a href="Arenas.html">Arenas</a></div>
-        </nav>
-        
-
-    </header>
-    <section class="v-header">
-        <div class="fullscreen-video-wrap">
-            <video src="../videos/Trailer_good.mp4" autoplay="true" loop="true" muted></video>
+<body>
+    <!-- Navigation Bar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card id=" myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-large ">Apex Legends</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#Legends" class="w3-bar-item  w3-large w3-button">Home</a>
+                <a href="#Legends" class="w3-bar-item w3-large w3-button">Legends</a>
+                <a href="#work" class="w3-bar-item w3-large w3-button">Report</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="w3-bar-item w3-button fa fa-bars"></i>
+            </a>
         </div>
-        <div class="header-overlay"></div>
-        <section class="header-content">
-            <H1>Welcome To The Apex Games</H1>
-            <P>
-                Your Road To Apex Predator Begins Here<Br>
-                Select A Category To Gain More Knowledge
-            </p>
-            <nav class="home-nav-bar">
-                <a href="Legends.html">Legends</a>
-                <a href="Arenas.html">Arenas</a>
-            </nav>
+    </div>
+
+    <!-- Sidebar For Small Screens -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large w3-rightbar w3-border-white"
+        style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class=" w3-bar-item w3-button w3-large w3-padding-16">Close
+            ×</a>
+        <a href="#Legends" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+        <a href="#Legends" onclick="w3_close()" class="w3-bar-item w3-button">Legends</a>
+        <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Report</a>
+    </nav>
+
+    <!-- Header with full-height image -->
+    <header>
+        <section class="video-header">
+            <div class="fullscreen-video-wrap">
+                <video src="../videos/Trailer_good.mp4" autoplay="true" loop="true" muted></video>
+            </div>
+
+            <div class="header-overlay"></div>
+            <!-- Large Screen -->
+            <div class="w3-display-left w3-text-white w3-hide-small" style="padding:28px">
+                <div class="video-content">
+                    <span class="w3-jumbo w3-hide-small">Welcome To The Apex Games</span><br>
+                    <span class="w3-center w3-large">Your Road To Apex Predator Begins Here<Br>Select A Category Below
+                        To Gain More Knowledge</span>
+                </div>
+                <!-- Large Screen -->
+                <div class="w3-hide-small">
+                    <div class="video-nav-bar-large">
+                        <ul>
+                            <li><a href="#about" class="w3-large">Legends</a></li>
+                            <li><a href="#about" class="w3-large">Arenas</a></li>
+                            <li><a href="#about" class="w3-large">Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Small Screen -->
+            <div class="w3-display-middle w3-text-white w3-hide-large w3-hide-medium" style="padding:10px">
+                <div style="text-align: center;">
+                    <span class="w3-jumbo w3-hide-large w3-hide-medium ">Welcome</span><br>
+                    <span class="w3-large w3-hide-large w3-hide-medium ">Your Road To Apex Predator Begins
+                        Here<Br>Select A Category To Gain More Knowledge</span>
+                </div>
+                <!-- Small Screen -->
+                <div class="w3-hide-large w3-hide-medium w3-center w3-margin-top">
+                    <div class="video-nav-bar">
+                        <ul>
+                            <li><a href="#about" class="w3-large">Legends</a></li>
+                            <li><a href="#about" class="w3-large">Arenas</a></li>
+                            <li><a href="#about" class="w3-large">Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-    </section>
-    <article class="content-wrap">
-        <h2 class="content-title">The apex games</h2>
-        <div class="content-text">
-            <p>
-                The Apex Games are a televised blood sport hosted in the Outlands and ran by the mysterious Syndicate
+    </header>
+
+    <!-- About Section -->
+    <div class="w3-container" style="margin: 0%;padding: 0%;" id="about">
+        <h2 class="w3-center w3-card-2 w3-black w3-text-white w3-bottombar w3-border-red "style="margin: 0%;padding: 0%;">The Apex Games</h2>
+        <div class="content-wrap">
+            <!-- Large Screen -->
+            <p class="w3-content w3-center w3-large w3-hide-small">
+                The Apex Games are a televised blood sport hosted in the Outlands and ran by the mysterious
+                Syndicate
                 that attracts Legends from all across the Frontier with promises of money, fame, and glory.
-                <br><br>
-                The Apex Games have been running for more than 120 seasons (the earlier seasons were reported to be held
+                The Apex Games have been running for more than 120 seasons (the earlier seasons were reported to be
+                held
                 in the Thunderdome of Kings Canyon). The 124th Season of the games was notable for the inclusion of
                 Silva Pharmaceutical's daredevil heir Octavio Silva and the daughter of the Game's lead electrical
                 engineer, Natalie Paquette.
-                <br><br>
-                The games was suspended for a long period after a mysterious figure detonated an EMP blast on the main
+                The games was suspended for a long period after a mysterious figure detonated an EMP blast on the
+                main
                 arena of Kings Canyon's Repulsor Tower. This led to the invasion of wildlife into the arena and the
                 temporary suspension of the games. The Syndicate has used this setback to upgrade the arena with new
-                structures, including a tall maze-like tower called The Cage and a sponsored area of the arena for the
+                structures, including a tall maze-like tower called The Cage and a sponsored area of the arena for
+                the
                 legend Octane. While initially successful, more attacks from the mysterious figure have made
-                reconstructing Kings Canyon more effort than it's worth. It was then decided that the games be moved to
-                another arena at World's Edge on the planet of Talos.
+                reconstructing Kings Canyon more effort than it's worth. It was then decided that the games be moved
+                to
+                another arena at World's Edge on the planet of Talos.</p>
+
+            <!-- Small Screen -->
+            <p class="w3-content w3-center w3-large w3-hide-large w3-hide-medium">
+                The Apex Games are a televised blood sport hosted in the Outlands and ran by the mysterious
+                Syndicate
+                that attracts Legends from all across the Frontier with promises of money, fame, and glory.
             </p>
+            
+            <!-- Modal -->
+            <div class="w3-container w3-center w3-margin-bottom w3-hide-large w3-hide-medium">
+                <button onclick="document.getElementById('id03').style.display='block'"
+                    class="w3-white w3-button w3-large w3-hover-black w3-card-4 ">More Information</button>
+            </div>
+
         </div>
-    </article>
+
+        <!-- Modal Content -->
+        <div id="id03" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-black w3-display-container">
+                    <span onclick="document.getElementById('id03').style.display='none'"
+                        class="w3-button w3-black w3-display-topright"><i class="fa fa-remove"></i>
+                    </span>
+                    <div class="content-wrap">
+                        <div class="w3-container" style="padding:32px 16px" id="about">
+                            <h1 class="w3-center w3-xxlarge">The Apex Games</h1>
+                            <p class="w3-center w3-large">
+                                The Apex Games are a televised blood sport hosted in the Outlands and ran by the
+                                mysterious Syndicate
+                                that attracts Legends from all across the Frontier with promises of money, fame, and
+                                glory.
+                                The Apex Games have been running for more than 120 seasons (the earlier seasons were
+                                reported to be held
+                                in the Thunderdome of Kings Canyon). The 124th Season of the games was notable for
+                                the
+                                inclusion of
+                                Silva Pharmaceutical's daredevil heir Octavio Silva and the daughter of the Game's
+                                lead
+                                electrical
+                                engineer, Natalie Paquette.
+                                The games was suspended for a long period after a mysterious figure detonated an EMP
+                                blast on the main
+                                arena of Kings Canyon's Repulsor Tower. This led to the invasion of wildlife into
+                                the
+                                arena and the
+                                temporary suspension of the games. The Syndicate has used this setback to upgrade
+                                the
+                                arena with new
+                                structures, including a tall maze-like tower called The Cage and a sponsored area of
+                                the
+                                arena for the
+                                legend Octane. While initially successful, more attacks from the mysterious figure
+                                have
+                                made
+                                reconstructing Kings Canyon more effort than it's worth. It was then decided that
+                                the
+                                games be moved to
+                                another arena at World's Edge on the planet of Talos.
+                            </p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        
     </div>
+
+    <!-- Legends Slide Show -->
+    <div class="w3-container" style="margin: 0%;padding: 0%;">
+        <div class="w3-container" style="margin: 0%; padding: 0%;" id="about">
+            <h2 class="w3-center w3-card-4 w3-black w3-bottombar w3-border-red" style="margin: 0%; padding: 0%;">
+                The Arenas
+            </h2>
+        </div>
     </div>
-    </section>
-    <footer class="footer">
+    <div class="w3-display-container">
+        <!-- Images -->
+        <!-- King's Canyon -->
+        <div class="mySlides w3-animate-opacity">
+            <div class="w3-display-container w3-animate-opacity w3-card-4">
+                <img class="bgimg-1" style="width:100%; " src="../images/arenas/kingsCanyon.jpg">
+                <div class="w3-container w3-display-middle w3-center w3-margin-bottom">
+                    <button onclick="document.getElementById('id01').style.display='block'"
+                        class="w3-white w3-button w3-xlarge w3-hover-black w3-card-4 ">Kings Canyon</button>
+                </div>
+
+            </div>
+            <!-- Modal -->
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-black w3-display-container">
+                        <span onclick="document.getElementById('id01').style.display='none'"
+                            class="w3-button w3-black w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <div class="content-wrap">
+                            <div class="w3-container" style="padding:32px 16px" id="about">
+                                <h1 class="w3-center w3-xxlarge">Kings Canyon</h1>
+                                <p class="w3-center w3-large">
+
+                                    Once a simple settlement on the planet Solace dating back to the earliest
+                                    expeditions to
+                                    the
+                                    Frontier,
+                                    the island known as Kings Canyon, didn't thrive until a century later, when the
+                                    now-defunct
+                                    IMC built
+                                    several outposts centered around scientific research and development. In fact, it's
+                                    rumored
+                                    that the IMC
+                                    conducted experiments using phase shift technology here, although explorers have yet
+                                    to
+                                    find
+                                    any
+                                    evidence that proves this. To blow off steam, IMC soldiers station here would
+                                    compete in
+                                    gladiator-esque
+                                    combat in an area they nicknamed 'Thunderdome'. Years later, when the Syndicate
+                                    commissioned
+                                    the
+                                    rebuilding of the island of Kings Canyon as the home of their newest bloodsport,
+                                    they
+                                    insisted
+                                    Thunderdome remain untouched - a tribute to the earliest known predecessor of what
+                                    we
+                                    know
+                                    today as 'The
+                                    Apex Games'
+                                    <br><br>
+                                    An EMP detonated by a mysterious figure in the Repulsor Tower allowed the nearby
+                                    Flyers
+                                    and
+                                    Leviathans
+                                    to invade the island. The Leviathans made their home in the river and caused the
+                                    destruction
+                                    of the
+                                    settlements on it. The Legends were evacuated and the games put on-hold due to the
+                                    attack.
+                                    This respite
+                                    allowed the Syndicate to add new areas to the map, including a huge structure near
+                                    the
+                                    destroyed Bridges
+                                    and Hydro Dam called The Cage and a camp near what was once Cascades called
+                                    Containment.
+                                </p>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <!-- World's Edge -->
+        <div class="mySlides">
+            <!-- Image Header -->
+            <div class="w3-display-container w3-animate-opacity w3-card-4">
+                <img style="width:100%; " src="../images/Arenas/worldsedge.jpg">
+                <div class="w3-container w3-center w3-display-middle w3-margin-bottom">
+                    <button onclick="document.getElementById('id02').style.display='block'"
+                        class="w3-white w3-button w3-xlarge w3-hover-black w3-card-4 ">Worlds Edge</button>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div id="id02" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-black w3-display-container">
+                        <span onclick="document.getElementById('id02').style.display='none'"
+                            class="w3-button w3-black w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <div class="content-wrap">
+                            <div class="w3-container" style="padding:32px 16px" id="about">
+                                <h1 class="w3-center w3-xxlarge">Worlds Edge</h1>
+                                <p class="w3-center w3-large">
+
+                                    The once uninhabitable world of Talos became a hotbed of IMC activity when a rare
+                                    mineral
+                                    compound was
+                                    discovered beneath its surface. Heat-reducing towers were built to super-cool its
+                                    natural
+                                    lava flows,
+                                    and the town of World’s Edge grew around them. Decades ago, an explosion in one of
+                                    the
+                                    towers covered
+                                    the surrounding area in a lethal flash freeze. Today, World’s Edge is deserted, its
+                                    borders
+                                    inhabited by
+                                    a small community of hunters who reportedly spurn modern technology.
+                                    <br><br>
+                                    After the Repulsor attack on King's Canyon and the various attempts to rebuild it
+                                    proved
+                                    too
+                                    much
+                                    trouble than they were worth, the games were moved to World's Edge.
+                                </p>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <!-- Slide Show Buttons -->
+        <div class="w3-center w3-container w3-section w3-large w3-text-red w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-white w3-display" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right w3-hover-text-white" onclick="plusDivs(1)">&#10095;</div>
+            <span class="w3-badge demo w3-border w3-border-black w3-transparent w3-hover-black"
+                onclick="currentDiv(1)"></span>
+            <span class="w3-badge demo w3-border w3-border-black w3-transparent w3-hover-black"
+                onclick="currentDiv(2)"></span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64">
+
         <center>
             <p>
                 &copy; Copyright
@@ -74,8 +329,64 @@
                 </script> Raphael Salaja
             </p>
         </center>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                class="w3-hover-text-green">w3.css</a></p>
     </footer>
-    
+
+    <!-- JavaScript -->
+    <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        // Slide Show
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-red", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-red";
+        }
+
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+    </script>
 
 </body>
 
