@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+   <title>Mirage</title>
+   <meta charset="UTF-8">
+   <link rel="icon" href="../images/Icons/apexIcon.png" type="image/jpg" sizes="32x32">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="../css/LegendsInfo.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <body id="home">
+      <!-- Navigation Bar -->
+      <div class="w3-display-bottommiddle w3-jumbo w3-center">
+         <a href="#footer"><i class="fa fa-arrow-down w3-text-black"></i></a>
+      </div>
+      <div class="w3-top">
+         <div class="w3-bar w3-white w3-card id=" myNavbar">
+            <a href="../Navs/Home.html" class="w3-bar-item w3-button w3-large ">Apex Legends</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+               <a href="..\Navs\About.html" class="w3-bar-item w3-large w3-button">About</a>
+               <div class="w3-dropdown-hover">
+                  <a href="..\Navs\Legends.html" class="w3-large w3-button">Legends</a>
+                  <div class="w3-dropdown-content w3-bar-block w3-border w3-card-4">
+                     <a href="../Legends/Bangalore.html" class="w3-bar-item w3-button">Bangalore</a>
+                     <a href="../Legends/Bloodhound.html" class="w3-bar-item w3-button">Bloodhound</a>
+                     <a href="../Legends/Caustic.html" class="w3-bar-item w3-button">Caustic</a>
+                     <a href="../Legends/Crypto.html" class="w3-bar-item w3-button">Crypto</a>
+                     <a href="../Legends/Gibraltar.html" class="w3-bar-item w3-button">Gibraltar</a>
+                     <a href="../Legends/Lifeline.html" class="w3-bar-item w3-button">Lifeline</a>
+                     <a href="../Legends/Mirage.html" class="w3-bar-item w3-button">Mirage</a>
+                     <a href="../Legends/Octane.html" class="w3-bar-item w3-button">Octane</a>
+                     <a href="../Legends/Pathfinder.html" class="w3-bar-item w3-button">Pathfinder</a>
+                     <a href="../Legends/Wattson.html" class="w3-bar-item w3-button">Wattson</a>
+                     <a href="../Legends/Wraith.html" class="w3-bar-item w3-button">Wraith</a>
+                  </div>
+               </div>
+               <a href="..\Navs\Arenas.html" class="w3-bar-item w3-large w3-button">Arenas</a>
+               <a href="..\Navs\report.html" class="w3-bar-item w3-large w3-button">Report</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+               onclick="w3_open()">
+            <i class="w3-bar-item w3-button fa fa-bars"></i>
+            </a>
+         </div>
+      </div>
+      <!-- Sidebar For Small Screens -->
+      <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large w3-rightbar w3-border-white"
+         style="display:none" id="mySidebar">
+         <a href="javascript:void(0)" onclick="w3_close()" class=" w3-bar-item w3-button w3-large w3-padding-16">close</a>
+         <a href="..\Navs\About.html" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+         <a href="..\Navs\Arenas.html" onclick="w3_close()" class="w3-bar-item w3-button">Arenas</a>
+         <a href="..\Navs\Legends.html" onclick="w3_close()" class="w3-bar-item w3-button">Legends</a>
+         <a href="..\Navs\report.html" onclick="w3_close()" class="w3-bar-item w3-button">Report</a>
+      </nav>
+      <!-- Header with full-height image -->
+      <header class="bgimg-1" style="background-image:url(../images/Mirage/mir.png); background-position: center;
+         background-size: cover;">
+         <!-- <div class="header-overlay"></div> -->
+         <div class="image-container">
+            <div class="image-header w3-display-middle ">
+               <header class="w3-container w3-panel w3-card-4 w3-black w3-padding w3-animate-bottom w3-hide-small"
+                  style="margin: 0%;">
+                  <h1>Mirage</h1>
+               </header>
+               <header
+                  class="w3-container w3-panel w3-card-4 w3-black w3-padding w3-animate-bottom w3-hide-medium w3-hide-large"
+                  style="margin: 0%;">
+                  <h3>Mirage</h3>
+               </header>
+            </div>
+         </div>
+      </header>
+      <!--Large Screen-->
+      <span id = "footer"></span>
+      <div class="w3-hide-medium w3-hide-small">
+         <!-- Legend Details -->
+         <!-- Legend Background & Details -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Mirage/mirageArt.jpg);min-height:460px">
+                     <div class="w3-third" style="min-height:460px"></div>
+                     <div class="w3-third" style="min-height:460px"></div>
+                     <div class="w3-third w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <div>
+                           <div>
+                              <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">
+                                 Details
+                              </h1>
+                              <p style="text-align: left;">
+                                 Real Name: Elliott Witt<br>
+                                 Gender: Male<br>
+                                 Age: 30<br>
+                           </div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">
+                              Background
+                           </h1>
+                           <p style="text-align: left;">
+                              Mirage is the kind of guy who likes to stand out. The youngest of four
+                              brothers, he
+                              perfected the art of
+                              fooling around to get attention. The one thing he took seriously was
+                              Holo-Pilot
+                              technology: introduced
+                              to the illusion-creating tech by his engineer mother, he pored over the
+                              mechanisms
+                              and learned all he
+                              could about them. Even when his brothers went missing during the Frontier
+                              War,
+                              Mirage and his mother
+                              continued to develop holo devices, and the work brought them closer.
+                              <br><br>
+                              While working as a bartender on the Paradise Lounge in Solace City[1] to
+                              make some
+                              extra money, Mirage
+                              heard amazing stories from his patrons about the Apex Games and the wealth
+                              and glory
+                              that came with
+                              victory. As good as both of those sounded, he knew he couldn't risk leaving
+                              his
+                              mother childless – until
+                              she gave him a set of customized holo devices and told him to follow his
+                              dream.
+                              Mirage is now the life
+                              of the Apex Games, outwitting opponents and charming audiences across the
+                              Outlands.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Gameplay -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Mirage/mirageArt2.jpg);min-height:460px">
+                     <div class="w3-third w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Gameplay
+                        </h1>
+                        <div>
+                           <p style="text-align: left;">
+                              Mirage is a more difficult Offensive Legend to play, but is useful for
+                              distraction
+                              and revealing. His Decoys can confuse enemies, and, when they shoot them,
+                              reveals to
+                              Mirage the exact position of the enemy. His Ultimate drops a lot of decoys and
+                              makes
+                              him invisible, letting him confuse enemies, ping them for his team, and then
+                              outflank and outlive the enemy. If Mirage gets in over his head and gets knocked
+                              down,he just turns invisible to ping the enemy and wait for his team to revive
+                              to
+                              continue his job.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Abilities -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class="w3-third w3-container w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Tactical ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/psyche.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Psyche Out</h3>
+                  </div>
+                  <div>
+                     <p>Send out a holographic decoy to confuse the enemy.<br><br><br></p>
+                  </div>
+               </div>
+            </div>
+            <div class="w3-third w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Passive ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/encore.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Encore!</h3>
+                  </div>
+                  <div>
+                     <p>Automatically drop a decoy and cloak for five seconds when knocked down.<br><br></p>
+                  </div>
+               </div>
+            </div>
+            <div class="w3-third w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Ultimate ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/vanishing.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Vanishing Act</h3>
+                  </div>
+                  <div>
+                     <p>Deploy a team of Decoys to distract enemies while you cloak.<br><br><br></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Medium Screen-->
+      <div class="w3-hide-large w3-hide-small">
+         <!-- Legend Details -->
+         <!-- Legend Background & Details -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Mirage/mirageArt.jpg);min-height:460px">
+                     <div class="w3-half" style="min-height:460px"></div>
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <div>
+                           <div>
+                              <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">
+                                 Details
+                              </h1>
+                              <p style="text-align: left;">
+                                 Real Name: Elliott Witt<br>
+                                 Gender: Male<br>
+                                 Age: 30<br>
+                           </div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">
+                              Background
+                           </h1>
+                           <p style="text-align: left;">
+                              Mirage is the kind of guy who likes to stand out. The youngest of four
+                              brothers, he
+                              perfected the art of
+                              fooling around to get attention. The one thing he took seriously was
+                              Holo-Pilot
+                              technology: introduced
+                              to the illusion-creating tech by his engineer mother, he pored over the
+                              mechanisms
+                              and learned all he
+                              could about them. Even when his brothers went missing during the Frontier
+                              War,
+                              Mirage and his mother
+                              continued to develop holo devices, and the work brought them closer.
+                              <br><br>
+                              While working as a bartender on the Paradise Lounge in Solace City[1] to
+                              make some
+                              extra money, Mirage
+                              heard amazing stories from his patrons about the Apex Games and the wealth
+                              and glory
+                              that came with
+                              victory. As good as both of those sounded, he knew he couldn't risk leaving
+                              his
+                              mother childless – until
+                              she gave him a set of customized holo devices and told him to follow his
+                              dream.
+                              Mirage is now the life
+                              of the Apex Games, outwitting opponents and charming audiences across the
+                              Outlands.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Gameplay -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Mirage/mirageArt2.jpg);min-height: 460px;">
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Gameplay
+                        </h1>
+                        <div>
+                           <p style="text-align: left;">
+                              Mirage is a more difficult Offensive Legend to play, but is useful for
+                              distraction
+                              and revealing. His Decoys can confuse enemies, and, when they shoot them,
+                              reveals to
+                              Mirage the exact position of the enemy. His Ultimate drops a lot of decoys and
+                              makes
+                              him invisible, letting him confuse enemies, ping them for his team, and then
+                              outflank and outlive the enemy. If Mirage gets in over his head and gets knocked
+                              down,he just turns invisible to ping the enemy and wait for his team to revive
+                              to
+                              continue his job.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Abilities -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class="w3-half w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Tactical ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/psyche.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Psyche Out</h3>
+                  </div>
+                  <div>
+                     <p>Send out a holographic decoy to confuse the enemy.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="w3-half w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Passive ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/encore.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Encore!</h3>
+                  </div>
+                  <div>
+                     <p>Automatically drop a decoy and cloak for five seconds when knocked down.<br><br></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="w3-row-padding w3-center w3-margin" style="min-height:460px">
+            <div class="w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Ultimate ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/vanishing.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Vanishing Act</h3>
+                  </div>
+                  <div>
+                     <p>Deploy a team of Decoys to distract enemies while you cloak.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Small Screen-->
+      <div class="w3-hide-large w3-hide-medium">
+         <!-- Legend Details -->
+         <!-- Legend Background & Details -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="w3-container w3-padding w3-black">
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">
+                              Details
+                           </h1>
+                           <p style="text-align: left;">
+                              Real Name: Elliott Witt<br>
+                              Gender: Male<br>
+                              Age: 30<br>
+                        </div>
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">
+                              Background
+                           </h1>
+                           <p style="text-align: left;">
+                              Mirage is the kind of guy who likes to stand out. The youngest of four
+                              brothers, he
+                              perfected the art of
+                              fooling around to get attention. The one thing he took seriously was
+                              Holo-Pilot
+                              technology: introduced
+                              to the illusion-creating tech by his engineer mother, he pored over the
+                              mechanisms
+                              and learned all he
+                              could about them. Even when his brothers went missing during the Frontier
+                              War,
+                              Mirage and his mother
+                              continued to develop holo devices, and the work brought them closer.
+                              <br><br>
+                              While working as a bartender on the Paradise Lounge in Solace City[1] to
+                              make some
+                              extra money, Mirage
+                              heard amazing stories from his patrons about the Apex Games and the wealth
+                              and glory
+                              that came with
+                              victory. As good as both of those sounded, he knew he couldn't risk leaving
+                              his
+                              mother childless – until
+                              she gave him a set of customized holo devices and told him to follow his
+                              dream.
+                              Mirage is now the life
+                              of the Apex Games, outwitting opponents and charming audiences across the
+                              Outlands.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Gameplay -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="w3-container w3-padding w3-black">
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">
+                           Gameplay
+                        </h1>
+                        <div>
+                           <p style="text-align: left;">
+                              Mirage is a more difficult Offensive Legend to play, but is useful for
+                              distraction
+                              and revealing. His Decoys can confuse enemies, and, when they shoot them,
+                              reveals to
+                              Mirage the exact position of the enemy. His Ultimate drops a lot of decoys
+                              and makes
+                              him invisible, letting him confuse enemies, ping them for his team, and then
+                              outflank and outlive the enemy. If Mirage gets in over his head and gets
+                              knocked
+                              down,he just turns invisible to ping the enemy and wait for his team to
+                              revive to
+                              continue his job.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Abilities -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class="w3-half w3-container w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Tactical ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/psyche.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Psyche Out</h3>
+                  </div>
+                  <div>
+                     <p>Send out a holographic decoy to confuse the enemy.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="w3-half w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Passive ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/encore.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;"><br>Encore!</h3>
+                  </div>
+                  <div>
+                     <p>Automatically drop a decoy and cloak for five seconds when knocked down.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="w3-row-padding w3-center w3-margin" style="min-height:460px">
+            <div class=" w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Ultimate ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Mirage/vanishing.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Vanishing Act</h3>
+                  </div>
+                  <div>
+                     <p>Deploy a team of Decoys to distract enemies while you cloak.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="w3-center w3-black w3-padding-16">
+         <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+         <center>
+            <p>
+               &copy; Copyright
+               <script type="text/javascript">
+                  var dt = new Date();
+                  document.write("" + dt.getFullYear());
+               </script> Raphael Salaja
+            </p>
+         </center>
+         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+            class="w3-hover-text-green">w3.css</a></p>
+      </footer>
+      <!-- JavaScript -->
+      <script>
+         // Modal Image Gallery
+         function onClick(element) {
+             document.getElementById("img01").src = element.src;
+             document.getElementById("modal01").style.display = "block";
+             var captionText = document.getElementById("caption");
+             captionText.innerHTML = element.alt;
+         }
+         
+         
+         // Toggle between showing and hiding the sidebar when clicking the menu icon
+         var mySidebar = document.getElementById("mySidebar");
+         
+         function w3_open() {
+             if (mySidebar.style.display === 'block') {
+                 mySidebar.style.display = 'none';
+             } else {
+                 mySidebar.style.display = 'block';
+             }
+         }
+         
+         // Close the sidebar with the close button
+         function w3_close() {
+             mySidebar.style.display = "none";
+         }
+      </script>
+   </body>
+</html>

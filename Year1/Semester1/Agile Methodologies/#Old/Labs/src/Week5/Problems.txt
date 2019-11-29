@@ -1,0 +1,23 @@
+﻿Problem 1:
+
+A company wants to transmit data over the telephone, but they are concerned that the phones may be tapped. All their data are transmitted as four-digit integers. They have asked you to write a program that will encrypt their data so that it may be transmitted more securely. Your application should read a four-digit integer entered by the user and encrypt it as follows:
+
+Replace each digit by (the sum of that digit plus 7) modulus 10. Then swap the first digit with the third, and swap the second digit with the fourth.
+Print the encrypted integer.
+
+Problem 2:
+
+Write a separate application that inputs an encrypted four-digit integer and decrypts it to the original form.
+
+Employ:
+1. Simplified software development process.
+Hint: +3%10
+
+Problem 3:
+Write an application that inputs one number consisting of five digits from the user, separates the number into its individual digits and prints the digits separated from one another by three spaces each.
+
+Problem 4:
+Write an application that calculates the squares and cubes of the numbers from 0 to 10 and prints the resulting values in a table with the following columns – number, square, and cube.
+
+Problem 5:
+Write a program that reads a first name and last name from the user as two separate inputs and concatenates the first name and the last name, but separated by a space. Display the concatenated name on the console window.

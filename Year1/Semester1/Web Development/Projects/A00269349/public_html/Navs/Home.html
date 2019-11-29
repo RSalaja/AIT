@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<title>Apex Legends</title>
+<meta charset="UTF-8">
+<link rel="icon" href="../images/Icons/apexIcon.png" type="image/png" sizes="32x32">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../css/Home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    button#mutebtn {
+        background: url(../images/speaker.png) no-repeat;
+        width: 50px;
+        height: 50px;
+        background-size: 100%;
+        background-size: 50px auto;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+
+    button#playpausebtn {
+        background: url(../images/pause.png) no-repeat;
+        width: 50px;
+        height: 50px;
+        background-size: 100%;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+</style>
+
+<body id="home">
+    <!-- Header with full-height image -->
+    <header>
+        <section class="video-header">
+            <div class="fullscreen-video-wrap">
+                <video src="../videos/Trailer_good.mp4" autoplay="true" loop="true" muted></video>
+            </div>
+            <div class="header-overlay"></div>
+            <!-- Large Screen -->
+            <div class="w3-display-middle w3-text-white w3-hide-small w3-center" style="padding:28px">
+                <div class="video-content">
+                    <span class="w3-xxlarge w3-hide-small">Welcome To The Apex Games</span><br>
+                    <span class="w3-center w3-xlarge w3-text-black ">Your Road To Apex Predator Begins Here</span>
+
+                </div>
+
+
+                <!-- Large Screen -->
+                <div class="w3-hide-small w3-center">
+                    <div class="video-nav-bar-large">
+                        <ul>
+                            <li><a href="..\Navs\About.html" class="w3-large">About</a></li>
+                                                    <li><a href="..\Navs\Legends.html" class="w3-large">Legends</a></li>
+                            <li><a href="..\Navs\Arenas.html" class="w3-large">Arenas</a></li>
+
+                            <li><a href="..\Navs\report.html" class="w3-large">Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Small Screen -->
+            <div class="w3-display-middle w3-text-white w3-hide-large w3-hide-medium" style="padding:10px">
+                <div style="text-align: center;">
+                    <span class="w3-jumbo w3-hide-large w3-hide-medium ">Welcome</span><br>
+                    <span class="w3-large w3-hide-large w3-hide-medium w3-text-black">Your Road To Apex Predator Begins Here</span>
+                </div>
+                <!-- Small Screen -->
+                <div class="w3-hide-large w3-hide-medium w3-center w3-margin-top">
+                    <div class="video-nav-bar">
+                        <ul>
+                            <li><a href="..\Navs\About.html" class="w3-large">About</a></li>
+                            <li><a href="..\Navs\Arenas.html" class="w3-large">Arenas</a></li>
+                            <li><a href="..\Navs\Legends.html" class="w3-large">Legends</a></li>
+                            <li><a href="..\Navs\report.html" class="w3-large">Report</a></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="w3-display-bottommiddle w3-jumbo w3-center">
+                <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+            </div>
+            <div class="w3-display-topmiddle w3-center">
+                <button id="playpausebtn"></button>
+                <button id="mutebtn"></button>
+            </div>
+
+
+        </section>
+    </header>
+
+    <!-- About Section -->
+    <div class="w3-container" style="margin: 0%;padding: 0%;" id="footer">
+        <h2 class="w3-center w3-card-2 w3-black w3-text-white w3-bottombar w3-border-red "
+            style="margin: 0%;padding: 0%;">The Apex Games</h2>
+        <div class="content-wrap">
+            <!-- Large Screen -->
+            <p class="w3-content w3-center w3-large w3-hide-small">
+                The Apex Games are a televised blood sport hosted in the Outlands and ran by the mysterious
+                Syndicate
+                that attracts Legends from all across the Frontier with promises of money, fame, and glory.
+                The Apex Games have been running for more than 120 seasons (the earlier seasons were reported to be
+                held
+                in the Thunderdome of Kings Canyon). The 124th Season of the games was notable for the inclusion of
+                Silva Pharmaceutical's daredevil heir Octavio Silva and the daughter of the Game's lead electrical
+                engineer, Natalie Paquette.
+                The games was suspended for a long period after a mysterious figure detonated an EMP blast on the
+                main
+                arena of Kings Canyon's Repulsor Tower. This led to the invasion of wildlife into the arena and the
+                temporary suspension of the games. The Syndicate has used this setback to upgrade the arena with new
+                structures, including a tall maze-like tower called The Cage and a sponsored area of the arena for
+                the
+                legend Octane. While initially successful, more attacks from the mysterious figure have made
+                reconstructing Kings Canyon more effort than it's worth. It was then decided that the games be moved
+                to
+                another arena at World's Edge on the planet of Talos.</p>
+
+            <!-- Small Screen -->
+            <p class="w3-content w3-center w3-large w3-hide-large w3-hide-medium">
+                The Apex Games are a televised blood sport hosted in the Outlands and ran by the mysterious
+                Syndicate
+                that attracts Legends from all across the Frontier with promises of money, fame, and glory.
+            </p>
+
+            <!-- Modal -->
+            <div class="w3-container w3-center w3-margin-bottom w3-hide-large w3-hide-medium">
+                <button onclick="document.getElementById('id03').style.display='block'"
+                    class="w3-white w3-button w3-large w3-hover-black w3-card-4 ">More Information</button>
+            </div>
+
+        </div>
+
+        <!-- Modal Content -->
+        <div id="id03" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-black w3-display-container">
+                    <span onclick="document.getElementById('id03').style.display='none'"
+                        class="w3-button w3-black w3-display-topright"><i class="fa fa-remove"></i>
+                    </span>
+                    <div class="content-wrap">
+                        <div class="w3-container" style="padding:32px 16px" id="about">
+                            <h1 class="w3-center w3-xxlarge">The Apex Games</h1>
+                            <p class="w3-center w3-large">
+                                The Apex Games are a televised blood sport hosted in the Outlands and ran by the
+                                mysterious Syndicate
+                                that attracts Legends from all across the Frontier with promises of money, fame, and
+                                glory.
+                                The Apex Games have been running for more than 120 seasons (the earlier seasons were
+                                reported to be held
+                                in the Thunderdome of Kings Canyon). The 124th Season of the games was notable for
+                                the
+                                inclusion of
+                                Silva Pharmaceutical's daredevil heir Octavio Silva and the daughter of the Game's
+                                lead
+                                electrical
+                                engineer, Natalie Paquette.
+                                The games was suspended for a long period after a mysterious figure detonated an EMP
+                                blast on the main
+                                arena of Kings Canyon's Repulsor Tower. This led to the invasion of wildlife into
+                                the
+                                arena and the
+                                temporary suspension of the games. The Syndicate has used this setback to upgrade
+                                the
+                                arena with new
+                                structures, including a tall maze-like tower called The Cage and a sponsored area of
+                                the
+                                arena for the
+                                legend Octane. While initially successful, more attacks from the mysterious figure
+                                have
+                                made
+                                reconstructing Kings Canyon more effort than it's worth. It was then decided that
+                                the
+                                games be moved to
+                                another arena at World's Edge on the planet of Talos.
+                            </p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+
+
+
+        <center>
+            <p>
+                &copy; Copyright
+                <script type="text/javascript">
+                    var dt = new Date();
+                    document.write("" + dt.getFullYear());
+                </script> Raphael Salaja
+            </p>
+        </center>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mute
+        var audio, playbtn, mutebtn, seek_bar;
+        function initAudioPlayer() {
+            audio = new Audio();
+            audio.src = "../music/apexSong.mp3";
+            audio.loop = true;
+            audio.play();
+            // Set object references
+            playbtn = document.getElementById("playpausebtn");
+            mutebtn = document.getElementById("mutebtn");
+            // Add Event Handling
+            playbtn.addEventListener("click", playPause);
+            mutebtn.addEventListener("click", mute);
+            // Functions
+            function playPause() {
+                if (audio.paused) {
+                    audio.play();
+                    playbtn.style.background = "url(../images/pause.png) no-repeat";
+                    playbtn.style.backgroundSize = '100%';
+                } else {
+                    audio.pause();
+                    playbtn.style.background = "url(../images/play.png) no-repeat";
+                    playbtn.style.backgroundSize = '100%';
+                }
+            }
+            function mute() {
+                if (audio.muted) {
+                    audio.muted = false;
+                    mutebtn.style.background = "url(../images/speaker.png) no-repeat";
+                    mutebtn.style.backgroundSize = '100%';
+                } else {
+                    audio.muted = true;
+                    mutebtn.style.background = "url(../images/speaker_muted.png) no-repeat";
+                    mutebtn.style.backgroundSize = '100%';
+                }
+
+            }
+        }
+
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+
+
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+        window.addEventListener("load", initAudioPlayer);
+    </script>
+</body>
+
+</html>

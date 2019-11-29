@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+   <title>Legends</title>
+   <meta charset="UTF-8">
+   <link rel="icon" href="../images/Icons/apexIcon.png" type="image/jpg" sizes="32x32">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="../css/Legends.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <body id="home">
+      <!-- Navigation Bar -->
+      <div class="w3-display-bottommiddle w3-jumbo w3-center">
+         <a href="#footer"><i class="fa fa-arrow-down w3-text-black"></i></a>
+      </div>
+      <div class="w3-top">
+         <div class="w3-bar w3-white w3-card id=" myNavbar">
+            <a href="../Navs/Home.html" class="w3-bar-item w3-button w3-large ">Apex Legends</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+               <a href="..\Navs\About.html" class="w3-bar-item w3-large w3-button">About</a>
+               <div class="w3-dropdown-hover">
+                  <a href="..\Navs\Legends.html" class="w3-large w3-button">Legends</a>
+                  <div class="w3-dropdown-content w3-bar-block w3-border w3-card-4">
+                     <a href="../Legends/Bangalore.html" class="w3-bar-item w3-button">Bangalore</a>
+                     <a href="../Legends/Bloodhound.html" class="w3-bar-item w3-button">Bloodhound</a>
+                     <a href="../Legends/Caustic.html" class="w3-bar-item w3-button">Caustic</a>
+                     <a href="../Legends/Crypto.html" class="w3-bar-item w3-button">Crypto</a>
+                     <a href="../Legends/Gibraltar.html" class="w3-bar-item w3-button">Gibraltar</a>
+                     <a href="../Legends/Lifeline.html" class="w3-bar-item w3-button">Lifeline</a>
+                     <a href="../Legends/Mirage.html" class="w3-bar-item w3-button">Mirage</a>
+                     <a href="../Legends/Octane.html" class="w3-bar-item w3-button">Octane</a>
+                     <a href="../Legends/Pathfinder.html" class="w3-bar-item w3-button">Pathfinder</a>
+                     <a href="../Legends/Wattson.html" class="w3-bar-item w3-button">Wattson</a>
+                     <a href="../Legends/Wraith.html" class="w3-bar-item w3-button">Wraith</a>
+                  </div>
+               </div>
+               <a href="..\Navs\Arenas.html" class="w3-bar-item w3-large w3-button">Arenas</a>
+               <a href="..\Navs\report.html" class="w3-bar-item w3-large w3-button">Report</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+               onclick="w3_open()">
+            <i class="w3-bar-item w3-button fa fa-bars"></i>
+            </a>
+         </div>
+      </div>
+      <!-- Sidebar For Small Screens -->
+      <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large w3-rightbar w3-border-white"
+         style="display:none" id="mySidebar">
+         <a href="javascript:void(0)" onclick="w3_close()" class=" w3-bar-item w3-button w3-large w3-padding-16">close</a>
+         <a href="..\Navs\About.html" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+         <a href="..\Navs\Arenas.html" onclick="w3_close()" class="w3-bar-item w3-button">Arenas</a>
+         <a href="..\Navs\Legends.html" onclick="w3_close()" class="w3-bar-item w3-button">Legends</a>
+         <a href="..\Navs\report.html" onclick="w3_close()" class="w3-bar-item w3-button">Report</a>
+      </nav>
+      <!-- Header with full-height image -->
+      <header class="bgimg-1">
+         <!-- <div class="header-overlay"></div> -->
+         <div class="image-container">
+            <div class="image-header w3-display-middle ">
+               <header
+                  class="w3-container w3-panel w3-card-4 w3-white w3-padding w3-animate-bottom" style="margin: 0%;">
+                  <h1>Meet the legends</h1>
+               </header>
+               <div
+                  class="w3-container w3-card-4 w3-black w3-hover-shadow w3-padding w3-bottombar w3-border-red w3-animate-bottom">
+                  <p style="font-size: 1.2rem;">Misfits, outcasts, drifters, and grifters.
+                     The Apex Games welcomes them all.<br>
+                     See what each Legend can do for your squad
+                  </p>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- Legends Select Section -->
+      <div class="bgimg-2" id = "footer">
+         <header>
+            <div class="w3-container" style="margin: 0%;padding: 0%;" id="about">
+               <h2 class="w3-center w3-card-2 w3-black w3-text-white w3-bottombar w3-border-red "style="margin: 0%:  padding: 0%;">Choose Your legend</h2>
+            </div>
+         </header>
+         <!-- First Photo Grid-->
+         <div class="text-format">
+            <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+               <div class="w3-third">
+                  <a href="../Legends/Bangalore.html">
+                     <div class="w3-container w3-hover-text-brown">
+                        <p style="margin: 0%;">Bangalore</p>
+                     </div>
+                     <img src="../images/Bangalore/bangalore.png" class="w3-hover-greyscale" style="width:100%; ">
+                  </a>
+               </div>
+               <div class="w3-third">
+                  <a href="../Legends/Bloodhound.html">
+                     <div class="w3-container w3-hover-text-khaki">
+                        <p style="margin: 0%;">Bloodhound</p>
+                     </div>
+                     <img src="../images/Bloodhound/bloodhound.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+               <div class="w3-third">
+                  <a href="../Legends/Caustic.html">
+                     <div class="w3-container w3-hover-text-amber">
+                        <p style="margin: 0%;">Caustic</p>
+                     </div>
+                     <img src="  ../images/Caustic/caustic.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+            </div>
+            <!-- Second Photo Grid-->
+            <div class="w3-row-padding w3-padding-16 w3-center">
+               <div class="w3-third">
+                  <a href="../Legends/Crypto.html">
+                     <div class="w3-container w3-hover-text-lime">
+                        <p  style="margin: 0%;">Crypto</p>
+                     </div>
+                     <img src="  ../images/Crypto/crypto.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+               <div class="w3-third">
+                  <a href="../Legends/Gibraltar.html">
+                     <div class="w3-container w3-hover-text-orange">
+                        <p style="margin: 0%;">Gibraltar</p>
+                     </div>
+                     <img src="  ../images/Gibraltar/gibby.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+               <div class="w3-third">
+                  <a href="../Legends/Lifeline.html">
+                     <div class="w3-container w3-hover-text-blue">
+                        <p style="margin: 0%;">Lifeline</p>
+                     </div>
+                     <img src="  ../images/Lifeline/lifeline.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+            </div>
+            <!-- Third Photo Grid-->
+            <div class="w3-row-padding w3-padding-16 w3-center">
+               <div class="w3-third">
+                  <a href="../Legends/Mirage.html">
+                     <div class="w3-container w3-hover-text-yellow">
+                        <p style="margin: 0%;">Mirage</p>
+                     </div>
+                     <img src="  ../images/Mirage/mirage.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+               <div class="w3-third">
+                  <a href="../Legends/Octane.html">
+                     <div class="w3-container w3-hover-text-light-green">
+                        <p style="margin: 0%;">Octane</p>
+                     </div>
+                     <img src="  ../images/Octane/octane.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+               <div class="w3-third">
+                  <a href="../Legends/Pathfinder.html">
+                     <div class="w3-container w3-hover-text-indigo">
+                        <p style="margin: 0%;">Pathfinder</p>
+                     </div>
+                     <img src="  ../images/Pathfinder/pathfinder.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+            </div>
+            <!-- Fourth Photo Grid Big -->
+            <div class="w3-row-padding w3-padding-16 w3-center w3-hide-small">
+               <div class="w3-half">
+                  <a href="../Legends/Wattson.html">
+                     <div class="w3-container w3-hover-text-orange">
+                        <p style="margin: 0%;">Wattson</p>
+                     </div>
+                     <img src="  ../images/Wattson/wattson.png" class="w3-hover-greyscale" style="width:75%;">
+                  </a>
+               </div>
+               <div class="w3-half">
+                  <a href="../Legends/Wraith.html">
+                     <div class="w3-container w3-hover-text-indigo">
+                        <p style="margin: 0%;">wraith</p>
+                     </div>
+                     <img src="  ../images/Wraith/wraith.png" class="w3-hover-greyscale" style="width:75%;">
+                  </a>
+               </div>
+            </div>
+            <!-- Fourth Photo Grid Small -->
+            <div class="w3-row-padding w3-padding-16 w3-center w3-hide-medium w3-hide-large">
+               <div class="w3-third">
+                  <a href="../Legends/Wattson.html">
+                     <div class="w3-container w3-hover-text-orange">
+                        <p style="margin: 0%;">Wattson</p>
+                     </div>
+                     <img src="  ../images/Wattson/wattson.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+               <div class="w3-third">
+                  <a href="../Legends/Wraith.html">
+                     <div class="w3-container w3-hover-text-indigo">
+                        <p style="margin: 0%;">wraith</p>
+                     </div>
+                     <img src="  ../images/Wraith/wraith.png" class="w3-hover-greyscale" style="width:100%;">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="w3-center w3-black w3-padding-16">
+         <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+         <p>
+            &copy; Copyright
+            <script type="text/javascript">
+               var dt = new Date();
+               document.write("" + dt.getFullYear());
+            </script> Raphael Salaja
+         </p>
+         </center>
+         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+            class="w3-hover-text-green">w3.css</a></p>
+      </footer>
+      <!-- JavaScript -->
+      <script>
+         // Modal Image Gallery
+         function onClick(element) {
+             document.getElementById("img01").src = element.src;
+             document.getElementById("modal01").style.display = "block";
+             var captionText = document.getElementById("caption");
+             captionText.innerHTML = element.alt;
+         }
+         
+         
+         // Toggle between showing and hiding the sidebar when clicking the menu icon
+         var mySidebar = document.getElementById("mySidebar");
+         
+         function w3_open() {
+             if (mySidebar.style.display === 'block') {
+                 mySidebar.style.display = 'none';
+             } else {
+                 mySidebar.style.display = 'block';
+             }
+         }
+         
+         // Close the sidebar with the close button
+         function w3_close() {
+             mySidebar.style.display = "none";
+         }
+      </script>
+   </body>
+</html>

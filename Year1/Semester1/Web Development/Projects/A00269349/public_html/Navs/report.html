@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+   <title>Report</title>
+   <meta charset="UTF-8">
+   <link rel="icon" href="../images/Icons/apexIcon.png" type="image/jpg" sizes="32x32">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="../css/Home.css">
+   <link rel="stylesheet" href="../css/LegendsInfo.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+      .hyperlink {
+      color: red;
+      text-decoration: none;
+      }
+   </style>
+   <body id="home">
+      <!-- Navigation Bar -->
+      <div class="w3-display-bottommiddle w3-jumbo w3-center">
+         <a href="#footer"><i class="fa fa-arrow-down w3-text-white"></i></a>
+      </div>
+      <div class="w3-top">
+         <div class="w3-bar w3-white w3-card id=" myNavbar">
+            <a href="../Navs/Home.html" class="w3-bar-item w3-button w3-large ">Apex Legends</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+               <a href="..\Navs\About.html" class="w3-bar-item w3-large w3-button">About</a>
+               <div class="w3-dropdown-hover">
+                  <a href="..\Navs\Legends.html" class="w3-large w3-button">Legends</a>
+                  <div class="w3-dropdown-content w3-bar-block w3-border w3-card-4">
+                     <a href="../Legends/Bangalore.html" class="w3-bar-item w3-button">Bangalore</a>
+                     <a href="../Legends/Bloodhound.html" class="w3-bar-item w3-button">Bloodhound</a>
+                     <a href="../Legends/Caustic.html" class="w3-bar-item w3-button">Caustic</a>
+                     <a href="../Legends/Crypto.html" class="w3-bar-item w3-button">Crypto</a>
+                     <a href="../Legends/Gibraltar.html" class="w3-bar-item w3-button">Gibraltar</a>
+                     <a href="../Legends/Lifeline.html" class="w3-bar-item w3-button">Lifeline</a>
+                     <a href="../Legends/Mirage.html" class="w3-bar-item w3-button">Mirage</a>
+                     <a href="../Legends/Octane.html" class="w3-bar-item w3-button">Octane</a>
+                     <a href="../Legends/Pathfinder.html" class="w3-bar-item w3-button">Pathfinder</a>
+                     <a href="../Legends/Wattson.html" class="w3-bar-item w3-button">Wattson</a>
+                     <a href="../Legends/Wraith.html" class="w3-bar-item w3-button">Wraith</a>
+                  </div>
+               </div>
+               <a href="..\Navs\Arenas.html" class="w3-bar-item w3-large w3-button">Arenas</a>
+               <a href="..\Navs\report.html" class="w3-bar-item w3-large w3-button">Report</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+               onclick="w3_open()">
+            <i class="w3-bar-item w3-button fa fa-bars"></i>
+            </a>
+         </div>
+      </div>
+      <!-- Sidebar For Small Screens -->
+      <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large w3-rightbar w3-border-white"
+         style="display:none" id="mySidebar">
+         <a href="javascript:void(0)" onclick="w3_close()" class=" w3-bar-item w3-button w3-large w3-padding-16">Close
+         </a>
+         <a href="..\Navs\About.html" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+         <a href="..\Navs\Arenas.html" onclick="w3_close()" class="w3-bar-item w3-button">Arenas</a>
+         <a href="..\Navs\Legends.html" onclick="w3_close()" class="w3-bar-item w3-button">Legends</a>
+         <a href="..\Navs\report.html" onclick="w3_close()" class="w3-bar-item w3-button">Report</a>
+      </nav>
+      <!-- Header with full-height image -->
+      <header class="bgimg-1" style="background-image:url(../images/reportHeader.jpg); background-position: center;
+         background-size: cover;">
+         <!-- <div class="header-overlay"></div> -->
+         <div class="image-container">
+            <div class="image-header w3-display-middle ">
+               <header class="w3-container w3-panel w3-card-4 w3-white w3-padding w3-animate-bottom"
+                  style="margin: 0%;">
+                  <h1>Welcome to the report page</h1>
+               </header>
+               <div
+                  class="w3-container w3-card-4 w3-black w3-hover-shadow w3-padding w3-bottombar w3-border-red w3-animate-bottom">
+                  <p style="font-size: 1.2rem;">This page details the functionalities and technologies used for the
+                     website
+                  </p>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!--Large Screen-->
+      <div id="footer">
+         <!-- Legend Details -->
+         <div class="w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-container" style="min-height:460px;">
+                  <div class="w3-row-padding w3-center w3-margin-top">
+                     <div class="w3-half w3-padding">
+                        <div class="w3-card-4 w3-container w3-black" style="min-height:300px;">
+                           <h1 class="w3-bottombar " style="margin:0%; text-align: center;">Report
+                              PAGE
+                           </h1>
+                           <div>
+                              <h1 class="w3-xlarge" style="margin:0%; text-align: center;">
+                              </h1>
+                              <p style="text-align: center;">
+                                 i hope you enjoyed the website.<br>
+                                 i based my website on the game 'apex legends' as i enjoy playing it.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="w3-half w3-padding">
+                        <div class="w3-card-4 w3-container w3-black" style="min-height:300px;">
+                           <h1 class="w3-bottombar" style="margin:0%; text-align: center;">
+                              Details
+                           </h1>
+                           <p style="text-align: center;">
+                              Student Number: A00268349<br>
+                              Programme: Bachelor of Science (Honours)
+                              in Software Design with Virtual Reality and Gaming<br>
+                              Age:
+                              Greater Than Zero<br>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="w3-responsive">
+                     <h1 class=" w3-bottombar w3-border-black" style="margin:0%; margin-top: 5%; text-align: left;">
+                        The Report
+                        Table
+                     </h1>
+                     <table class="w3-table-all ">
+                        <tr>
+                           <th>Page</th>
+                           <th>Markup</th>
+                           <th>Responsive</th>
+                           <th>Description</th>
+                        </tr>
+                        <tr>
+                           <td><a href="..\Navs\Home.html" class="hyperlink">Home</a></td>
+                           <td>CSS3/W3CSS</td>
+                           <td>Yes</td>
+                           <td>
+                              This is the landing page. It conains A header with a video background<br>
+                              The user can be pause,play,mute or umuted<br>
+                              <i>
+                              NOTE ON THE AUDIO:</i> You might notice the audio does not automatically play
+                              when
+                              you
+                              first land on the homepage.
+                              This is due to the 'Autoplay Policy' change which prevents playback by
+                              default,
+                              unless the user interacts with the
+                              page, e.g by pressing the pause button. See <a
+                                 href="https://developers.google.com/web/updates/2018/11/web-audio-autoplay"
+                                 class="hyperlink"> here </a> for Chrome's changes.
+                              However, if the user navigates back to the Home Page, the audio plays
+                              automatically.
+                              Browsers that plays the audio automatically upon landing on the homepage
+                              includes IE
+                              and Edge.
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="..\Navs\About.html" class="hyperlink">About</a></td>
+                           <td>CSS3/W3CSS</td>
+                           <td>Yes</td>
+                           <td>This page is an overview of the entire website. it contains a brief description of
+                              the game apex legends. <br>it also contains links to
+                              each
+                              category. 
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="..\Navs\Legends.html" class="hyperlink">Legends</a></td>
+                           <td>CSS3/W3CSS</td>
+                           <td>Yes</td>
+                           <td>This is the landing page for the playable characters in apex legends.<br> the page
+                              contains image links to the respective character's description page..
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="..\Legends\Bangalore.html" class="hyperlink">Bangalore</a>, <a
+                              href="..\Legends\Bloodhound.html" class="hyperlink">Bloodhound</a>, etc.</td>
+                           <td>CSS3/W3CSS</td>
+                           <td>Yes</td>
+                           <td>
+                              These pages contains a description of each legend, showing their
+                              background, abilities etc.
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="..\Navs\Arenas.html" class="hyperlink">Arenas</a></td>
+                           <td>CSS3/W3CSS</td>
+                           <td>Yes</td>
+                           <td>this page shows the arenas of the world of
+                              apex. it contains a slideshowwith a text box which is clickable.<br>
+                              when clicked it
+                              will show a modal with information about the respective arena.
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="..\Navs\report.html" class="hyperlink">Report</a></td>
+                           <td>CSS3/W3CSS</td>
+                           <td>Yes</td>
+                           <td>This page details the functionalities and technologies used for the
+                              website
+                           </td>
+                        </tr>
+                        <br><br>
+                     </table>
+                  </div>
+                  <div class="w3-responsive" style="margin-top:10%;">
+                     <h1 class=" w3-bottombar w3-border-black" style="margin:0%; text-align: left;">The
+                        References
+                        Table
+                     </h1>
+                     <table class="w3-table-all">
+                        <tr>
+                           <th>Images</th>
+                           <td>All images were taken from the website
+                              <a href="https://www.ea.com/games/apex-legends." class="hyperlink">
+                              https://www.ea.com/games/apex-legends.</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>Videos</th>
+                           <td>All tables were taken from the website
+                              <a href="https://www.ea.com/games/apex-legends." class="hyperlink">
+                              https://www.ea.com/games/apex-legends.</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>Music</th>
+                           <td>
+                              Song - The Search<br>
+                              Artist - NF<br>
+                              UMG [on behalf of NF Real Music];<br>
+                              LatinAutor - UMPG, ASCAP, BMI - Broadcast Music Inc.<br>
+                              Adorando Brazil, Capitol CMG Publishing, LatinAutor, <br>
+                              5 Music Rights Societies
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="w3-center w3-black w3-padding-16">
+         <a href="#home" class="w3-button w3-light-grey"><i
+            class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+         <center>
+            <p>
+               &copy; Copyright
+               <script type="text/javascript">
+                  var dt = new Date();
+                  document.write("" + dt.getFullYear());
+               </script> Raphael Salaja
+            </p>
+         </center>
+         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+            class="w3-hover-text-green">w3.css</a></p>
+      </footer>
+      <!-- JavaScript -->
+      <script>
+         // Modal Image Gallery
+         function onClick(element) {
+             document.getElementById("img01").src = element.src;
+             document.getElementById("modal01").style.display = "block";
+             var captionText = document.getElementById("caption");
+             captionText.innerHTML = element.alt;
+         }
+         
+         
+         // Toggle between showing and hiding the sidebar when clicking the menu icon
+         var mySidebar = document.getElementById("mySidebar");
+         
+         function w3_open() {
+             if (mySidebar.style.display === 'block') {
+                 mySidebar.style.display = 'none';
+             } else {
+                 mySidebar.style.display = 'block';
+             }
+         }
+         
+         // Close the sidebar with the close button
+         function w3_close() {
+             mySidebar.style.display = "none";
+         }
+      </script>
+   </body>
+</html>

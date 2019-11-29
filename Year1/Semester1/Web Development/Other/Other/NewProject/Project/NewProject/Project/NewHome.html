@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<title>Apex Legends</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="\images\apexIcon.png" type="image/jpg" sizes="32x32">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: ApexFontRegular;
+    }
+
+    /* Landing Video Layout */
+    /* Layout */
+    .v-header {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+    /* Video */
+    .fullscreen-video-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .fullscreen-video-wrap video {
+        object-position: center;
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        right: 0;
+        transform: translateX(calc((100% - 100vw) / 2));
+        z-index: auto
+    }
+
+    .header-overlay {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: gray;
+        z-index: 0;
+        opacity: 0.75;
+    }
+
+    /* Video Links Large*/
+    .video-nav-bar-large {
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .video-nav-bar-large ul {
+        z-index: 0;
+        text-align: left;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .video-nav-bar-large ul li {
+        padding-right: 10px;
+        padding-top: 10px;
+        text-align: left;
+    }
+
+    .video-nav-bar-large a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .video-nav-bar-large a:hover {
+        color: #a2d2df;
+    }
+
+    /* Video Links Small*/
+    .video-nav-bar {
+        overflow-y: hidden;
+        display: inline-block;
+    }
+
+    .video-nav-bar ul {
+        text-align: center;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .video-nav-bar ul li {
+        text-align: center;
+        background: white;
+        padding: 10px;
+        margin-bottom: 10%;
+        border-bottom: red solid 5px ;
+    }
+
+    .video-nav-bar a {
+        color: black;
+        text-decoration: none;
+
+    }
+
+    .video-nav-bar li:hover {
+        background: gray;
+    }
+
+    /*Card Wrap*/
+    .content-wrap {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 1.2rem;
+        padding: 6px;
+    }
+
+
+    /* Fonts import */
+    @font-face {
+        font-family: ApexFontRegular;
+        src: url(font/ApexMk2/ApexMk2-Regular.otf);
+    }
+
+    @font-face {
+        font-family: ApexFontLight;
+        src: url(font/ApexMk2/ApexMk2-LightCondensed.otf);
+    }
+
+    @font-face {
+        font-family: ApexFontBold;
+        src: url(font/ApexMk2/ApexMk2-BoldExtended.otf);
+    }
+
+    body,
+    html {
+        height: 100%;
+        line-height: 1.8;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card id="myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-large ">Apex Legends</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#Legends" class="w3-bar-item  w3-large w3-button">Home</a>
+                <a href="#Legends" class="w3-bar-item w3-large w3-button">Legends</a>
+                <a href="#team" class="w3-bar-item w3-large w3-button">Arenas</a>
+                <a href="#work" class="w3-bar-item w3-large w3-button">Report</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="w3-bar-item w3-button fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large w3-rightbar w3-border-white"
+        style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class=" w3-bar-item w3-button w3-large w3-padding-16">Close
+            ×</a>
+        <a href="#Legends" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+        <a href="#Legends" onclick="w3_close()" class="w3-bar-item w3-button">Legends</a>
+        <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Arenas</a>
+        <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Report</a>
+
+    </nav>
+
+    <!-- Header with full-height image -->
+    <header>
+        <section class="v-header">
+            <div class="fullscreen-video-wrap">
+                <video src="videos/Trailer_good.mp4" autoplay="true" loop="true" muted></video>
+            </div>
+
+            <div class="header-overlay"></div>
+            <!-- Large Screen -->
+
+            <div class="w3-display-left w3-text-white w3-hide-small" style="padding:28px">
+                <div class="video-content">
+                    <span class="w3-jumbo w3-hide-small">Welcome To The Apex Games</span><br>
+                    <span class="w3-center w3-large">Your Road To Apex Predator Begins Here<Br>
+                        Select A Category To Gain More Knowledge
+                    </span>
+                </div>
+                <!-- Large Screen -->
+            <div class="w3-hide-small">
+                <div class="video-nav-bar-large">
+                    <ul>
+                        <li><a href="#about" class="w3-large">Legends</a></li>
+                        <li><a href="#about" class="w3-large">Arenas</a></li>
+                        <li><a href="#about" class="w3-large">Report</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <!-- Small Screen -->
+            <div class="w3-display-middle w3-text-white w3-hide-large w3-hide-medium" style="padding:10px">
+                <div style="text-align: center;">
+                    <span class="w3-jumbo w3-hide-large w3-hide-medium ">Welcome</span><br>
+                    <span class="w3-large w3-hide-large w3-hide-medium ">Your Road To Apex Predator Begins
+                        Here<Br>
+                        Select A Category To Gain More Knowledge
+                    </span>
+                </div>
+                <!-- Small Screen -->
+            <div class="w3-hide-large w3-hide-medium w3-center w3-margin-top">
+                <div class="video-nav-bar">
+                    <ul > 
+                        <li class="w3-card-4"><a href="#about" class="w3-large">Legends</a></li>
+                        <li class="w3-card"><a href="#about" class="w3-large">Arenas</a></li>
+                        <li class="w3-card"><a href="#about" class="w3-large">Report</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            
+
+            
+
+
+            <!-- <div class="w3-display-left w3-text-white w3-center w3-hide-medium w3-hide-large" style="padding:10px">
+                <span class="w3-jumbo w3-hide-small">Welcome <Br>To The Apex Games</span>
+                <span class="w3-xxlarge w3-hide-large w3-hide-medium">The Apex Games</span><br>
+                <span class="w3-center w3-large">Your Road To Apex Predator Begins Here<Br>
+                    Select A Category To Gain More Knowledge
+                </span>
+                <div class="w3-hide-large w3-hide-medium w3-center">
+                    <div class="video-nav-bar">
+                        <ul>
+                            <li><a href="#about" class="w3-large">Legends</a></li>
+                            <li><a href="#about" class="w3-large">Arenas</a></li>
+                            <li><a href="#about" class="w3-large">Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w3-hide-small">
+                    <div class="video-nav-bar-large">
+                        <ul>
+                            <li><a href="#about" class="w3-large">Legends</a></li>
+                            <li><a href="#about" class="w3-large">Arenas</a></li>
+                            <li><a href="#about" class="w3-large">Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+    </header>
+
+
+
+    <!-- About Section -->
+    <div class="content-wrap">
+
+        <div class="w3-container" style="padding:32px 16px" id="about">
+
+            <h2 class="w3-center w3-card-2 w3-black w3-text-white w3-bottombar w3-border-red">
+                The Apex Games
+            </h2>
+
+            <p class="w3-center w3-large">
+                The Apex Games are a televised blood sport hosted in the Outlands and ran by the mysterious Syndicate
+                that attracts Legends from all across the Frontier with promises of money, fame, and glory.
+                <br><br>
+                The Apex Games have been running for more than 120 seasons (the earlier seasons were reported to be held
+                in the Thunderdome of Kings Canyon). The 124th Season of the games was notable for the inclusion of
+                Silva Pharmaceutical's daredevil heir Octavio Silva and the daughter of the Game's lead electrical
+                engineer, Natalie Paquette.
+                <br><br>
+                The games was suspended for a long period after a mysterious figure detonated an EMP blast on the main
+                arena of Kings Canyon's Repulsor Tower. This led to the invasion of wildlife into the arena and the
+                temporary suspension of the games. The Syndicate has used this setback to upgrade the arena with new
+                structures, including a tall maze-like tower called The Cage and a sponsored area of the arena for the
+                legend Octane. While initially successful, more attacks from the mysterious figure have made
+                reconstructing Kings Canyon more effort than it's worth. It was then decided that the games be moved to
+                another arena at World's Edge on the planet of Talos.
+            </p>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <center>
+            <p>
+                &copy; Copyright
+                <script type="text/javascript">
+                    var dt = new Date();
+                    document.write("" + dt.getFullYear());
+                </script> Raphael Salaja
+            </p>
+        </center>
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+
+    <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

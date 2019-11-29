@@ -1,0 +1,148 @@
+/* Core Settings */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 3rem;
+  font-family: ApexFontBold;
+  line-height: 1.5;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/*Nav-Bar*/
+.navigation-bar {
+  margin: 0;
+  float: left;
+  background-color: rgba(51, 51, 51, 0.5);
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 2px solid black;
+  overflow: hidden;
+  float: left;
+  z-index: 3;
+  top: 0px;
+  position: absolute;
+}
+.navigation-bar a {
+  float: left;
+  margin: 0;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-shadow: 2px 2px #111;
+}
+.navigation-bar a:hover {
+  color: rgba(218, 41, 41, 0.637);
+  text-shadow: 2px 2px #111;
+}
+
+/* Section A */
+.content-wrap {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 1.2rem;
+  padding: 1em 1em 1em;
+  
+}
+.content-text {
+  font-size: 1.2rem;
+  font-family: ApexFontRegular;
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #111;
+}
+
+.content-title {
+  display: block;
+  background-color: black;
+  border-bottom: 4px solid rgb(218, 41, 41);
+  font-size: 2rem;
+  padding: 1rem;
+  text-shadow: 2px 2px #111;
+  color: #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* Image Background */
+.showcase {
+  z-index: -1;
+  background-image: url("../images/kings.jpg");
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+  padding: 0 20px;
+  margin: 0%;
+  border-bottom: 4px solid rgb(218, 41, 41);
+  box-shadow: 2 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.showcase2 {
+    z-index: -1;
+    background-image: url("../images/worldsedge.jpg");
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: inherit;
+    padding: 0 20px;
+    margin: 0%;
+    border-bottom: 4px solid rgb(218, 41, 41);
+    border-top: 4px solid rgb(218, 41, 41);
+    box-shadow: 2 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+  /* Footer */
+.footer{
+  background-color: #111;
+  color: #ddd;
+  text-align: left;
+  font-size: 1rem;
+  margin: 0%;
+  padding: 1rem;
+}
+/* Responsiveness */
+@media screen and (max-width: 500px) {
+  header.navigation-bar {
+    display: flex;
+  }
+
+  header.navigation-bar a {
+    margin: 0%;
+    padding: 14px 21px;
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: 2px 2px #111;
+  }
+
+  .content-text {
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+}
+
+/* Font Import */
+@font-face {
+  font-family: ApexFontRegular;
+  src: url(font/ApexMk2/ApexMk2-Regular.otf);
+}
+@font-face {
+  font-family: ApexFontLight;
+  src: url(font/ApexMk2/ApexMk2-LightCondensed.otf);
+}
+@font-face {
+  font-family: ApexFontBold;
+  src: url(font/ApexMk2/ApexMk2-BoldExtended.otf);
+}

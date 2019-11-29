@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+   <title>Wraith</title>
+   <meta charset="UTF-8">
+   <link rel="icon" href="../images/Icons/apexIcon.png" type="image/jpg" sizes="32x32">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="../css/LegendsInfo.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <body id="home">
+      <!-- Navigation Bar -->
+      <div class="w3-display-bottommiddle w3-jumbo w3-center">
+         <a href="#footer"><i class="fa fa-arrow-down w3-text-black"></i></a>
+      </div>
+      <div class="w3-top">
+         <div class="w3-bar w3-white w3-card id=" myNavbar">
+            <a href="../Navs/Home.html" class="w3-bar-item w3-button w3-large ">Apex Legends</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+               <a href="..\Navs\About.html" class="w3-bar-item w3-large w3-button">About</a>
+               <div class="w3-dropdown-hover">
+                  <a href="..\Navs\Legends.html" class="w3-large w3-button">Legends</a>
+                  <div class="w3-dropdown-content w3-bar-block w3-border w3-card-4">
+                     <a href="../Legends/Bangalore.html" class="w3-bar-item w3-button">Bangalore</a>
+                     <a href="../Legends/Bloodhound.html" class="w3-bar-item w3-button">Bloodhound</a>
+                     <a href="../Legends/Caustic.html" class="w3-bar-item w3-button">Caustic</a>
+                     <a href="../Legends/Crypto.html" class="w3-bar-item w3-button">Crypto</a>
+                     <a href="../Legends/Gibraltar.html" class="w3-bar-item w3-button">Gibraltar</a>
+                     <a href="../Legends/Lifeline.html" class="w3-bar-item w3-button">Lifeline</a>
+                     <a href="../Legends/Mirage.html" class="w3-bar-item w3-button">Mirage</a>
+                     <a href="../Legends/Octane.html" class="w3-bar-item w3-button">Octane</a>
+                     <a href="../Legends/Pathfinder.html" class="w3-bar-item w3-button">Pathfinder</a>
+                     <a href="../Legends/Wattson.html" class="w3-bar-item w3-button">Wattson</a>
+                     <a href="../Legends/Wraith.html" class="w3-bar-item w3-button">Wraith</a>
+                  </div>
+               </div>
+               <a href="..\Navs\Arenas.html" class="w3-bar-item w3-large w3-button">Arenas</a>
+               <a href="..\Navs\report.html" class="w3-bar-item w3-large w3-button">Report</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+               onclick="w3_open()">
+            <i class="w3-bar-item w3-button fa fa-bars"></i>
+            </a>
+         </div>
+      </div>
+      <!-- Sidebar For Small Screens -->
+      <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large w3-rightbar w3-border-white"
+         style="display:none" id="mySidebar">
+         <a href="javascript:void(0)" onclick="w3_close()" class=" w3-bar-item w3-button w3-large w3-padding-16">close</a>
+         <a href="..\Navs\About.html" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+         <a href="..\Navs\Arenas.html" onclick="w3_close()" class="w3-bar-item w3-button">Arenas</a>
+         <a href="..\Navs\Legends.html" onclick="w3_close()" class="w3-bar-item w3-button">Legends</a>
+         <a href="..\Navs\report.html" onclick="w3_close()" class="w3-bar-item w3-button">Report</a>
+      </nav>
+      <!-- Header with full-height image -->
+      <header class="bgimg-1" style="background-image:url(../images/Wraith/wraithhead.png); background-position: center;
+         background-size: cover;">
+         <!-- <div class="header-overlay"></div> -->
+         <div class="image-container">
+            <div class="image-header w3-display-middle ">
+               <header class="w3-container w3-panel w3-card-4 w3-black w3-padding w3-animate-bottom w3-hide-small" style="margin: 0%;">
+                  <h1>Wraith</h1>
+               </header>
+               <header class="w3-container w3-panel w3-card-4 w3-black w3-padding w3-animate-bottom w3-hide-medium w3-hide-large" style="margin: 0%;">
+                  <h3>Wraith</h3>
+               </header>
+            </div>
+         </div>
+      </header>
+      <!--Large Screen-->
+      <span id = "footer"></span>
+      <div class="w3-hide-medium w3-hide-small">
+         <!-- Legend Details -->
+         <!-- Legend Background & Details -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Wraith/wraithArt.jpg);min-height:460px">
+                     <div class="w3-third" style="min-height:460px"></div>
+                     <div class="w3-third" style="min-height:460px"></div>
+                     <div class="w3-third w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Details
+                           </h1>
+                           <p style="text-align: left;">
+                              Real Name: Renee Blasey<br>
+                              Gender: Female<br>
+                              Age: 32
+                           </p>
+                        </div>
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Background
+                           </h1>
+                           <p style="text-align: left;">
+                              Subject 611367, Codenamed "Wraith", is a whirlwind fighter, able to execute swift and deadly attacks and
+                              manipulate spacetime by opening rifts in the fabric of reality. Years ago, she woke up in an IMC
+                              Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a
+                              distant voice whispering in her mind that would keep her awake for days on end, nearly driving her
+                              insane.
+                              <br><br>
+                              She was on the facility one day when a portal opened before she was to be sedated. A person wearing a
+                              purple helmet comes out and scares the facility staff away. The person berated her for not fighting back
+                              and revealed herself to her. She was her from another dimension, on a quest for revenge on the people
+                              who experimented on her. With this Voidwalker's help, she learned to trust the voices and was given the
+                              device needed for her to safely manipulate the void.
+                              <br><br>
+                              Using a portal to the Voidwalker's dimension enabled her to escape her facility, arriving in Kings
+                              Canyon still under construction for the Apex Games. Determined to uncover her true identity, Wraith
+                              began a quest to find out more about the experiments and herself. Many of the old research facilities,
+                              however, are buried beneath the heavily guarded arenas used for the Apex Games. She now returns from
+                              where she arrived on this world and joined the competition, and with every match she gets closer to the
+                              truth.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Gameplay -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Wraith/wraithArt2.jpg);min-height:460px">
+                     <div class="w3-third w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Gameplay
+                        </h1>
+                        <div>
+                           <p style="text-align: left;"> A versatile Offensive Legend, Wraith can reposition and flank her enemies with her abilities. Using Into the Void.png Into the Void will allow Wraith to reposition or take cover while being invincible while her Dimensional Rift.png Dimensional Rift can allow her squad to be safely transported over long distances. Finally, her Voices from the Void.png Voices from the Void passive can give her and her teammates warnings about enemies approaching.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Abilities -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class="w3-third w3-container w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Tactical ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/int.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Into The Void</h3>
+                  </div>
+                  <div>
+                     <p>Reposition quickly through the safety of void space, avoiding all damage.<br><br></p>
+                  </div>
+               </div>
+            </div>
+            <div class="w3-third w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Passive ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/voices.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Voices from the Void</h3>
+                  </div>
+                  <div>
+                     <p>A voice warns you when danger approaches. As far as you can tell, it’s on your side.
+                  </div>
+               </div>
+            </div>
+            <div class="w3-third w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Ultimate ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/dimens.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Dimensional Rift</h3>
+                  </div>
+                  <div>
+                     <p>Link two locations with portals for 60 seconds, allowing your entire team to use them</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Medium Screen-->
+      <div class="w3-hide-large w3-hide-small">
+         <!-- Legend Details -->
+         <!-- Legend Background & Details -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Wraith/wraithArt.jpg);min-height:460px">
+                     <div class="w3-half" style="min-height:460px"></div>
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Details
+                           </h1>
+                           <p style="text-align: left;">
+                              Real Name: Renee Blasey<br>
+                              Gender: Female<br>
+                              Age: 32
+                           </p>
+                        </div>
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Background
+                           </h1>
+                           <p style="text-align: left;">
+                              Subject 611367, Codenamed "Wraith", is a whirlwind fighter, able to execute swift and deadly attacks and
+                              manipulate spacetime by opening rifts in the fabric of reality. Years ago, she woke up in an IMC
+                              Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a
+                              distant voice whispering in her mind that would keep her awake for days on end, nearly driving her
+                              insane.
+                              <br><br>
+                              She was on the facility one day when a portal opened before she was to be sedated. A person wearing a
+                              purple helmet comes out and scares the facility staff away. The person berated her for not fighting back
+                              and revealed herself to her. She was her from another dimension, on a quest for revenge on the people
+                              who experimented on her. With this Voidwalker's help, she learned to trust the voices and was given the
+                              device needed for her to safely manipulate the void.
+                              <br><br>
+                              Using a portal to the Voidwalker's dimension enabled her to escape her facility, arriving in Kings
+                              Canyon still under construction for the Apex Games. Determined to uncover her true identity, Wraith
+                              began a quest to find out more about the experiments and herself. Many of the old research facilities,
+                              however, are buried beneath the heavily guarded arenas used for the Apex Games. She now returns from
+                              where she arrived on this world and joined the competition, and with every match she gets closer to the
+                              truth.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Gameplay -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="bgimg-2 w3-container w3-padding"
+                     style="background-image:url(../images/Wraith/wraithArt2.jpg);min-height:460px">
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Gameplay
+                        </h1>
+                        <div>
+                           <p style="text-align: left;"> A versatile Offensive Legend, Wraith can reposition and flank her enemies with her abilities. Using Into the Void.png Into the Void will allow Wraith to reposition or take cover while being invincible while her Dimensional Rift.png Dimensional Rift can allow her squad to be safely transported over long distances. Finally, her Voices from the Void.png Voices from the Void passive can give her and her teammates warnings about enemies approaching.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Abilities -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class="w3-half w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Tactical ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/int.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Into The Void</h3>
+                  </div>
+                  <div>
+                     <p>Reposition quickly through the safety of void space, avoiding all damage.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="w3-half w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Passive ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/voices.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Voices from the Void</h3>
+                  </div>
+                  <div>
+                     <p>A voice warns you when danger approaches. As far as you can tell, it’s on your side.
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="w3-row-padding w3-center w3-margin" style="min-height:460px">
+            <div class="w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Ultimate ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/dimens.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Dimensional Rift</h3>
+                  </div>
+                  <div>
+                     <p>Link two locations with portals for 60 seconds, allowing your entire team to use them</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!--Small Screen-->
+      <div class="w3-hide-large w3-hide-medium">
+         <!-- Legend Details -->
+         <!-- Legend Background & Details -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="w3-container w3-padding w3-black">
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Details
+                           </h1>
+                           <p style="text-align: left;">
+                              Real Name: Renee Blasey<br>
+                              Gender: Female<br>
+                              Age: 32
+                           </p>
+                        </div>
+                        <div>
+                           <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Background
+                           </h1>
+                           <p style="text-align: left;">
+                              Subject 611367, Codenamed "Wraith", is a whirlwind fighter, able to execute swift and deadly attacks and
+                              manipulate spacetime by opening rifts in the fabric of reality. Years ago, she woke up in an IMC
+                              Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a
+                              distant voice whispering in her mind that would keep her awake for days on end, nearly driving her
+                              insane.
+                              <br><br>
+                              She was on the facility one day when a portal opened before she was to be sedated. A person wearing a
+                              purple helmet comes out and scares the facility staff away. The person berated her for not fighting back
+                              and revealed herself to her. She was her from another dimension, on a quest for revenge on the people
+                              who experimented on her. With this Voidwalker's help, she learned to trust the voices and was given the
+                              device needed for her to safely manipulate the void.
+                              <br><br>
+                              Using a portal to the Voidwalker's dimension enabled her to escape her facility, arriving in Kings
+                              Canyon still under construction for the Apex Games. Determined to uncover her true identity, Wraith
+                              began a quest to find out more about the experiments and herself. Many of the old research facilities,
+                              however, are buried beneath the heavily guarded arenas used for the Apex Games. She now returns from
+                              where she arrived on this world and joined the competition, and with every match she gets closer to the
+                              truth.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Gameplay -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class=" w3-container w3-padding">
+               <div class="w3-card-4">
+                  <div class="w3-container w3-padding w3-black">
+                     <div class="w3-half w3-card-4 w3-container w3-black" style="min-height:460px">
+                        <h1 class="w3-bottombar w3-border-white" style="margin:0%; text-align: left;">Gameplay
+                        </h1>
+                        <div>
+                           <p style="text-align: left;"> A versatile Offensive Legend, Wraith can reposition and flank her enemies with her abilities. Using Into the Void.png Into the Void will allow Wraith to reposition or take cover while being invincible while her Dimensional Rift.png Dimensional Rift can allow her squad to be safely transported over long distances. Finally, her Voices from the Void.png Voices from the Void passive can give her and her teammates warnings about enemies approaching.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Legend Abilities -->
+         <div class="w3-row-padding w3-center w3-margin">
+            <div class="w3-half w3-container w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Tactical ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/int.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Into The Void</h3>
+                  </div>
+                  <div>
+                     <p>Reposition quickly through the safety of void space, avoiding all damage.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="w3-half w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Passive ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/voices.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Double <br>Time</h3>
+                  </div>
+                  <div>
+                     <p>A voice warns you when danger approaches. As far as you can tell, it’s on your side.
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="w3-row-padding w3-center w3-margin" style="min-height:460px">
+            <div class=" w3-padding">
+               <div class="w3-card-4 w3-container w3-black" style="min-height:460px">
+                  <h2 style="margin-bottom : 0%;">Ultimate ABILITY</h2>
+                  <div class="icon-format">
+                     <img src="../images/Wraith/dimens.png"> 
+                  </div>
+                  <div>
+                     <h3 class="w3-bottombar w3-border-white" style="margin:0%;">Dimensional Rift</h3>
+                  </div>
+                  <div>
+                     <p>Link two locations with portals for 60 seconds, allowing your entire team to use them</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="w3-center w3-black w3-padding-16">
+         <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+         <center>
+            <p>
+               &copy; Copyright
+               <script type="text/javascript">
+                  var dt = new Date();
+                  document.write("" + dt.getFullYear());
+               </script> Raphael Salaja
+            </p>
+         </center>
+         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+            class="w3-hover-text-green">w3.css</a></p>
+      </footer>
+      <!-- JavaScript -->
+      <script>
+         // Modal Image Gallery
+         function onClick(element) {
+             document.getElementById("img01").src = element.src;
+             document.getElementById("modal01").style.display = "block";
+             var captionText = document.getElementById("caption");
+             captionText.innerHTML = element.alt;
+         }
+         
+         
+         // Toggle between showing and hiding the sidebar when clicking the menu icon
+         var mySidebar = document.getElementById("mySidebar");
+         
+         function w3_open() {
+             if (mySidebar.style.display === 'block') {
+                 mySidebar.style.display = 'none';
+             } else {
+                 mySidebar.style.display = 'block';
+             }
+         }
+         
+         // Close the sidebar with the close button
+         function w3_close() {
+             mySidebar.style.display = "none";
+         }
+      </script>
+   </body>
+</html>
