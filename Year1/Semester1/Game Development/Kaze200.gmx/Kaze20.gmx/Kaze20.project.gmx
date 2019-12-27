@@ -6,22 +6,61 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="Enemey">
+    <sprites name="Enemy">
       <sprite>sprites\sprite_baseEnemy</sprite>
       <sprite>sprites\sprite_baseEnemyRun</sprite>
       <sprite>sprites\sprite_baseEnemyJump</sprite>
       <sprite>sprites\sprite_gun</sprite>
       <sprite>sprites\sprite_bullet</sprite>
+      <sprite>sprites\sprite_baseEnemyDead</sprite>
+      <sprite>sprites\sprite_baseEnemyHitbox</sprite>
+      <sprite>sprites\sprite_baseEnemyAttack</sprite>
+      <sprites name="Knight">
+        <sprite>sprites\sprite_knight</sprite>
+        <sprite>sprites\sprite_knightRun</sprite>
+        <sprite>sprites\sprite_knightJump</sprite>
+        <sprite>sprites\sprite_knightDead</sprite>
+        <sprite>sprites\sprite_knightAttack</sprite>
+        <sprite>sprites\sprite_knightHitbox</sprite>
+      </sprites>
+      <sprites name="Mage">
+        <sprite>sprites\sprite_mageAttack</sprite>
+        <sprite>sprites\sprite_mageHitbox</sprite>
+        <sprite>sprites\sprite_mage</sprite>
+        <sprite>sprites\sprite_mageRun</sprite>
+        <sprite>sprites\sprite_mageJump</sprite>
+        <sprite>sprites\sprite_mageDead</sprite>
+      </sprites>
+      <sprites name="Gunner">
+        <sprite>sprites\sprite_gunnerDead</sprite>
+        <sprite>sprites\sprite_enemyGun</sprite>
+        <sprite>sprites\sprite_enemyGunBullet</sprite>
+        <sprite>sprites\sprite_gunnerRun</sprite>
+        <sprite>sprites\sprite_gunnerJump</sprite>
+        <sprite>sprites\sprite_gunner</sprite>
+      </sprites>
     </sprites>
     <sprites name="Enviroment">
       <sprite>sprites\sprite_wall</sprite>
       <sprite>sprites\sprite_crate</sprite>
+      <sprite>sprites\sprite_spikes</sprite>
+      <sprite>sprites\sprite_spikeDown</sprite>
+      <sprite>sprites\sprite_spikeLeft</sprite>
+      <sprite>sprites\sprite_spikeRight</sprite>
+      <sprite>sprites\sprite_horizontalPlatform</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\sprite_playerRun</sprite>
+      <sprite>sprites\sprite_playerDead</sprite>
+      <sprite>sprites\sprite_gliiter</sprite>
+      <sprite>sprites\sprite_respawn</sprite>
       <sprite>sprites\sprite_player</sprite>
+      <sprite>sprites\sprite_playerAttack</sprite>
+      <sprite>sprites\sprite_hitbox</sprite>
       <sprite>sprites\sprite_playerJump</sprite>
       <sprite>sprites\sprite_hand</sprite>
+      <sprite>sprites\sprite_playerWall</sprite>
+      <sprite>sprites\sprite_dash_effect</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Shuriken">
@@ -41,99 +80,164 @@
         <sprite>sprites\sprite_YellowGem</sprite>
       </sprites>
       <sprite>sprites\sprite_coins</sprite>
+      <sprite>sprites\sprite_heart</sprite>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\sprite_dust</sprite>
+      <sprite>sprites\sprite_dash</sprite>
       <sprite>sprites\sprite_blood</sprite>
       <sprite>sprites\sprite_brownSpark</sprite>
       <sprite>sprites\sprite_coinCollect</sprite>
       <sprite>sprites\sprite_GemCollect</sprite>
       <sprite>sprites\sprite_sparkGlow</sprite>
       <sprite>sprites\sprite_explosion</sprite>
-      <sprite>sprites\sprite26</sprite>
+      <sprite>sprites\sprite_slash</sprite>
+      <sprite>sprites\sprite_snow</sprite>
     </sprites>
+    <sprites name="HUD">
+      <sprite>sprites\sprite_health</sprite>
+      <sprite>sprites\sprite_energy</sprite>
+      <sprite>sprites\sprite_healthBorder</sprite>
+      <sprite>sprites\sprite_energyBorder</sprite>
+    </sprites>
+    <sprite>sprites\sprite_cursor</sprite>
+    <sprite>sprites\sprite_cave</sprite>
+    <sprite>sprites\sprite_cloud</sprite>
+    <sprite>sprites\sprite63</sprite>
+    <sprite>sprites\sprite71</sprite>
+    <sprite>sprites\sprite_trigger</sprite>
+    <sprite>sprites\sprite_menuCursor</sprite>
   </sprites>
   <backgrounds name="background">
-    <backgrounds name="Stone">
-      <background>background\Stone</background>
-      <background>background\StoneBottom</background>
-      <background>background\StoneWall</background>
-    </backgrounds>
-    <backgrounds name="Jungle">
-      <background>background\Jungle</background>
-      <background>background\JungleBottom</background>
-      <background>background\JungleObjects</background>
-      <background>background\JungleWall</background>
-      <background>background\Bridge</background>
-    </backgrounds>
-    <backgrounds name="Cave">
-      <background>background\bg_Cave</background>
-      <background>background\CaveObjects</background>
-      <background>background\Cave</background>
-    </backgrounds>
     <backgrounds name="Background">
-      <background>background\Cloud</background>
-      <background>background\background14</background>
-      <background>background\Middleground</background>
-      <background>background\Mountains</background>
-      <background>background\Background</background>
+      <backgrounds name="NightMountains">
+        <background>background\SkyNightBG</background>
+        <background>background\Stars</background>
+        <background>background\CloudsBG</background>
+        <background>background\NightMoutains</background>
+        <background>background\MG3</background>
+        <background>background\MG2</background>
+        <background>background\MG1</background>
+      </backgrounds>
+      <backgrounds name="DayMountains">
+        <background>background\SkyDayBG</background>
+        <background>background\DayMountains</background>
+        <background>background\CloudsDayBG</background>
+        <background>background\MG3Day</background>
+        <background>background\MG2Day</background>
+        <background>background\MG1Day</background>
+      </backgrounds>
     </backgrounds>
-    <backgrounds name="Water">
-      <background>background\Water</background>
-      <background>background\WaterBottom</background>
+    <backgrounds name="Levels">
+      <background>background\Tutorial</background>
     </backgrounds>
-    <background>background\NewTiles</background>
-    <background>background\Mud2</background>
-    <background>background\Mud</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_collision.gml</script>
-    <script>scripts\scr_enemy_movement.gml</script>
-    <script>scripts\scr_weapon.gml</script>
-    <script>scripts\scr_getInput.gml</script>
-    <script>scripts\scr_animation.gml</script>
-    <script>scripts\scr_animation_Skeleton.gml</script>
-    <script>scripts\Approach.gml</script>
-    <script>scripts\ScreenShake.gml</script>
-    <script>scripts\scr_movement.gml</script>
-    <script>scripts\DrawSetText.gml</script>
-    <script>scripts\scr_Globals.gml</script>
+    <scripts name="EnemyScripts&amp;States">
+      <script>scripts\scr_idle.gml</script>
+      <script>scripts\scr_chase.gml</script>
+      <script>scripts\scr_attack.gml</script>
+      <script>scripts\scr_eDeath.gml</script>
+      <script>scripts\scr_enemy_movement.gml</script>
+      <script>scripts\scr_baseEnemy_animation.gml</script>
+      <scripts name="Mage">
+        <script>scripts\scr_mageIdle.gml</script>
+        <script>scripts\scr_mageAttack.gml</script>
+        <script>scripts\scr_mageAnimation.gml</script>
+        <script>scripts\scr_mageChase.gml</script>
+      </scripts>
+      <scripts name="Knight">
+        <script>scripts\scr_knightAnimation.gml</script>
+        <script>scripts\scr_knightAttack.gml</script>
+        <script>scripts\scr_knightChase.gml</script>
+        <script>scripts\scr_knightIdle.gml</script>
+      </scripts>
+      <scripts name="Gunner">
+        <script>scripts\scr_gunnerIdle.gml</script>
+        <script>scripts\scr_gunnerAnimation.gml</script>
+        <script>scripts\scr_gunnerAttack.gml</script>
+        <script>scripts\scr_gunnerChase.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="PlayerScripts&amp;States">
+      <script>scripts\scr_movement.gml</script>
+      <script>scripts\scr_collision.gml</script>
+      <script>scripts\scr_getInput.gml</script>
+      <script>scripts\scr_animation.gml</script>
+      <script>scripts\scr_no_input.gml</script>
+    </scripts>
+    <scripts name="Functions">
+      <script>scripts\ScreenShake.gml</script>
+      <script>scripts\Approach.gml</script>
+      <script>scripts\InitGame.gml</script>
+      <script>scripts\MenuTexts.gml</script>
+      <script>scripts\SlideTrans.gml</script>
+      <script>scripts\DrawSetText.gml</script>
+    </scripts>
+    <scripts name="GlobalVariables">
+      <script>scripts\scr_Globals.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader_white.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\GUI_FONT</font>
+    <font>fonts\MENU_FONT</font>
+    <font>fonts\MENU_FONT_BIG</font>
+    <font>fonts\MENU_FONT_SMALL</font>
   </fonts>
   <objects name="objects">
     <objects name="Enemies">
-      <object>objects\object_baseEnemy</object>
-      <object>objects\object_bullet</object>
-      <object>objects\object_baseEnemyGun</object>
-    </objects>
-    <objects name="Weapons">
-      <objects name="Shuriken">
-        <object>objects\object_shuriken</object>
-        <object>objects\object_shurikenPickup</object>
-        <object>objects\object_shurikenInHand</object>
+      <objects name="Mage">
+        <object>objects\object_mageDead</object>
+        <object>objects\object_mage</object>
+        <object>objects\object_mageHitbox</object>
       </objects>
-      <objects name="Bo">
-        <object>objects\object_bo</object>
-        <object>objects\object_boSpin</object>
-        <object>objects\object_boPickup</object>
+      <objects name="Knight">
+        <object>objects\object_knightDead</object>
+        <object>objects\object_knight</object>
+        <object>objects\object_knightHitbox</object>
+      </objects>
+      <objects name="Gunner">
+        <object>objects\object_gun</object>
+        <object>objects\object_gunnerDead</object>
+        <object>objects\object_gunner</object>
+        <object>objects\object_enemyGunBullet</object>
       </objects>
     </objects>
     <objects name="Enviroment">
       <object>objects\object_crate</object>
+      <object>objects\object_spikes</object>
+      <object>objects\object_spikeLeft</object>
+      <object>objects\object_spikeRight</object>
+      <object>objects\object_spikeDown</object>
     </objects>
     <objects name="Player">
-      <object>objects\object_player</object>
       <object>objects\object_hand</object>
+      <object>objects\object_player</object>
       <object>objects\object_handRight</object>
+      <object>objects\object_respawn</object>
+      <object>objects\object_playerDead</object>
+      <objects name="Weapons">
+        <objects name="Shuriken">
+          <object>objects\object_shuriken</object>
+          <object>objects\object_shurikenPickup</object>
+          <object>objects\object_shurikenInHand</object>
+        </objects>
+        <objects name="Bo">
+          <object>objects\object_bo</object>
+          <object>objects\object_boSpin</object>
+          <object>objects\object_boPickup</object>
+        </objects>
+        <object>objects\object_hitbox</object>
+      </objects>
+      <object>objects\object_dash_effect</object>
     </objects>
     <objects name="Wall">
       <object>objects\object_wall</object>
+      <object>objects\object_movingPlatform</object>
     </objects>
     <objects name="Collectibles">
       <object>objects\object_YellowGem</object>
@@ -141,6 +245,7 @@
       <object>objects\object_RedGem</object>
       <object>objects\object_GreenGem</object>
       <object>objects\object_coin</object>
+      <object>objects\object_heart</object>
     </objects>
     <objects name="Particles">
       <object>objects\object_dust</object>
@@ -149,24 +254,46 @@
       <object>objects\object_coinCollect</object>
       <object>objects\object_gemCollect</object>
       <object>objects\object_explosion</object>
+      <object>objects\object_snow</object>
     </objects>
     <objects name="GameObjects">
+      <object>objects\object_newCamera</object>
       <object>objects\object_camera</object>
       <object>objects\object_game</object>
+      <object>objects\object_cursor</object>
+      <object>objects\object63</object>
+      <object>objects\object64</object>
+      <object>objects\object_lighting</object>
+      <object>objects\object_control</object>
+      <object>objects\object_caveLighting</object>
+      <object>objects\object_camera2</object>
+      <object>objects\object_snowControl</object>
+      <object>objects\object_menu</object>
+      <object>objects\object_controlsScreen</object>
+      <object>objects\object_title</object>
+      <object>objects\object_fade</object>
+      <object>objects\object_transitions</object>
+      <object>objects\object_lvlEnd</object>
+      <object>objects\object_HUD</object>
     </objects>
     <objects name="Parents">
       <object>objects\object_parenthitable</object>
       <object>objects\object_enemyhitable</object>
       <object>objects\object_parentWeapons</object>
+      <object>objects\object_characters</object>
       <object>objects\object_parentGems</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Level_1</room>
+    <room>rooms\TitleScreen</room>
+    <room>rooms\MenuScreen</room>
+    <room>rooms\HelpScreen</room>
+    <room>rooms\Level_1_Tutorial</room>
+    <room>rooms\Level_2__Beginings</room>
   </rooms>
   <constants number="2">
-    <constant name="RES_W">1024</constant>
-    <constant name="RES_H">768</constant>
+    <constant name="RES_W">1920</constant>
+    <constant name="RES_H">1080</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

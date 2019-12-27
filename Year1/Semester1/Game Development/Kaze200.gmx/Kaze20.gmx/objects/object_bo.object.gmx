@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>scr_getInput()
-
+canbounce = 0;
+bo_delay = 0;
+bo_delay_max = 17;
 enum aState
 {
     normal,
@@ -57,88 +59,102 @@ state = pState.normal
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_getInput();
+            <string>if (hascontrol)
+{
+    scr_getInput();
+}
+else
+{
+    scr_no_input();
+}
+
+scr_Globals();
 
 bo_bounce = 0
 bo_power = 2;
 var bo_angle = image_angle
 
-direction = point_direction(x,y,mouse_x,mouse_y)
+
+direction = point_direction(x, y, mouse_x, mouse_y)
 image_angle = direction;
 
 if (object_player.image_xscale &lt;= 0)
 {
-x = object_player.x - 10;
-y = object_player.y;
+    x = object_player.x - 6;
+    y = object_player.y + 6;
 }
 
 if (object_player.image_xscale &gt;= 0)
 {
-x = object_player.x + 10;
-y = object_player.y;
+    x = object_player.x + 6;
+    y = object_player.y + 6;
 }
 
-switch(state)
+switch (state)
 {
-    case aState.normal: 
+    case aState.normal:
     {
-        if (place_meeting(x,y,object_wall))
+        if (place_meeting(x, y, object_wall))
         {
             state = aState.bounce;
         }
-         
+        if (key_attack)
+        {
+            state = aState.attack;
+        }
+
     }
     break;
+
+case aState.bounce:
+{
+                airtime = 1;
     
-    case aState.bounce: 
-    {
-        if (place_meeting(x,y,object_wall)) &amp;&amp; (left_click)
-        {
-               
-                repeat(5)
-                with (instance_create(x,y,object_brownSpark))
+                if (place_meeting(x, y, object_wall)) &amp;&amp; (left_click)
                 {
-                    depth = -100;
+                    bo_delay = bo_delay_max
+                    with(object_newCamera)
+                    {
+                        shake = 5;
+                    }
+
+
+                    repeat(5)
+                    with(instance_create(x, y, object_brownSpark))
+                    {
+                        depth = -100;
+                    }
+
+
+                    with(object_player)
+                    {
+                        scr_movement();
+                        var bo_angle = image_angle
+                        bo_bounce = 9.5
+                        direction = point_direction(x, y, mouse_x, mouse_y)
+                        grounded = false;
+
+                        vsp += -lengthdir_y(bo_bounce, direction);
+                        hsp += -lengthdir_x(bo_bounce, direction);
+
+                        state = aState.normal
+                        
+                        hsp_frac = 0
+                        vsp_frac = 0
+
+                    }
+                    if (!place_meeting(x, y, object_wall)) &amp;&amp; (left_click)
+                    {
+                        state = aState.normal
+                    }
                 }
-               
-            
-            with (object_player)
-            {
-                 var bo_angle = image_angle
-                 direction = point_direction(x,y,mouse_x,mouse_y)
-                 bo_bounce =  2;
-                 grounded = false;
-                 vsp_frac = 0;
-                 vsp += -lengthdir_y(jumpspeed*bo_bounce, direction);
-                 hsp += -lengthdir_x(walkSpeed*bo_bounce, direction);
-                 vsp += grv;
-                 state = aState.normal
-                
             }
-            if (!place_meeting(x,y,object_wall)) &amp;&amp; (left_click)
-            {
-            state = aState.normal
-            }
-        }
-     }  
-
-    break;
-
-}
-
-
-if ((place_meeting(x,y,object_enemyhitable) &amp;&amp; left_click))
-        {
-           instance_destroy();
-           instance_create(x,y,object_boSpin)
-        }
-
-
-             
-
-
-
+        } 
         
+    
+
+
+
 
 </string>
           </argument>
@@ -169,6 +185,12 @@ if ((place_meeting(x,y,object_enemyhitable) &amp;&amp; left_click))
         hp--;
         flash = 3;
     }
+    
+    with(object_newCamera)
+{
+    shake = 5;
+}
+
 }
 </string>
           </argument>

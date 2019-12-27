@@ -3,7 +3,7 @@
   <spriteName>sprite_bullet</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.6;
+            <string>//      ANIMATION       //
+image_speed = 0.9;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,114 +49,62 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x += lengthdir_x(spd,direction); 
+            <string>//      BULLET  DIRECTION       //
+x += lengthdir_x(spd,direction); 
 y += lengthdir_y(spd,direction); 
 
-if (place_meeting(x,y,object_wall)) &amp;&amp; (place_meeting(x,y,object_crate)) 
+//      BULLET  COLLISISONS     //
+//      WALL, CRATES, ETC.      //
+if (place_meeting(x, y, object_wall)) &amp;&amp; (place_meeting(x, y, object_crate))
 {
     spd = 0;
-    repeat(5)
-    with (instance_create(x,y,object_brownSpark))
- {                   
- depth = -100;
- }
-}
-
-
-
-
-if (place_meeting(x,y,object_wall))
-{
-    spd = 0;
-    repeat(5)
-    with (instance_create(x,y,object_brownSpark))
- {                   
- depth = -100;
- }
-}
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="object_parenthitable">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (place_meeting(x,y,object_parenthitable))
-{
-    with(instance_place(x,y,object_parenthitable))
+    with(instance_place(x, y, object_parenthitable))
     {
-         hp--;
-         flash = 3
+        hp--;
+        flash = 3
     }
     instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
 }
 
+//      PLAYER      //
+if (place_meeting(x, y, object_player))
+{
+    spd = 0;
+    with(object_player)
+    {
+        pHealth--;
+        flash = 3
+        pHitFrom = other.direction;
+        lastHitBy = 1
+    }
+    with(object_camera)
+    {
+        shake = 5;
+    }
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_blood))
+    {
+        depth = -100;
+    }
+}
 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_speed=0;
-image_index=1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="77">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (place_meeting(x,y,object_wall)) instance_destroy();
+//      JUST THE WALL       //
+if (place_meeting(x, y, object_wall))
+{
+    spd = 0;
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
+}
 
 </string>
           </argument>

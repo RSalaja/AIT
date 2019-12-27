@@ -51,8 +51,6 @@
             <kind>1</kind>
             <string>scr_getInput();
 
-
-
 if (object_player.image_xscale &lt;= 0)
 {
 x = object_player.x + 7;

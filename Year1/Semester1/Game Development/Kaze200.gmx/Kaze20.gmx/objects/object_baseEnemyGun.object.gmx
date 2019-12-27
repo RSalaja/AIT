@@ -25,20 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>countdown = 40;
+            <string>///      INIT VARIABLES      ///
+//      RELAOD RATE     //
+countdown = 80;
 countdownRate = countdown;
-state = baseEnemyGunState.idle;
 
-enum baseEnemyGunState    {
-idle,
-shoot
+//      STATE MACHINES      //
+state = basegunState.normal;
+enum basegunState
+{
+    normal,
+    shoot,
+    dontShoot
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,45 +60,75 @@ shoot
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x= owner.x;
-y = owner.y;
+            <string>//      IMAGE       //
+if (owner.image_xscale &lt;= 0)
+{
+    x = owner.x - 10;
+    y = owner.y;
+}
+
+if (owner.image_xscale &gt;= 0)
+{
+    x = owner.x - 10;
+    y = owner.y;
+}
 
 image_xscale = abs(owner.image_xscale);
 image_yscale = abs(owner.image_yscale);
 
-switch (state)
+
+//      GUN'S STATES        //
+if (instance_exists(object_player))
 {
-    case baseEnemyGunState.idle:
+    if (object_player.x &lt; x)
+    {
+        image_yscale = -image_yscale;
+    }
+    switch (state)
     {
 
-    }
-    break;
-    case baseEnemyGunState.shoot:
-    {
-    if (instance_exists(object_player))
+        case gunState.normal:
         {
-            if (object_player.x&lt;x)image_yscale = -image_yscale;
-            if  (point_distance(object_player.x,object_player.y,x,y) &lt;600)
+            countdown = countdownRate;
+        }
+        break;
+
+        case gunState.dontShoot:
+        {
+            countdown = countdownRate;
+        }
+        break;
+    
+        case gunState.shoot:
+        {
+            image_angle = point_direction(x, y, object_player.x, object_player.y);
+            countdown--;
+    
+            if (countdown &lt;= 0)
             {
-                image_angle =  point_direction(x,y,object_player.x,object_player.y)
-                countdown--;
-                if (countdown &lt;= 0)
+                countdown = countdownRate;
+                if (!collision_line(x, y, object_player.x, object_player.y, object_wall, false, false))
                 {
-                    countdown = countdownRate;
-                    with (instance_create(x,y,object_bullet))
+                    with(instance_create(x, y, object_bullet))
                     {
-                        spd = 10;
-                        direction = other.image_angle + random_range(-3,3);
-                        image_angle = direction
+                        spd = 3;
+                        direction = other.image_angle + random_range(-3, 3);
+                        image_angle = direction;
                     }
                 }
             }
-            
         }
-    }
-    break;
+        break;
+        }
 }
- 
+else  if (object_playerDead.x &lt; x)
+
+
+    {
+        image_yscale = -image_yscale;
+    }
+
+
 
 
 

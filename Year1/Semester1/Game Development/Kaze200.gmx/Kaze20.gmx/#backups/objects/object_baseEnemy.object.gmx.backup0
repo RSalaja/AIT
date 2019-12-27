@@ -1,0 +1,106 @@
+// 2019-12-07 17:45:44
+#event create     INIT VARIABLES        ///
+//      MOVEMENT        //
+hsp = 0;
+vsp = 0;
+
+walkSpeed = 3;
+walkAcceleration = 1.5;
+
+hsp_fric_ground = 0.50;
+hsp_fric_air = 0;
+
+hsp_frac = 0.0;
+vsp_frac = 0.0;
+
+jumpspeed = 6;
+grv = 0.3;
+
+//      HIT DETECTION       //
+hit = 0;
+flash = 0;
+hp = 4;
+hitfrom = 0;
+
+//      WEAPON POSSESION        //
+hasweapon = true;
+if (hasweapon)
+{
+    mygun = instance_create(x, y, object_baseEnemyGun);
+    with(mygun)
+    {
+        owner = other.id
+    }
+}
+else mygun = noone;
+
+//      STATE MACHINES          //
+state = baseEnemyState.idle;
+enum baseEnemyState
+{
+    idle,
+    chase,
+    attack,
+    hit
+}
+
+#event step
+//      INHERITANCE     //
+event_inherited()
+
+//      ENEMIES' STATE      //
+if (instance_exists(object_player))
+{
+    switch (state)
+    {
+        //      IDLE        //
+        case baseEnemyState.idle:
+        {
+            scr_idle();
+        }
+        break;
+
+        //      CHASE     //
+        case baseEnemyState.chase:
+        {
+            scr_chase();
+        }
+        break;
+        
+        //      ATTACK      //
+        case baseEnemyState.attack:
+        {
+            scr_attack();
+        }
+        break;
+    
+        //      HIT       //
+        case baseEnemyState.hit:
+        {
+            scr_hit()
+        }
+        break;
+
+    }
+}
+
+//      DEATH       //
+if (pHealth <= 0)
+{
+    state = baseEnemyState.idle
+}
+
+#event step_begin
+if (hp <= 0)
+{
+    with(instance_create(x, y, object_baseEnemyDead))
+    {
+        direction = other.hitfrom;
+        hsp = lengthdir_x(5, direction);
+        vsp = lengthdir_y(5, direction);
+        if (sign(hsp) != 0)
+        {
+            image_xscale = sign(hsp);
+        }
+    }
+}

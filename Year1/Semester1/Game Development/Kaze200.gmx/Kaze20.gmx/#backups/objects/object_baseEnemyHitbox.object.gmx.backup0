@@ -1,0 +1,40 @@
+// 2019-12-07 17:30:57
+#event step     COLLISIONS      ///
+
+//      ENVIROMENT      //
+if (place_meeting(x, y, object_parenthitable))
+{
+    instance_destroy();
+    with(object_parenthitable)
+    {
+        hp--;
+        flash = 3
+    }
+    with(object_camera)
+    {
+        shake = 5;
+    }
+}
+
+//      PLAYER      //
+if (instance_exists(object_player))
+{
+    if (place_meeting(x, y, object_player))
+    {
+        with(object_player)
+        {
+            pHealth = pHealth - 0;
+            flash = 3;
+            pHitFrom = other.direction
+        }
+    }
+    with(object_camera)
+    {
+        shake = 3;
+    }
+    instance_destroy();
+
+}
+
+#event draw_post     DESTROY AT END OF ANIMATION     //
+instance_destroy();

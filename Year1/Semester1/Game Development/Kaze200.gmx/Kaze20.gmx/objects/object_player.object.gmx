@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>object_characters</parentName>
   <maskName>sprite_player</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,31 +25,183 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init Variables
+            <string>///      Init Variables        ///
+//      MOVEMENT        //
 hsp = 0;
 vsp = 0;
-walkSpeed = 3;
-walkAcceleration = 1.5;
-hsp_fric_ground = 0.50;
+
+walkSpeedBonus = 2
+walkSpeed = 2;
+walkAcceleration = 0.2;
+
+hsp_fric_ground = 0.2;
 hsp_fric_air = 0;
-jumpspeed = 6;
-grv = 0.3;
+
+jumpspeed = 5;
+grv = 0.2;
+jumps = 0;
+jumpsmax = 2;
+
 hsp_frac = 0.0;
 vsp_frac = 0.0;
+
+canjump = 0;
+onwall = 0
+grv_wall = 0.1;
+hsp_wjump = 2;
+vsp_wjump = -5;
+vsp_max_wall = 4;
+walljumpdelay = 0
+walljumpdelay_max = 20
+climbspeed = 1;
+
+dash = false
+dash_speed = 8;
+dash_delay = 0
+dash_delay_max =10  
+
+globalvar hascontrol;
+global.hascontrol = true
+
+
+
+/*
+//      HIT DETECTION       //
+pHitFrom = 0;
+pHit = 0
+
+lastHitBy = 0                   // 0 = sword/melee
+lastHitByMax = 1                // 1 = bullet
+*/
+flash = 0;
+
+//      GLOBAL VARIABLES        //
+globalvar pHealth ;
+pHealth = 5;
+globalvar pHealthMax;
+pHealthMax = 5;
+
+globalvar pEnergy ;
+pEnergy = 0;
+globalvar pEnergyMax;
+pEnergyMax = 10;
+
+
+//      STATE MACHINES          //
 state = pState.normal
-hit = 0
-
-
 enum pState
 {
     normal,
-    swing
+    dash,
+    pHit,
 }
 
 
+draw_xscale = 1
+draw_yscale = 1
 
 
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dash = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///     UPDATE  POSITION        ///
+if(grounded)
+{
+last_x = object_player.xprevious
+last_y = object_player.yprevious -5
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///      REGEN ENERGY        ///
+global.pEnergy ++
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///      RETURN BACK TO ORIGNAL FPS      ///
+room_speed = 60
 </string>
           </argument>
         </arguments>
@@ -72,45 +224,161 @@ enum pState
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Get Input
-scr_getInput();
+            <string>//      GET INPUT       //
+if (hascontrol)
+{
+    scr_getInput();
+}
+else
+{
+    scr_no_input();
+}
 
 
-//  Players' State  //
+
+//      PLAYER'S STATE      //
 switch (state)
-    {   
-     
-       // Normal //
-       case pState.normal:
-           {
-                //  Movement  //
-                scr_movement();
-           }
-           break;
-       
+{
+    //      NORMAL      //
+    case pState.normal:
+    {
+        //      MOVEMENT      //
+        scr_movement();
+        scr_animation();
+    
     }
+    break;
 
+    //      ATTACK      //
+   
+    
+    //      HIT     //
+    case pState.pHit:
+    {
+        scr_baseEnemy_animation();
+        state = baseEnemyState.idle;
+        pHit = 0;
+        flash = 3;
+    }
+    break;
+}
 
-
-//  Collision  //
+//      COLLISISON      //
 scr_collision();
 
+//      SLOW MOTION     //
+if (key_shift)
+{
+    timer = 30;
+    if (timer &gt; 0) 
+    {
+        timer -= 1;
+        global.pEnergy = Approach(global.pEnergy, 0, 60);
+    }
+    else
+    {
+        timer = 30;
+        room_speed = 60;    
+    }
+}
 
-//Animation
-scr_animation();
 
 //Parralax
-background_x[0] = view_xview/1.2;
-background_x[1] = view_xview/1.6;
-background_x[2] = view_xview/2.0;
-background_x[3] = view_xview/2.2;
+background_x[0] = view_xview / 1.1;
+background_x[1] = view_xview / 1.25;
+background_x[2] = view_xview / 1.3;
+background_x[3] = view_xview / 1.5;
+background_x[4] = view_xview / 1.7;
+background_x[5] = view_xview / 1.9;
+background_x[6] = view_xview / 2;
+
+//Health Bar
+if (pHealth &gt;= pHealthMax)
+{
+    pHealth = pHealthMax;
+}
+
+/*
+if (lastHitBy &gt;= lastHitByMax)
+{
+    lastHitBy = lastHitByMax;
+}
+
+if (lastHitBy &lt;= 0)
+{
+    lastHitBy = 0;
+}
+*/
+
+//Death
+if (pHealth &lt;=0) 
+{
+    if (object_exists(object_shurikenInHand))
+    {
+        with(object_shurikenInHand)
+        {
+            instance_destroy();
+        }
+    }
+    if (object_exists(object_bo))
+    {
+        with(object_bo)
+        {
+            instance_destroy();
+        }
+    }
+    if (object_exists(object_hand))
+    {
+        with(object_hand)
+        {
+            instance_destroy();
+        }
+    }
+    instance_create(x,y,object_playerDead)
+    instance_destroy();
+}
+
+
+        
+    /*
+    if (lastHitBy = 0)
+    {
+        direction = point_direction(object_enemyhitable.x, object_enemyhitable.y ,x,y)
+        hsp = lengthdir_x(1,direction);
+        vsp = lengthdir_y(1,direction)-2;
+        if (sign(hsp !=0))
+        {
+            image_xscale = sign(hsp)
+        }
+    }
+    
+    else
+    {
+        direction = other.pHitFrom
+        hsp = lengthdir_x(1,direction);
+        vsp = lengthdir_y(1,direction)-2;
+        if (sign(hsp !=0))
+        {
+            image_xscale = sign(hsp)
+        }
+    }
+    *?
+    
+   /* with(object_baseEnemy)
+    {
+        state = baseEnemyState.idle
+        image_index = 0;
+        sprite_index = sprite_baseEnemy
+    }
+    */
+
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="82">
+    <event eventtype="7" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -127,26 +395,48 @@ background_x[3] = view_xview/2.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_restart();
+            <string>//      UPDATE POSITION     //
+if (object_exists(object_player))
+{
+with (object_player)
+{
+pHealth = 0
+}
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="78">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+    if (flash &gt; 0)
+    {
+        flash--;
+        shader_set(shader_white);
+        draw_self();
+        shader_reset();
+    }
+    
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

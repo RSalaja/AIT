@@ -1,7 +1,7 @@
 /// ScreenShake(magnitude,frames)
 /// @arg 
 /// @arg 
-with(object_camera)
+with(object_newCamera)
 {
     if (argument0 > shake_remain)
     {

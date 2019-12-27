@@ -1,0 +1,23 @@
+// 2019-12-07 17:47:38
+#event create|      INIT VARIABLES      ///
+//      MOVEMENT        //
+hsp = 0;
+vsp = 0;
+
+grv = 0.3;
+eDone = 0;
+
+//      ANINMATION      //
+image_speed = 0;
+
+
+
+
+
+
+#event step
+if (eDone == 0)
+{
+    scr_eDeath();
+}
+

@@ -25,74 +25,62 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>display_set_gui_size(RES_W,RES_H);
-global.gems = 0;
-global.gemsthisroom = 0;
-global.coins = 0;
-global.coinsthisroom = 0;
-gemstextscale = 1;
-coinstextscale = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.gemsthisroom = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Draw Score ///
-scr_Globals();
+            <string>
 
-if (instance_exists(object_player))
+//      CHECKPOINT      //
+respawn = 0
+globalvar respawnX,respawnY;
+respawnX=0
+respawnY=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//      UPDATE POSITION     //
+if (object_exists(object_player))
 {
-       gemstextscale = max(gemstextscale * 0.95,1);
-       DrawSetText(c_black, GUI_FONT, fa_right, fa_top);
-       draw_text_transformed(RES_W - 8,12,string(global.gems)+ " Gems Collected",gemstextscale,gemstextscale,0);
-       draw_set_colour(c_white);
-       draw_text_transformed(RES_W - 10,10,string(global.gems)+ " Gems Collected",gemstextscale,gemstextscale,0);
-    
-       coinstextscale = max(coinstextscale * 0.95,1);
-       DrawSetText(c_black, GUI_FONT, fa_right, fa_top);
-       draw_text_transformed(RES_W - 8,44,string(global.coins)+ " Coins Collected",coinstextscale,coinstextscale,0);
-       draw_set_colour(c_white);
-       draw_text_transformed(RES_W - 10,42,string(global.coins)+ " Coins Collected",coinstextscale,coinstextscale,0);
+with (object_player)
+{
+if (global.grounded)
+{
+    if(image_xscale &gt; 0)
+    {
+        global.respawnX = (object_player.x) - 16;
+        
+    }
+    if(image_xscale &lt; 0)
+    {
+        global.respawnX = (object_player.x) + 16;
+        
+    }
+    global.respawnY = (object_player.y) - 16; 
+    }
+}
+}
+
+if (respawn == 1)
+{
+    instance_create(global.respawnX,global.respawnY,object_shurikenInHand)
+    instance_create(global.respawnX,global.respawnY,object_bo)
+    respawn = 0
 }
 </string>
           </argument>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>object_characters</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="3" enumb="0">
@@ -25,13 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hp &lt;=0) 
+            <string>if (hp &lt;= 0) 
 {
     with(mygun)
     {
-    instance_destroy();
+        instance_destroy();
     }
-    instance_destroy();
+        instance_destroy();
 }
 </string>
           </argument>

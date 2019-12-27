@@ -1,0 +1,247 @@
+// 2019-12-08 15:48:36
+#event create|      Init Variables        ///
+//      MOVEMENT        //
+hsp = 0;
+vsp = 0;
+
+walkSpeedBonus = 3
+walkSpeed = 3;
+walkAcceleration = 0.1;
+
+hsp_fric_ground = 0.50;
+hsp_fric_air = 0;
+
+jumpspeed = 6;
+grv = 0.3;
+
+hsp_frac = 0.0;
+vsp_frac = 0.0;
+
+//      HIT DETECTION       //
+pHitFrom = 0;
+pHit = 0
+flash = 0;
+lastHitBy = 0                   // 0 = sword/melee
+lastHitByMax = 1                // 1 = bullet
+                
+
+//      GLOBAL VARIABLES        //
+globalvar pHealth ;
+pHealth = 5;
+globalvar pHealthMax;
+pHealthMax = 5;
+
+globalvar pEnergy ;
+pEnergy = 0;
+globalvar pEnergyMax;
+pEnergyMax = 10;
+
+
+//      STATE MACHINES          //
+state = pState.normal
+enum pState
+{
+    normal,
+    attack,
+    pHit,
+}
+
+
+
+
+
+
+
+#event alarm0|      RETURN BACK TO ORIGNAL FPS      ///
+room_speed = 60
+
+#event alarm1|      REGEN ENERGY        ///
+global.pEnergy ++
+
+#event step
+//      GET INPUT       //
+scr_getInput();
+
+
+//      PLAYER'S STATE      //
+switch (state)
+{
+    //      NORMAL      //
+    case pState.normal:
+    {
+        //      MOVEMENT      //
+        scr_movement();
+        scr_animation();
+        if (key_attack && grounded)
+        {
+            state = pState.attack;
+            image_index = 0;
+        }
+    }
+    break;
+
+    //      ATTACK      //
+    case pState.attack:
+    {
+        scr_movement();
+        vsp = 0
+    
+        if (sprite_index != sprite_playerAttack)
+        {
+            sprite_index = sprite_playerAttack
+            image_index = 0
+            image_speed = 0.2
+        }
+    
+        if (image_index == 3)
+        {
+            with(instance_create(x, y, object_hitbox))
+            {
+                image_xscale = other.image_xscale
+                if (position_meeting(x, y, object_enemyhitable))
+                {
+                    with(object_enemyhitable)
+                    {
+                        if (hit == 0)
+                        {
+                            hit = 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    break;
+    
+    //      HIT     //
+    case pState.pHit:
+    {
+        scr_baseEnemy_animation();
+        state = baseEnemyState.idle;
+        pHit = 0;
+        flash = 3;
+    }
+    break;
+}
+
+//      COLLISISON      //
+scr_collision();
+
+//      SLOW MOTION     //
+if (key_shift)
+{
+    timer = 30;
+    room_speed = 30;
+    if (timer > 0) 
+    {
+        timer -= 1;
+        global.pEnergy = Approach(global.pEnergy, 0, 60);
+    }
+    else
+    {
+        room_speed = 60;    
+    }
+    
+    
+}
+
+
+//Parralax
+background_x[0] = view_xview / 1.2;
+background_x[1] = view_xview / 1.6;
+background_x[2] = view_xview / 2.0;
+background_x[3] = view_xview / 2.2;
+
+//Health Bar
+if (pHealth >= pHealthMax)
+{
+    pHealth = pHealthMax;
+}
+
+if (lastHitBy >= lastHitByMax)
+{
+    lastHitBy = lastHitByMax;
+}
+
+if (lastHitBy <= 0)
+{
+    lastHitBy = 0;
+}
+
+//Death
+if (pHealth <=0) 
+{
+    if (object_exists(object_shurikenInHand))
+    {
+        with(object_shurikenInHand)
+        {
+            instance_destroy();
+        }
+    }
+    if (object_exists(object_bo))
+    {
+        with(object_bo)
+        {
+            instance_destroy();
+        }
+    }
+    if (object_exists(object_hand))
+    {
+        with(object_hand)
+        {
+            instance_destroy();
+        }
+    }
+    instance_change(object_playerDead,true)
+    if (lastHitBy = 0)
+    {
+        direction = point_direction(object_baseEnemy.x, object_baseEnemy.y ,x,y)
+        hsp = lengthdir_x(1,direction);
+        vsp = lengthdir_y(1,direction)-2;
+        if (sign(hsp !=0))
+        {
+            image_xscale = sign(hsp)
+        }
+    }
+    
+    else
+    {
+        direction = other.pHitFrom
+        hsp = lengthdir_x(1,direction);
+        vsp = lengthdir_y(1,direction)-2;
+        if (sign(hsp !=0))
+        {
+            image_xscale = sign(hsp)
+        }
+    }
+    
+    with(object_baseEnemy)
+    {
+        state = baseEnemyState.idle
+        image_index = 0;
+        sprite_index = sprite_baseEnemy
+    }
+}
+
+
+#event other_outside
+game_restart()
+
+#event other_animation_end
+if state == pState.attack
+{
+    state = pState.normal;
+    image_index = 0;
+}
+
+#event draw
+draw_self();
+
+if (flash > 0)
+{
+    flash--;
+    shader_set(shader_white);
+    draw_self();
+    shader_reset();
+} 
+

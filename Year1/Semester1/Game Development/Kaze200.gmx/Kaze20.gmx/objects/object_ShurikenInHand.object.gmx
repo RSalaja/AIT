@@ -49,18 +49,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_getInput();
+            <string>if (hascontrol)
+{
+    scr_getInput();
+}
+else
+{
+    scr_no_input();
+}
+
 
 if (object_player.image_xscale &lt;= 0)
 {
 x = object_player.x + 7;
-y = object_player.y;
+y = object_player.y + 4;
 }
 
 if (object_player.image_xscale &gt;= 0)
 {
 x = object_player.x - 7;
-y = object_player.y;
+y = object_player.y + 4;
 }
 
 firingdelay = firingdelay - 1;
@@ -69,7 +77,7 @@ if (right_click) &amp;&amp; (firingdelay &lt; 0)
     firingdelay = 5;
     with (instance_create(x,y,object_shuriken))
     {
-        spd = 10;
+        spd = 10
         direction = point_direction(x,y,mouse_x,mouse_y)
     }
 }

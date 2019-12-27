@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>384</width>
-  <height>216</height>
+  <width>1152</width>
+  <height>256</height>
   <data>images\Middleground.png</data>
 </background>

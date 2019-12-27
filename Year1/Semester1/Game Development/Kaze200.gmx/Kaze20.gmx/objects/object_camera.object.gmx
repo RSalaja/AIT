@@ -25,8 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>following = object_player;
+            <string>if (object_exists(object_player))
+{
+    following = object_player;
+}
+else
+{
+    following = object_playerDead;
+}
 
+shake = 0;
 </string>
           </argument>
         </arguments>
@@ -49,11 +57,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_xview[0] = (object_player.x+((mouse_x-object_player.x)/3.5))-view_wview[0]/2;
+            <string>if (instance_exists(object_player))
+{
+view_xview[0] = (object_player.x+((mouse_x-object_player.x)/3.5))-view_wview[0]/2;
 view_yview[0] = (object_player.y+((mouse_y-object_player.y)/3.5))-view_hview[0]/2;
 
 view_xview = median(view_xview,0,room_width - view_wview);
 view_yview = median(view_yview,0,room_height- view_hview);
+
+view_xview += random_range(-shake,shake);
+view_yview += random_range(-shake,shake);
+}
+
+else
+{
+view_xview[1] = (object_playerDead.x+((mouse_x-object_playerDead.x)/3.5))-view_wview[0]/2;
+view_yview[1] = (object_playerDead.y+((mouse_y-object_playerDead.y)/3.5))-view_hview[0]/2;
+
+view_xview = median(view_xview,0,room_width - view_wview);
+view_yview = median(view_yview,0,room_height- view_hview);
+
+view_xview += random_range(-shake,shake);
+view_yview += random_range(-shake,shake);
+}
+
+shake *= 0.9
+
 </string>
           </argument>
         </arguments>

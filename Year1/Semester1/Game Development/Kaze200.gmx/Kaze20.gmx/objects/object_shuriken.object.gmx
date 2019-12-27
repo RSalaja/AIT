@@ -38,7 +38,7 @@ if (place_meeting(x,y,object_wall)) &amp;&amp; (place_meeting(x,y,object_crate))
  }
 }
 
-if (place_meeting(x,y,object_baseEnemy))
+if (place_meeting(x,y,object_mage or object_knight or object_gunner))
 {
     spd = 0;
     repeat(2)
@@ -89,6 +89,12 @@ if (place_meeting(x,y,object_wall))
      flash = 3;
      hitfrom = other.direction;
 }
+
+with(object_newCamera)
+{
+    shake = 5;
+}
+
 instance_destroy();
 
 
@@ -122,6 +128,12 @@ instance_destroy();
          flash = 3
     }
     instance_destroy();
+    
+    with(object_newCamera)
+{
+    shake = 5;
+}
+
 }
 
 

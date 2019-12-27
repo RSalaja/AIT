@@ -73,6 +73,11 @@ y = ystart + sin(get_timer()/500000) * 3;
             <kind>1</kind>
             <string>instance_create(object_player.x,object_player.y,object_shurikenInHand)
 instance_destroy()
+
+with(object_hand)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

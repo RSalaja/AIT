@@ -6,7 +6,7 @@
   <depth>1</depth>
   <persistent>0</persistent>
   <parentName>object_enemyhitable</parentName>
-  <maskName>sprite_player</maskName>
+  <maskName>sprite_baseEnemy</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,49 +25,85 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init Variables
-hsp = 3;
+            <string>///     INIT VARIABLES        ///
+//      MOVEMENT        //
+hsp = 0;
 vsp = 0;
+
 walkSpeed = 3;
-/*----------------------*/
 walkAcceleration = 1.5;
+
 hsp_fric_ground = 0.50;
 hsp_fric_air = 0;
-jumpspeed = 6;
-grv = 0.3;
+
 hsp_frac = 0.0;
 vsp_frac = 0.0;
-hit = 0;
-flash=0;
-hp = 4;
-hitfrom=0;
-hasweapon = true;
-state = baseEnemyState.idle;
 
+jumpspeed = 6;
+grv = 0.3;
+
+//      HIT DETECTION       //
+hit = 0;
+flash = 0;
+hp = 4;
+hitfrom = 0;
+
+//      WEAPON POSSESION        //
+hasweapon = false;
 if (hasweapon)
 {
-    mygun = instance_create(x,y,object_baseEnemyGun)
-    with (mygun)
+    mygun = instance_create(x, y, object_baseEnemyGun);
+    with(mygun)
     {
         owner = other.id
     }
 }
 else mygun = noone;
 
-
-
+//      STATE MACHINES          //
+state = baseEnemyState.idle;
 enum baseEnemyState
 {
     idle,
     chase,
-    attack
+    attack,
+    hit
 }
-
-
-
-
-
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (hp &lt;= 0)
+{
+    with(instance_create(x, y, object_baseEnemyDead))
+    {
+        direction = other.hitfrom;
+        hsp = lengthdir_x(5, direction);
+        vsp = lengthdir_y(5, direction);
+        if (sign(hsp) != 0)
+        {
+            image_xscale = sign(hsp);
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -90,105 +126,44 @@ enum baseEnemyState
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited()
-//  Enemies' State  //
-switch (state)
-    {   
-     
-       // Idle //
-       case baseEnemyState.idle:
-       {
-            hsp = 0;
-            if(distance_to_object(object_player) &lt; 96)
-            {
-                state = baseEnemyState.chase;
-                with (object_baseEnemyGun)
-                {
-                state = baseEnemyGunState.shoot
-                }
-            }
-       }
-       break;
-       
-       // Chase //
-       case baseEnemyState.chase:
-       {       
-            hsp = 1;
-            dir = sign(object_player.x - x);
-            hsp = dir * hsp;
-            if(distance_to_object(object_player) &gt; 128) 
-            {
-                state = baseEnemyState.idle;
-                with (object_baseEnemyGun)
-                {
-                state = baseEnemyGunState.idle
-                }
-            }
-            with (object_baseEnemyGun)
-            {
-            state =  baseEnemyGunState.shoot
-            }
-            
-       }
-       break;
-     
-    }
+            <string>//      INHERITANCE     //
+event_inherited()
 
-vsp  += grv
-//  Horizontal Collision  //
-if (place_meeting(x+hsp,y,object_wall))
+//      ENEMIES' STATE      //
+if (instance_exists(object_player))
 {
-   var hstep = sign(hsp);
-   hsp = 0;
-   hsp_frac = 0;
-   while (!place_meeting(x+hstep,y,object_wall)) x += hstep;
-}
-x = x + hsp;
-
-//  Verical Collision  //
-if (place_meeting(x,y+vsp,object_wall))
-{
-    var vstep = sign(vsp);
-    vsp = 0;
-    vsp_frac = 0;
-    while (!place_meeting(x,y+vstep,object_wall)) y += vstep;
-
-}
-y = y + vsp;
-
-
-
-if (!place_meeting(x,y+1,object_wall))
-{
-    sprite_index = sprite_baseEnemyJump;
-    image_speed = 0;
-    if (sign(vsp) &gt; 0) image_index = 1; else image_index = 0;
-}
-else 
-{    
-     if (sprite_index == sprite_baseEnemyJump)
+    switch (state)
     {
-        repeat(5)
-        with (instance_create(x,bbox_bottom,object_dust))
+        //      IDLE        //
+        case baseEnemyState.idle:
         {
-            vsp = 0;
+            scr_idle();
         }
-    }
-    image_speed = 0.2;
-    if (hsp == 0)
-    {
-        sprite_index = sprite_baseEnemy;   
-    }
-    else
-    {
-        sprite_index = sprite_baseEnemyRun;   
+        break;
+
+        //      CHASE     //
+        case baseEnemyState.chase:
+        {
+            scr_chase();
+        }
+        break;
+        
+        //      ATTACK      //
+        case baseEnemyState.attack:
+        {
+            scr_attack();
+        }
+        break;
+
+
     }
 }
 
-if (hsp != 0) image_xscale = sign(hsp);
-
-
-
+//      DEATH       //
+if (pHealth &lt;= 0)
+{
+    state = baseEnemyState.idle
+}
 </string>
           </argument>
         </arguments>

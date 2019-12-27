@@ -1,0 +1,64 @@
+// 2019-12-07 17:53:18
+#event create
+//      ANIMATION       //
+image_speed = 0.9;
+
+#event step
+//      BULLET  DIRECTION       //
+x += lengthdir_x(spd,direction); 
+y += lengthdir_y(spd,direction); 
+
+//      BULLET  COLLISISONS     //
+//      WALL, CRATES, ETC.      //
+if (place_meeting(x, y, object_wall)) && (place_meeting(x, y, object_crate))
+{
+    spd = 0;
+    with(instance_place(x, y, object_parenthitable))
+    {
+        hp--;
+        flash = 3
+    }
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
+}
+
+//      PLAYER      //
+if (place_meeting(x, y, object_player))
+{
+    spd = 0;
+    with(object_player)
+    {
+        pHealth--;
+        flash = 3
+        pHitFrom = other.direction;
+    }
+    with(object_camera)
+    {
+        shake = 5;
+    }
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_blood))
+    {
+        depth = -100;
+    }
+}
+
+//      JUST THE WALL       //
+if (place_meeting(x, y, object_wall))
+{
+    spd = 0;
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
+}
+
+
+
