@@ -25,8 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///     INIT VARIABLES        ///
-//      MOVEMENT        //
+            <string>/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+
+/*----------------------
+        Movement            
+----------------------*/
 hsp = 0;
 vsp = 0;
 
@@ -42,13 +47,17 @@ vsp_frac = 0.0;
 jumpspeed = 6;
 grv = 0.3;
 
-//      HIT DETECTION       //
+/*--------------------------
+        Hit Detection             
+--------------------------*/
 hit = 0;
 flash = 0;
-hp = 4;
+hp = 5;
 hitfrom = 0;
 
-//      WEAPON POSSESION        //
+/*------------------------------
+        Weapon Detection                             
+------------------------------*/
 hasweapon = true;
 if (hasweapon)
 {
@@ -60,7 +69,9 @@ if (hasweapon)
 }
 else mygun = noone;
 
-//      STATE MACHINES          //
+/*------------------
+        States                        
+------------------*/
 state = gunnerState.idle;
 enum gunnerState
 {
@@ -91,17 +102,16 @@ enum gunnerState
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hp &lt;= 0)
+            <string>/*--------------------
+        Death        
+--------------------*/
+if (hp &lt;= 0)
 {
-    with(instance_create(x, y, object_gunnerDead))
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_enemyDead))
     {
-        direction = other.hitfrom;
-        hsp = lengthdir_x(5, direction);
-        vsp = lengthdir_y(5, direction);
-        if (sign(hsp) != 0)
-        {
-            image_xscale = sign(hsp);
-        }
+        depth = -100;
     }
 }
 </string>
@@ -126,43 +136,59 @@ enum gunnerState
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//      INHERITANCE     //
+            <string>/*------------------------------
+        Parent Inheritence                              
+------------------------------*/
 event_inherited()
 
-//      ENEMIES' STATE      //
+/*----------------------------
+        Enemies' State      
+----------------------------*/
 if (instance_exists(object_player))
 {
     switch (state)
     {
-        //      IDLE        //
+        /*--------------------
+                Idle        
+        --------------------*/
         case gunnerState.idle:
         {
             scr_gunnerIdle();
         }
         break;
-
-        //      CHASE     //
+        
+        /*--------------------
+                Chase        
+        --------------------*/
         case gunnerState.chase:
         {
             scr_gunnerChase();
         }
         break;
         
-        //      ATTACK      //
+        /*--------------------
+                Attack        
+        --------------------*/
         case gunnerState.attack:
         {
             scr_gunnerAttack();
         }
         break;
 
-
     }
 }
 
-//      DEATH       //
+/*--------------------
+        Death        
+--------------------*/
 if (pHealth &lt;= 0)
 {
     state = gunnerState.idle
+}
+
+if (hp &lt;= 0) 
+{
+    instance_destroy();
 }
 </string>
           </argument>

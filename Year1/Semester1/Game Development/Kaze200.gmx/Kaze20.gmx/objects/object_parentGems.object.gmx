@@ -25,22 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_Globals();
+            <string>/*------------------
+        Vars       
+--------------------*/
+scr_Globals();
 
-/// Float ///
-y = ystart + sin(get_timer()/500000) * 6;
+/*------------------
+        Float       
+--------------------*/
+y = ystart + sin(get_timer() / 500000) * 6;
 image_speed = 0.3;
 
-if (place_meeting(x,y,object_player))
+if (place_meeting(x, y, object_player))
 {
     instance_destroy();
-    repeat(10) instance_create(x,y,object_gemCollect);
+    repeat(10) instance_create(x, y, object_gemCollect);
     with(object_game)
-        {
-            global.gems++;
-            global.gemsthisroom++;
-            gemstextscale = 2;
-        }
+    {
+        global.gems++;
+        global.gemsthisroom++;
+        gemstextscale = 2;
+    }
 }
 </string>
           </argument>

@@ -25,25 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// GUI/VARS/MENU SETUP
+            <string>/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
 menu_speed = 40
 
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 gui_margin = 32 
 
-//  TITLE
+/*------------------
+        Title              
+-------------------*/
 gui_middleX = gui_width/2 
 gui_middleY = gui_height/2 - 500
 gui_middleY_target = gui_height/2
 
-title = "A GAME MADE BY ME
+title = "A GAME MADE BY A00269349
  
 POWERED BY GAMEMAKER"
+
 off = 2
-
 done = false
-
 alarm[0] = 240
 
 
@@ -93,13 +96,17 @@ alarm[0] = 240
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_getInput();
-///     CONTROL MENU        ///
+            <string>/*----------------------
+        Get Input               
+----------------------*/
+scr_getInput();
 
-//      EASE IN TITLE       //
+/*----------------------
+        Ease In               
+----------------------*/
 gui_middleY += (gui_middleY_target - gui_middleY) / menu_speed
 
-if (done || keyboard_check_pressed(vk_anykey))
+if (done || (keyboard_check_pressed(vk_anykey )|| mouse_check_button_pressed(mb_any)))
 {
     SlideTrans(trans_mode.next);
 }
@@ -131,17 +138,23 @@ if (done || keyboard_check_pressed(vk_anykey))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(MENU_FONT);
+            <string>/*----------------------
+        Set Font               
+----------------------*/
+draw_set_font(MENU_FONT);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle)
 draw_set_colour(c_black)
-
+/*----------------------
+        Outline               
+----------------------*/
 draw_text(gui_middleX - off,    gui_middleY,        title);
 draw_text(gui_middleX + off,    gui_middleY,        title);
 draw_text(gui_middleX,          gui_middleY + off,  title);
 draw_text(gui_middleX,          gui_middleY - off,  title);
-
-
+/*----------------------
+        TEXT               
+----------------------*/
 draw_set_colour(c_white)
 draw_text(gui_middleX, gui_middleY, title);
 </string>

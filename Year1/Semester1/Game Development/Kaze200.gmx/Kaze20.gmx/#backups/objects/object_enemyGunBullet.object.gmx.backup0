@@ -1,0 +1,69 @@
+// 2020-01-06 20:56:01
+#event step
+/*------------------------------
+        Bullet Direction                      
+------------------------------*/
+x += lengthdir_x(spd, direction);
+y += lengthdir_y(spd, direction);
+
+/*------------------------------
+        Bullet Collisions
+-------------------------------- 
+        Wall, Crates, Etc.
+------------------------------*/
+if (place_meeting(x, y, object_wall)) && (place_meeting(x, y, object_crate))
+{
+    spd = 0;
+    with(instance_place(x, y, object_parenthitable))
+    {
+        hp--;
+        flash = 3
+    }
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
+}
+
+/*------------------------------
+        Player Collisions
+------------------------------*/
+if (place_meeting(x, y, object_player))
+{
+    spd = 0;
+    with(object_player)
+    {
+        pHealth -= 1;
+    }
+
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_blood))
+    {
+        depth = -100;
+    }
+}
+
+/*-----------------------------------
+        Just Wall Collisions        
+-----------------------------------*/
+if (place_meeting(x, y, object_wall))
+{
+    spd = 0;
+    instance_destroy();
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
+}
+
+
+#event other_animation_end
+/*--------------------------
+        Muzzle Flash              
+--------------------------*/
+image_speed = 0;
+image_index = 1;

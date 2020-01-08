@@ -52,8 +52,11 @@
   </views>
   <instances>
     <instance objName="object_menu" x="32" y="0" name="inst_A87ABFFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object_control" x="64" y="0" name="inst_06097D2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object_snowControl" x="0" y="0" name="inst_891F0BC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_menuCursor" x="256" y="256" name="inst_057760DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_menuCursor" x="256" y="256" name="inst_7C4B36F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_BG_music" x="64" y="0" name="inst_32C34866" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object_control" x="96" y="0" name="inst_E506CF52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

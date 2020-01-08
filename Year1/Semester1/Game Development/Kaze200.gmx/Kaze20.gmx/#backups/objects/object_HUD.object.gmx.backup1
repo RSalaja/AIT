@@ -1,0 +1,53 @@
+// 2020-01-06 21:29:01
+#event step
+/*----------------------------------
+        Find Variables        
+----------------------------------*/
+global.scrolls = instance_number(object_scrolls)
+if global.scrolls == 0
+{
+    global. scrolls = 0
+}
+
+global.enemies = instance_number(object_enemyhitable)
+if global.enemies == 0
+{
+    global. enemies = 0
+}
+
+#event draw_gui
+/*----------------------------------
+            Variables        
+----------------------------------*/
+scr_Globals();
+/*----------------------------------
+            Draw HUD        
+----------------------------------*/
+
+if (instance_exists(object_player))
+{
+       /*----------------------------------
+                    Health        
+        ----------------------------------*/
+       draw_set_halign(fa_right);
+       draw_set_valign(fa_top); 
+       draw_sprite(sprite_healthBorder,0,16,healthbar_y);
+       draw_sprite_stretched(sprite_health,0,16,healthbar_y,(global.pHealth/global.pHealthMax)*healthbar_width,healthbar_height)
+       
+       /*----------------------------------
+                    Scrolls        
+        ----------------------------------*/
+       DrawSetText(c_black, MENU_FONT, fa_right, fa_top);
+       draw_text_transformed(gui_width - 16,16,"SCROLLS REMAINING " + string(global.scrolls), 1,1,0);
+       draw_set_colour(c_white);
+       draw_text_transformed(gui_width - 16,16,"SCROLLS REMAINING " + string(global.scrolls),1,1,0);
+       
+       /*----------------------------------
+                    Enemies        
+        ----------------------------------*/
+       DrawSetText(c_black, MENU_FONT, fa_right, fa_top);
+       draw_text_transformed(gui_width - 16,64,"ENEMIES REMAINING " + string(global.enemies), 1,1,0);
+       draw_set_colour(c_white);
+       draw_text_transformed(gui_width - 16,64,"ENEMIES REMAINING " + string(global.enemies),1,1,0);
+       
+}

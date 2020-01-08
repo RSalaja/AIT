@@ -1,0 +1,108 @@
+// 2020-01-06 21:29:00
+#event create
+/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+gui_width = display_get_gui_width();
+gui_height = display_get_gui_height();
+gui_margin = 32 
+controls_speed = 25
+controls_x = gui_width/2 + 200
+controls_y = gui_height/2 - 500
+controls_y_target = gui_height/2
+
+
+/*----------------------------------
+               Text        
+----------------------------------*/
+controls = "W            ->     JUMP
+A            ->     MOVE LEFT
+D            ->     MOVE RIGHT
+LEFT-CLICK   ->     BO-JUMP
+RIGHT-CLICK  ->     THROW WEAPON
+           
+           EXTRAS
+P            ->     MENU
+N            ->     NEXT ROOM
+M            ->     PREVIOUS ROOM
+F            ->     FULLSCREEN
+R            ->     RESTART ROOM
+ESC          ->     NEXT ROOM
+"
+
+off = 2
+controls_x = gui_width/2 - string_width(controls)/2;
+controls_y = gui_height - 275
+controls_y_target = gui_height/2
+controls_speed = 25
+
+prompt = "PRESS BACKSPACE TO EXIT"
+prompt_x = gui_width/2 
+prompt_y = gui_height - 200
+prompt_y_target = gui_height - gui_margin
+
+
+#event step
+/*----------------------
+        Get Input               
+----------------------*/
+scr_getInput();
+
+/*----------------------
+        Ease In               
+----------------------*/
+controls_y += (controls_y_target - controls_y) / controls_speed
+prompt_y += (prompt_y_target - prompt_y) / controls_speed
+
+
+#event draw_gui
+/*----------------------
+        Set Font               
+----------------------*/
+draw_set_font(MENU_FONT);
+var off = 2
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle)
+draw_set_colour(c_black)
+/*----------------------
+       Outline              
+----------------------*/
+draw_text(controls_x - off,    controls_y,        controls);
+draw_text(controls_x + off,    controls_y,        controls);
+draw_text(controls_x,          controls_y + off,  controls);
+draw_text(controls_x,          controls_y - off,  controls);
+/*----------------------
+        Text
+----------------------*/
+draw_set_colour(c_white)
+draw_text(controls_x, controls_y, controls);
+
+/*----------------------
+        Set Font               
+----------------------*/
+draw_set_font(MENU_FONT);
+var off = 2
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle)
+draw_set_colour(c_black)
+
+/*----------------------
+        Outline              
+----------------------*/
+draw_text(prompt_x - off,    prompt_y,        prompt);
+draw_text(prompt_x + off,    prompt_y,        prompt);
+draw_text(prompt_x,          prompt_y + off,  prompt);
+draw_text(prompt_x,          prompt_y - off,  prompt);
+
+/*----------------------
+        Text               
+----------------------*/
+draw_set_colour(c_white)
+draw_text(prompt_x, prompt_y, prompt);
+
+#event keypress:vk_backspace
+/*----------------------
+        Go Back               
+----------------------*/
+SlideTrans(trans_mode.goto,MenuScreen)
+audio_play_sound(Menu_BACK,11,false)

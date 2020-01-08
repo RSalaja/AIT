@@ -9,7 +9,7 @@ if (!collision_line(x, y, object_player.x, object_player.y, object_wall, false, 
     {
         state = knightState.idle;
     }
-    if (distance_to_object(object_player) < 10)
+    if (distance_to_object(object_player) < 8)
     {
         state = knightState.attack;
         hsp = 0

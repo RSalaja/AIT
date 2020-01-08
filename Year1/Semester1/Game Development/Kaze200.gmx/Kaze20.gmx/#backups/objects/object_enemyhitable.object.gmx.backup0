@@ -1,0 +1,30 @@
+// 2020-01-06 21:40:20
+#event step
+/*------------------
+        Destroy       
+--------------------*/
+if (hp <= 0) 
+{
+    with(mygun)
+    {
+        instance_destroy();
+    }
+        instance_destroy();
+}
+
+#event other_outside
+#action action_kill_object
+
+#event draw
+/*------------------
+        Flash       
+--------------------*/
+draw_self();
+if (flash > 0)
+{
+    flash--;
+    shader_set(shader_white);
+    draw_self();
+    shader_reset();
+} 
+

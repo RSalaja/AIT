@@ -2,16 +2,17 @@ scr_getInput();
 scr_Globals();
 ///scr_movement
 
-//  Ground Check  //
+/*----------------------------------
+        Ground Check      
+----------------------------------*/
 globalvar grounded;
-grounded = (place_meeting(x, y + 1, object_wall));
+grounded = ((place_meeting(x, y +1, object_wall) || (place_meeting(x, y +1, object_platform))));
 
-//  Horizontal Movement  //
-
-
+/*----------------------------------
+        Horizontal Move       
+----------------------------------*/
 var dir = key_right - key_left;
 hsp += dir * (walkAcceleration ) ;
-
 
 if (dir == 0)
 {
@@ -20,30 +21,26 @@ if (dir == 0)
     hsp = Approach(hsp, 0, hsp_fric) ;
     
 }
-
 hsp = clamp(hsp, -walkSpeed, walkSpeed);
-
-
-
 vsp += grv
 
 
 
-//  Ground Jump  //
+/*----------------------------------
+           Jump     
+----------------------------------*/
 if (grounded)
 {
     jumps = jumpsmax
     airtime = 0
 }
 
-canjump -= 1;
-if ((key_jump) || (airtime == 1)) && (canjump > 0)
+if (key_jump) 
 {
-    canjump = 0
+
     grounded = false;
 
 }
-
 if ((key_jump)) && (jumps > 0)
 {
 
@@ -54,7 +51,9 @@ if ((key_jump)) && (jumps > 0)
 }
 
 
-//  Fractions To Integers  //
+/*----------------------------------
+        Frac -> Int      
+----------------------------------*/
 hsp += hsp_frac;
 vsp += vsp_frac;
 hsp_frac = frac(hsp);

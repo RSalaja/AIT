@@ -1,0 +1,23 @@
+// 2020-01-06 20:52:17
+#event create
+/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+direction = random (360);
+speed = random_range(2,4);
+image_speed = 0.1
+
+
+#event step
+/*----------------------------------
+        Create Particles        
+----------------------------------*/
+if (instance_exists(object_player))
+{
+    dir = point_direction(x,y,object_player.x,object_player.y)
+    acceleration = 0.25;
+    motion_add(dir,acceleration)
+}
+
+#event other_animation_end
+instance_destroy();

@@ -1,0 +1,23 @@
+// 2020-01-06 21:10:32
+#event create
+/*-----------------------------
+        Collected Scrolls      
+------------------------------*/
+allScrolls = false
+
+#event collision:object_player
+/*-----------------------------
+        Move To Next Room
+------------------------------*/
+if (instance_number(object_scrolls) <= 0)
+{
+    with(object_player)
+    {
+        if (hascontrol)
+        {
+            hascontrol = false;
+            audio_play_sound(Level_End, 100000, false);
+            SlideTrans(trans_mode.goto, other.target)
+        }
+    }
+}

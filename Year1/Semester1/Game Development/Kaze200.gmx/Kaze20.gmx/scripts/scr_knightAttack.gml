@@ -13,10 +13,12 @@ if (sprite_index != sprite_knightAttack)
     sprite_index = sprite_knightAttack
     image_index = 0
     image_speed = 0.2
+    image_index = round(image_index)
 }
 
 if (image_index == 6)
 {
+    image_index = 0
     with(instance_create(x, y, object_knightHitbox))
     {
         image_xscale = other.image_xscale
@@ -24,11 +26,9 @@ if (image_index == 6)
         {
             with(object_player)
             {
-                if (pHit == 0)
-                {
-                    pHit = 1;
-                }
+                    hitbyKnight = 1           
             }
         }
+        
     }
 }

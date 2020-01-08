@@ -1,0 +1,14 @@
+// 2020-01-06 20:39:39
+#event step
+/*-------------------
+        Float       
+-------------------*/
+y = ystart + sin(get_timer()/500000) * 3;
+
+#event collision:object_player
+repeat(5)
+{
+    instance_create(x,y,object_gemCollect)
+}
+audio_play_sound(choose(sound_collect,sound_collect2),125,false);
+instance_destroy();

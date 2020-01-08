@@ -1,0 +1,107 @@
+// 2020-01-06 20:26:05
+#event create
+/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+
+/*----------------------
+        Movement        
+----------------------*/
+hsp = 0;
+vsp = 0;
+
+walkSpeed = 3;
+walkAcceleration = 1.5;
+
+hsp_fric_ground = 0.50;
+hsp_fric_air = 0;
+
+hsp_frac = 0.0;
+vsp_frac = 0.0;
+
+jumpspeed = 6;
+grv = 0.3;
+
+/*--------------------------
+        Hit Detection             
+--------------------------*/
+hit = 0;
+flash = 0;
+hp = 4;
+hitfrom = 0;
+
+/*------------------
+        States                  
+------------------*/
+state = mageState.idle;
+enum mageState
+{
+    idle,
+    chase,
+    attack,
+    hit
+}
+
+#event step
+/*----------------------------
+        Enemies' State      
+----------------------------*/
+if (instance_exists(object_player))
+{
+    switch (state)
+    {
+        /*--------------------
+                Idle        
+        --------------------*/
+        case mageState.idle:
+        {
+            scr_mageIdle();
+        }
+        break;
+        
+        /*--------------------
+                Chase        
+        --------------------*/
+        case mageState.chase:
+        {
+            scr_mageChase();
+        }
+        break;
+        
+        /*--------------------
+                Attack        
+        --------------------*/
+        case mageState.attack:
+        {
+            scr_mageAttack();
+        }
+        break;
+
+    }
+}
+
+/*--------------------
+        Death        
+--------------------*/
+if (pHealth <= 0)
+{
+    state = mageState.idle
+}
+
+if (hp <= 0) 
+{
+    instance_destroy();
+}
+
+#event step_begin
+/*--------------------
+        Death        
+--------------------*/
+if (hp <= 0)
+{
+    repeat(5)
+    with (instance_create(x,y,object_enemyDead))
+    {                   
+        depth = -100;
+    }
+}

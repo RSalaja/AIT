@@ -1,0 +1,191 @@
+// 2020-01-06 21:33:44
+#event create
+/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+gui_width = display_get_gui_width();
+gui_height = display_get_gui_height();
+gui_margin = 32 
+
+menu_x = gui_width/2
+menu_y = gui_height + 200
+menu_y_target = gui_height - gui_margin - 32
+menu_speed = 25
+menu_font = MENU_FONT
+menu_itemheight = font_get_size(MENU_FONT)
+menu_commited = -1
+menu_control = true
+
+menu[4] = "NEW GAME"
+menu[3] = "CONTINUE"
+menu[2] = "CONTROLS"
+menu[1] = "ABOUT"
+menu[0] = "QUIT"
+
+menu_items = array_length_1d(menu);
+menu_cursor = 4
+
+/*----------------------------------
+        Title Variables        
+----------------------------------*/
+title_x = gui_width/2 
+title_y = gui_height/2 - 500
+title_y_target = gui_height/2
+
+title = "BO JACK"
+off = 2
+
+title_done = 0
+
+hint = "USE ARROW KEYS TO CHOOSE
+USE ENTER TO SELECT"
+
+
+hint_x = gui_width + 200
+hint_y = gui_height - 300
+hint_x_target = gui_width/2
+hint_speed = 25
+
+
+#event step
+/*----------------------
+        Get Input               
+----------------------*/
+scr_getInput();
+
+/*----------------------
+        Ease In               
+----------------------*/
+title_y += (title_y_target - title_y) / menu_speed
+menu_y += (menu_y_target - menu_y)/menu_speed
+hint_x += (hint_x_target - hint_x)/hint_speed
+
+
+/*---------------------------
+        Menu Control               
+----------------------------*/
+if (menu_control)
+{
+    if (keyboard_check_pressed(vk_up))
+    {
+        menu_cursor++;
+        if (menu_cursor >= menu_items)
+        {
+            menu_cursor = 0
+        }
+        audio_play_sound(Menu_Move, 11, false)
+    }
+    if (keyboard_check_pressed(vk_down))
+    {
+        menu_cursor--;
+        if (menu_cursor < 0)
+        {
+            menu_cursor = menu_items - 1
+        }
+        audio_play_sound(Menu_Move, 11, false)
+    }
+    if (key_enter)
+    {
+        menu_y_target = gui_height + 200
+        title_y_target = -500
+        hint_x_target = -500
+        menu_commited = menu_cursor
+        menu_control = false;
+        audio_play_sound(Menu_Select, 11, false)
+    }
+}
+
+if (menu_y > gui_height + 150 && menu_commited != -1)
+{
+    switch (menu_cursor)
+    {
+        case 4:
+        {
+            SlideTrans(trans_mode.goto, Level_1);
+        }
+        break;
+
+    case 3:
+    {
+        if (!file_exists(SAVEFILE))
+        {
+            SlideTrans(trans_mode.goto, Level_1);
+        }
+        else
+        {
+            var file = file_text_open_read(SAVEFILE)
+            var target = file_text_read_real(file)
+            file_text_close(file)
+            SlideTrans(trans_mode.goto, target);
+        }
+    }
+    break
+
+    case 2:
+    {
+        SlideTrans(trans_mode.goto, HelpScreen);
+    }
+    break;
+
+    case 1:
+    {
+        SlideTrans(trans_mode.goto, AboutScreen);
+    }
+    break;
+
+    case 0:
+    {
+        game_end();
+    }
+    break;
+    }
+}
+
+    
+
+#event draw_gui
+/*----------------------
+        Set Font               
+----------------------*/
+draw_set_font(MENU_FONT);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle)
+for (var i = 0; i < menu_items; i++)
+{
+    var offset = 2
+    var txt = menu[i];
+    if (menu_cursor ==i)
+    {
+        txt = string_insert("> ",txt,0)
+        var col = c_white
+    }
+    else
+    {
+       var col = c_gray 
+    }
+    var xx = menu_x;
+    var yy = menu_y - (menu_itemheight * (i * 1.5))
+    /*----------------------
+            Outline               
+    ----------------------*/
+    draw_set_colour(c_black);
+    draw_text(xx-offset,yy,txt)
+    draw_text(xx+offset,yy,txt)
+    draw_text(xx,yy-offset,txt)
+    draw_text(xx,yy+offset,txt)
+    draw_set_colour(col)
+    draw_text(xx,yy,txt)
+    
+}
+
+/*----------------------
+        Title            
+----------------------*/
+draw_set_font(MENU_FONT_BIG);
+MenuTexts(title_x, title_y, title  );
+
+/*----------------------
+        Hint            
+----------------------*/
+draw_set_font(MENU_FONT);
+MenuTexts(hint_x, hint_y, hint );

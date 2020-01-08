@@ -24,6 +24,6 @@ if (place_meeting(x, y + vsp, object_wall))
     vsp = 0;
     vsp_frac = 0;
     while (!place_meeting(x, y + vstep, object_wall))
-        y += vstep;
+    y += vstep;
 }
 y = y + vsp;

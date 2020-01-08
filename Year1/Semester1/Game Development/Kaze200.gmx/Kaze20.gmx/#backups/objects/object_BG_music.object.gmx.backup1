@@ -1,0 +1,26 @@
+// 2020-01-06 19:45:45
+#event create
+song[9] = BG_song1
+song[8] = BG_song2
+song[7] = BG_song3
+song[6] = BG_song4
+song[5] = BG_song5
+song[4] = BG_song6
+song[3] = BG_song7
+song[2] = BG_song8
+song[1] = BG_song9
+song[0] = BG_song10
+song_amount = array_length_1d(song);
+song_choice = 0
+
+
+#event other_room_start
+if room == TitleScreen || room ==GameOverScreen || room == FinishedRoom
+{
+    audio_stop_sound(song[song_choice])
+}
+else
+{
+    audio_stop_all()
+    audio_play_sound(song[choose(0,1,2,3,4,5,6,7,8,9)],50,true);
+}

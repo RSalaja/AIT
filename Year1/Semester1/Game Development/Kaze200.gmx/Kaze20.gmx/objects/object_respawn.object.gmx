@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = random (360);
+            <string>/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+direction = random (360);
 speed = random_range(2,4);
 image_speed = 0.1
 
@@ -51,7 +54,10 @@ image_speed = 0.1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(object_player))
+            <string>/*----------------------------------
+        Create Particles        
+----------------------------------*/
+if (instance_exists(object_player))
 {
     dir = point_direction(x,y,object_player.x,object_player.y)
     acceleration = 0.25;

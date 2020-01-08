@@ -1,5 +1,7 @@
 vsp  += grv
-//  Horizontal Collision  //
+/*----------------------------------
+        Horizontal Move       
+----------------------------------*/
 if (place_meeting(x+hsp,y,object_wall))
 {
    var hstep = sign(hsp);
@@ -9,7 +11,9 @@ if (place_meeting(x+hsp,y,object_wall))
 }
 x = x + hsp;
 
-//  Verical Collision  //
+/*----------------------------------
+        Verical Move       
+----------------------------------*/
 if (place_meeting(x,y+vsp,object_wall))
 {
     var vstep = sign(vsp);

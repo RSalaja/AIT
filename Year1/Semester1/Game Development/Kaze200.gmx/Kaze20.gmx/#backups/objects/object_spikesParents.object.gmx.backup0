@@ -1,0 +1,33 @@
+// 2020-01-06 21:41:18
+#event collision:object_player
+/*------------------------
+        Damage Player       
+--------------------------*/
+if (place_meeting(x, y, object_player))
+{
+    with(object_player)
+    {
+        if (pHealth > 0)
+        {
+            pHealth -= 1;
+            abyssFall = false
+            if (object_exists(object_shurikenInHand))
+            {
+                with(object_shurikenInHand)
+                {
+                    instance_destroy();
+                }
+            }
+            if (object_exists(object_bo))
+            {
+                with(object_bo)
+                {
+                    instance_destroy();
+                }
+            }
+
+            instance_create(x, y, object_playerDead)
+            instance_destroy();
+        }
+    }
+}

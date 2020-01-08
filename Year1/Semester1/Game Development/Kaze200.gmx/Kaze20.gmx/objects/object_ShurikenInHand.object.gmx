@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>firingdelay = 0
+            <string>/*------------------
+        Reload      
+------------------*/
+firingdelay = 0
 
 </string>
           </argument>
@@ -49,7 +52,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hascontrol)
+            <string>/*------------------
+        Control      
+------------------*/
+if (hascontrol)
 {
     scr_getInput();
 }
@@ -58,7 +64,9 @@ else
     scr_no_input();
 }
 
-
+/*--------------------------
+        Image Control                     
+--------------------------*/
 if (object_player.image_xscale &lt;= 0)
 {
 x = object_player.x + 7;
@@ -71,10 +79,14 @@ x = object_player.x - 7;
 y = object_player.y + 4;
 }
 
+/*---------------------------
+        Weapon Control                           
+---------------------------*/
 firingdelay = firingdelay - 1;
 if (right_click) &amp;&amp; (firingdelay &lt; 0)
 {
     firingdelay = 5;
+    audio_play_sound(Weapon_Throw,5,false);
     with (instance_create(x,y,object_shuriken))
     {
         spd = 10

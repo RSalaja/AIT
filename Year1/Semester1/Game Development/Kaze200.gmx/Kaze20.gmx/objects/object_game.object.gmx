@@ -25,13 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-//      CHECKPOINT      //
+            <string>/*-----------------------------
+        Checkpoint    
+------------------------------*/
 respawn = 0
 globalvar respawnX,respawnY;
 respawnX=0
 respawnY=0
+
+/*-----------------------------
+        Global Variables     
+------------------------------*/
+globalvar pHealth ;
+pHealth = 10;
+globalvar pHealthMax;
+pHealthMax = 10;
+
+
+
+globalvar pHealthBeforeDeath;
+pHealthBeforeDeath = pHealth;
+globalvar dead;
+dead= false
 </string>
           </argument>
         </arguments>
@@ -54,34 +69,41 @@ respawnY=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//      UPDATE POSITION     //
+            <string>/*-----------------------------
+        Update Position
+------------------------------*/
 if (object_exists(object_player))
 {
-with (object_player)
-{
-if (global.grounded)
-{
-    if(image_xscale &gt; 0)
+    with(object_player)
     {
-        global.respawnX = (object_player.x) - 16;
-        
+        if (global.grounded)
+        {
+            if (image_xscale &gt; 0)
+            {
+                global.respawnX = (object_player.x) - 16;
+
+            }
+            if (image_xscale &lt; 0)
+            {
+                global.respawnX = (object_player.x) + 16;
+
+            }
+            global.respawnY = (object_player.y) - 16;
+        }
     }
-    if(image_xscale &lt; 0)
-    {
-        global.respawnX = (object_player.x) + 16;
-        
-    }
-    global.respawnY = (object_player.y) - 16; 
-    }
-}
 }
 
+/*---------------------
+        Respawn      
+----------------------*/
 if (respawn == 1)
 {
-    instance_create(global.respawnX,global.respawnY,object_shurikenInHand)
-    instance_create(global.respawnX,global.respawnY,object_bo)
+    instance_create(global.respawnX, global.respawnY, object_shurikenInHand)
+    instance_create(global.respawnX, global.respawnY, object_bo)
+
     respawn = 0
 }
+
 </string>
           </argument>
         </arguments>

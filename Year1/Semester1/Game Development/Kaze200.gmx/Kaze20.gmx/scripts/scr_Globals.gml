@@ -1,15 +1,9 @@
 /// Init Variables ///
 
-healthbar_width = 157
-healthbar_height= 20
-healthbar_x = 150
-healthbar_y = 17
+healthbar_width = 463
+healthbar_height= 32
+healthbar_x = 80
+healthbar_y = 15
 
-energybar_width = 157
-energybar_height= 20
-energybar_x = 150
-energybar_y = 47
-
-airtime = 0;
-
-
+gui_width = display_get_gui_width();
+gui_height = display_get_gui_height();

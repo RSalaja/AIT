@@ -25,26 +25,47 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// GUI/VARS/MENU SETUP
-
+            <string>/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 gui_margin = 32 
-
 controls_speed = 25
-
-controls_x = gui_width/2 
+controls_x = gui_width/2 + 200
 controls_y = gui_height/2 - 500
 controls_y_target = gui_height/2
 
-controls = "ALL CONTROLS GO HERE
-PRESS BACK TO GO BACK"
-off = 2
 
-controls_x = gui_width/2
+/*----------------------------------
+               Text        
+----------------------------------*/
+controls = "W            -&gt;     JUMP
+A            -&gt;     MOVE LEFT
+D            -&gt;     MOVE RIGHT
+S            -&gt;     MOVE DOWN              
+LEFT-CLICK   -&gt;     BO-JUMP
+RIGHT-CLICK  -&gt;     THROW WEAPON
+           
+           EXTRAS
+P            -&gt;     MENU
+N            -&gt;     NEXT ROOM
+M            -&gt;     PREVIOUS ROOM
+F            -&gt;     FULLSCREEN
+R            -&gt;     RESTART ROOM
+ESC          -&gt;     NEXT ROOM
+"
+
+off = 2
+controls_x = gui_width/2 - string_width(controls)/2;
 controls_y = gui_height - 275
 controls_y_target = gui_height/2
 controls_speed = 25
+
+prompt = "PRESS BACKSPACE TO EXIT"
+prompt_x = gui_width/2 
+prompt_y = gui_height - 200
+prompt_y_target = gui_height - gui_margin
 
 </string>
           </argument>
@@ -68,13 +89,17 @@ controls_speed = 25
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_getInput();
-///     CONTROL MENU        ///
+            <string>/*----------------------
+        Get Input               
+----------------------*/
+scr_getInput();
 
-//      EASE IN TITLE       //
+/*----------------------
+        Ease In               
+----------------------*/
 controls_y += (controls_y_target - controls_y) / controls_speed
+prompt_y += (prompt_y_target - prompt_y) / controls_speed
 
-    
 </string>
           </argument>
         </arguments>
@@ -97,9 +122,49 @@ controls_y += (controls_y_target - controls_y) / controls_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(MENU_FONT);
-MenuTexts(controls_x, controls_y, controls);
+            <string>/*----------------------
+        Set Font               
+----------------------*/
+draw_set_font(MENU_FONT);
+var off = 2
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle)
+draw_set_colour(c_black)
+/*----------------------
+       Outline              
+----------------------*/
+draw_text(controls_x - off,    controls_y,        controls);
+draw_text(controls_x + off,    controls_y,        controls);
+draw_text(controls_x,          controls_y + off,  controls);
+draw_text(controls_x,          controls_y - off,  controls);
+/*----------------------
+        Text
+----------------------*/
+draw_set_colour(c_white)
+draw_text(controls_x, controls_y, controls);
 
+/*----------------------
+        Set Font               
+----------------------*/
+draw_set_font(MENU_FONT);
+var off = 2
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle)
+draw_set_colour(c_black)
+
+/*----------------------
+        Outline              
+----------------------*/
+draw_text(prompt_x - off,    prompt_y,        prompt);
+draw_text(prompt_x + off,    prompt_y,        prompt);
+draw_text(prompt_x,          prompt_y + off,  prompt);
+draw_text(prompt_x,          prompt_y - off,  prompt);
+
+/*----------------------
+        Text               
+----------------------*/
+draw_set_colour(c_white)
+draw_text(prompt_x, prompt_y, prompt);
 </string>
           </argument>
         </arguments>
@@ -122,7 +187,11 @@ MenuTexts(controls_x, controls_y, controls);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>SlideTrans(trans_mode.goto,MenuScreen)
+            <string>/*----------------------
+        Go Back               
+----------------------*/
+SlideTrans(trans_mode.goto,MenuScreen)
+audio_play_sound(Menu_BACK,11,false)
 </string>
           </argument>
         </arguments>

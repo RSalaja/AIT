@@ -11,3 +11,12 @@ with ( object_transitions)
         target = argument[1];
     }
 }
+
+/*-----------------------------------
+        trans_mode.intro:
+        trans_mode.next:
+        trans_mode.goto:            
+        trans_mode.restart:
+        trans_mode.roomRestart:
+------------------------------------*/
+ 

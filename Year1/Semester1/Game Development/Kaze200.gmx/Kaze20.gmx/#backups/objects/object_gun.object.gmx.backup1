@@ -1,0 +1,104 @@
+// 2020-01-06 20:29:47
+#event create
+/*-------------------------------------
+        Initialize Variables
+--------------------------------------*/
+
+/*------------------
+        Reload      
+------------------*/
+countdown = 80;
+countdownRate = countdown;
+
+/*------------------
+        States                  
+------------------*/
+state = gunState.normal;
+enum gunState
+{
+    normal,
+    shoot,
+    dontShoot
+}
+
+#event step
+/*--------------------------
+        Image Control                     
+--------------------------*/
+if (instance_exists(object_gunner))
+{
+    if (owner.image_xscale <= 0)
+    {
+        x = owner.x - 9;
+        y = owner.y + 7;
+    }
+
+    if (owner.image_xscale >= 0)
+    {
+        x = owner.x + 9;
+        y = owner.y + 7;
+    }
+    image_xscale = abs(owner.image_xscale);
+    image_yscale = abs(owner.image_yscale);
+    image_angle = 180;
+
+    /*----------------------------
+            Gun's State      
+    ----------------------------*/
+    if (instance_exists(object_player))
+    {
+        if (object_player.x < x)
+        {
+            image_yscale = -image_yscale;
+        }
+        switch (state)
+        {
+
+            case gunState.normal:
+            {
+                countdown = countdownRate;
+            }
+            break;
+
+        case gunState.dontShoot:
+        {
+            countdown = countdownRate;
+        }
+        break;
+
+        case gunState.shoot:
+        {
+            if (!collision_line(x, y, object_player.x, object_player.y, object_wall || object_platform, false, false))
+            {
+                image_angle = point_direction(x, y, object_player.x, object_player.y);
+                countdown--;
+
+                if (countdown <= 0)
+                {
+                    countdown = countdownRate;
+                    if (!collision_line(x, y, object_player.x, object_player.y, object_wall || object_platform, false, false))
+                    {
+                        with(instance_create(x - 7, y, object_enemyGunBullet))
+                        {
+                            spd = 5;
+                            direction = other.image_angle + random_range(-3, 3);
+                            image_angle = direction;
+                        }
+                    }
+                }
+            }
+        }
+        break;
+        }
+    }
+    else if (object_playerDead.x < x)
+    {
+        image_yscale = -image_yscale;
+    }
+
+}
+else
+{
+    instance_destroy()
+}
+

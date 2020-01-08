@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 0;
+            <string>/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+x = 0;
 y = 0;
-
 if (object_exists(object_player))
 {
     following = object_player;
@@ -37,7 +39,6 @@ else
     following = object_playerDead;
 }
 
-shake = 0;
 </string>
           </argument>
         </arguments>
@@ -60,34 +61,46 @@ shake = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///     POSITION VIEW BASED ON PLAYER       ///
-var xTo,yTo;
-
+            <string>/// 
+/*--------------------------------------------------------
+        Position View Based On Player's Position              
+--------------------------------------------------------*/
+var xTo, yTo;
 if (instance_exists(object_player))
 {
     xTo = (object_player.x div view_wview[0]) * view_wview[0]
     yTo = (object_player.y div view_hview[0]) * view_hview[0]
-    
-    var difX,divY;
+
+    var difX, divY;
     difX = (xTo - x)
     difY = (yTo - y)
-    
-    if (abs(difX) &lt; 1) x = xTo; else x+= difX/15
-    if (abs(difY) &lt; 1) y = yTo; else y+= difY/15
+
+    if (abs(difX) &lt; 1)
+    {
+        x = xTo;
+    }
+    else
+    {
+        x += difX / 15
+    }
+
+    if (abs(difY) &lt; 1)
+    {
+        y = yTo;
+    }
+    else
+    {
+        y += difY / 15
+
+    }
 }
 
 view_xview[0] = x;
 view_yview[0] = y;
 
-view_xview = median(view_xview,0,room_width - view_wview);
-view_yview = median(view_yview,0,room_height- view_hview);
-
-view_xview += random_range(-shake,shake);
-view_yview += random_range(-shake,shake);
-
-
-shake *= 0.9
-
+view_yview[0] = y
+view_xview = median(view_xview, 0, room_width - view_wview);
+view_yview = median(view_yview, 0, room_height - view_hview);
 </string>
           </argument>
         </arguments>

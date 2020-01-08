@@ -1,0 +1,50 @@
+// 2020-01-06 21:01:04
+#event create
+/*------------------
+        Reload      
+------------------*/
+firingdelay = 0
+
+
+#event step
+/*------------------
+        Control      
+------------------*/
+if (hascontrol)
+{
+    scr_getInput();
+}
+else
+{
+    scr_no_input();
+}
+
+/*--------------------------
+        Image Control                     
+--------------------------*/
+if (object_player.image_xscale <= 0)
+{
+x = object_player.x + 7;
+y = object_player.y + 4;
+}
+
+if (object_player.image_xscale >= 0)
+{
+x = object_player.x - 7;
+y = object_player.y + 4;
+}
+
+/*---------------------------
+        Weapon Control                           
+---------------------------*/
+firingdelay = firingdelay - 1;
+if (right_click) && (firingdelay < 0)
+{
+    firingdelay = 5;
+    audio_play_sound(Weapon_Throw,5,false);
+    with (instance_create(x,y,object_shuriken))
+    {
+        spd = 10
+        direction = point_direction(x,y,mouse_x,mouse_y)
+    }
+}

@@ -25,22 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//// SIZE VARIABLES 
-
+            <string>/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
 w = display_get_gui_width(); 
 h = display_get_gui_height(); 
 h_half = h * 0.5;
 
+/*------------------
+        States                        
+------------------*/
 enum trans_mode
 {
     off,
     next,
     goto,
     restart,
-    intro
+    intro,
+    roomRestart
 }
-
-
 mode = trans_mode.intro
 percent = 1;
 target = room
@@ -67,7 +70,10 @@ target = room
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (mode != trans_mode.off)
+            <string>/*------------------
+        States                        
+------------------*/
+if (mode != trans_mode.off)
 {
     if (mode == trans_mode.intro)
     {
@@ -112,6 +118,11 @@ target = room
                 game_restart();
                 break;
             }
+            case trans_mode.roomRestart:
+            {
+                mode = trans_mode.goto
+                break;
+            }
             
         }
     }
@@ -139,8 +150,9 @@ target = room
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// DRAW BARS
-
+            <string>/*---------------------
+        Draw Bars                           
+---------------------*/
 if (mode != trans_mode.off)
 {
     draw_set_colour(c_black);

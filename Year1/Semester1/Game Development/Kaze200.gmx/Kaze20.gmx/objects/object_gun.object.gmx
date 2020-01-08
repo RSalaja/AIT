@@ -25,12 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///      INIT VARIABLES      ///
-//      RELAOD RATE     //
+            <string>/*-------------------------------------
+        Initialize Variables
+--------------------------------------*/
+
+/*------------------
+        Reload      
+------------------*/
 countdown = 80;
 countdownRate = countdown;
 
-//      STATE MACHINES      //
+/*------------------
+        States                  
+------------------*/
 state = gunState.normal;
 enum gunState
 {
@@ -60,79 +67,86 @@ enum gunState
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//      IMAGE       //
-if (owner.image_xscale &lt;= 0)
+            <string>/*--------------------------
+        Image Control                     
+--------------------------*/
+if (instance_exists(object_gunner))
 {
-    x = owner.x - 9;
-    y = owner.y + 7;
-}
-
-if (owner.image_xscale &gt;= 0)
-{
-    x = owner.x + 9;
-    y = owner.y + 7;
-}
-
-image_xscale = abs(owner.image_xscale);
-image_yscale = abs(owner.image_yscale);
-image_angle = 180;
-
-//      GUN'S STATES        //
-if (instance_exists(object_player))
-{
-    if (object_player.x &lt; x)
+    if (owner.image_xscale &lt;= 0)
     {
-        image_yscale = -image_yscale;
+        x = owner.x - 9;
+        y = owner.y + 7;
     }
-    switch (state)
-    {
 
-        case gunState.normal:
+    if (owner.image_xscale &gt;= 0)
+    {
+        x = owner.x + 9;
+        y = owner.y + 7;
+    }
+    image_xscale = abs(owner.image_xscale);
+    image_yscale = abs(owner.image_yscale);
+    image_angle = 180;
+
+    /*----------------------------
+            Gun's State      
+    ----------------------------*/
+    if (instance_exists(object_player))
+    {
+        if (object_player.x &lt; x)
         {
-            countdown = countdownRate;
+            image_yscale = -image_yscale;
         }
-        break;
+        switch (state)
+        {
+
+            case gunState.normal:
+            {
+                countdown = countdownRate;
+            }
+            break;
 
         case gunState.dontShoot:
         {
             countdown = countdownRate;
         }
         break;
-    
+
         case gunState.shoot:
         {
-            if (!collision_line(x, y, object_player.x, object_player.y, object_wall, false, false))
-                {
-            image_angle = point_direction(x, y, object_player.x, object_player.y);
-            countdown--;
-    
-            if (countdown &lt;= 0)
+            if (!collision_line(x, y, object_player.x, object_player.y, object_wall || object_platform, false, false))
             {
-                countdown = countdownRate;
-                if (!collision_line(x, y, object_player.x, object_player.y, object_wall, false, false))
+                image_angle = point_direction(x, y, object_player.x, object_player.y);
+                countdown--;
+
+                if (countdown &lt;= 0)
                 {
-                    with(instance_create(x-7, y, object_enemyGunBullet))
+                    countdown = countdownRate;
+                    if (!collision_line(x, y, object_player.x, object_player.y, object_wall || object_platform, false, false))
                     {
-                        spd = 5;
-                        direction = other.image_angle + random_range(-3, 3);
-                        image_angle = direction;
+                        with(instance_create(x - 7, y, object_enemyGunBullet))
+                        {
+                            spd = 5;
+                            direction = other.image_angle + random_range(-3, 3);
+                            image_angle = direction;
+                        }
                     }
                 }
             }
         }
-        }
         break;
         }
-}
-else  if (object_playerDead.x &lt; x)
-
-
+    }
+    
+    else if (object_playerDead.x &lt; x)
     {
         image_yscale = -image_yscale;
     }
 
-
-
+}
+else
+{
+    instance_destroy()
+}
 
 
 </string>

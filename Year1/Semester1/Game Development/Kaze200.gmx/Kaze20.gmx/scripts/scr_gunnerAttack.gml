@@ -10,4 +10,3 @@ if (distance_to_object(object_player) > 10)
         state = gunState.shoot
     }
 }
-

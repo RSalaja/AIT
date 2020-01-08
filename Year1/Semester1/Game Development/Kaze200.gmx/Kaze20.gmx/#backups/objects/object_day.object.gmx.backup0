@@ -1,0 +1,98 @@
+// 2020-01-06 21:20:50
+#event create
+/*---------------------------
+        Surface Size              
+---------------------------*/
+
+surface = surface_create(room_width,room_height);
+surface_set_target(surface);
+draw_clear_alpha(c_black, 0);
+
+/*---------------------------
+        Surface Reset              
+---------------------------*/
+surface_reset_target();
+
+#event step
+/*---------------------------
+        Surface Draw              
+---------------------------*/
+if (surface_exists(surface))
+{
+    surface_set_target(surface);
+    /*---------------------------
+            Overlay              
+    ---------------------------*/
+    draw_set_colour(c_black);
+    draw_set_alpha(0.2);
+    draw_rectangle(0, 0, room_width, room_height, false);
+
+    /*---------------------------
+            Set Circles              
+    ---------------------------*/
+    draw_set_blend_mode(bm_subtract);
+    draw_set_colour(c_black);
+    draw_set_alpha(0.1);
+
+    /*---------------------------
+            Draw Circles              
+    ---------------------------*/
+    with(object_characters)
+    {
+        draw_circle(x, y, 60, false)
+    }
+
+    draw_set_colour(c_white);
+    draw_set_alpha(0.5);
+    with(object_characters)
+    {
+        draw_circle(x, y, 30, false)
+    }
+
+
+
+    /*---------------------------
+            Reset Draws              
+    ---------------------------*/
+    draw_set_blend_mode(bm_normal);
+    draw_set_alpha(1);
+    surface_reset_target();
+}
+else
+{
+    /*---------------------------
+            Surface Size               
+    ---------------------------*/
+    surface = surface_create(room_width, room_height);
+    surface_set_target(surface);
+    draw_clear_alpha(c_black, 0);
+
+    /*---------------------------
+            Surface Rest               
+    ---------------------------*/
+    surface_reset_target();
+}
+#event other_room_end
+/*---------------------------
+        Surface Destroy              
+---------------------------*/
+if  (surface_exists(surface))
+{
+    surface_free(surface);
+}
+
+#event draw 
+/*---------------------------
+        Surface Draw              
+---------------------------*/
+if (!surface_exists(surface))
+{
+    surface = surface_create(room_width, room_height);
+}
+else
+{   
+    if (view_current == 0)
+    {
+        draw_surface(surface, 0, 0);
+    }
+}

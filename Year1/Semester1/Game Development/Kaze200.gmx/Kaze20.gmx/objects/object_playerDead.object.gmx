@@ -25,18 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init Variables
-
+            <string>/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
 image_speed = 0.2;
 image_xscale = choose(1,-1);
 image_yscale = choose(1,-1);
-
 with(object_newCamera)
 {
     follow = other.id
 }
-
-
+audio_play_sound(Death,10,false)
 </string>
           </argument>
         </arguments>
@@ -59,11 +58,14 @@ with(object_newCamera)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat(5)
-    with (instance_create(x,y,object_respawn))
-    {                   
-        depth = -100;
-    }
+            <string>/*----------------------------------
+        Create Particles        
+----------------------------------*/
+repeat(5)
+with(instance_create(x, y, object_respawn))
+{
+    depth = -100;
+}
 </string>
           </argument>
         </arguments>
@@ -86,25 +88,27 @@ with(object_newCamera)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir = point_direction(x,y,global.respawnX,global.respawnY)
+            <string>/*----------------------
+        Direction               
+-----------------------*/
+dir = point_direction(x, y, global.respawnX, global.respawnY)
 acceleration = 0.25
-motion_add(dir,acceleration)
+motion_add(dir, acceleration)
 
-
-
-    if (y &lt;= global.respawnY)
+/*-------------------------------
+        Re-Create Objects                      
+-------------------------------*/
+if (y &lt;= global.respawnY)
+{
+    instance_destroy();
+    instance_create(global.respawnX, global.respawnY, object_player)
+    instance_create(global.respawnX, global.respawnY, object_shurikenInHand)
+    instance_create(global.respawnX, global.respawnY, object_bo)
+    with(object_player)
     {
-        instance_destroy();
-        instance_create(global.respawnX,global.respawnY,object_player)
-        instance_create(global.respawnX,global.respawnY,object_shurikenInHand)
-        instance_create(global.respawnX,global.respawnY,object_bo)
-        with(object_player)
-        {
-            respawn = 1
-        }
-
-    } 
-
+        respawn = 1
+    }
+}
 </string>
           </argument>
         </arguments>

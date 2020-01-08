@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>display_set_gui_size(RES_W,RES_H)
+            <string>/*-----------------------------
+        Set GUI Size      
+------------------------------*/
+display_set_gui_size(RES_W,RES_H)
 </string>
           </argument>
         </arguments>
@@ -48,7 +51,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_restart();
+            <string>/*-----------------------------
+        Restart Room      
+------------------------------*/
+room_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="80">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*-----------------------------
+        Go To Menu      
+------------------------------*/
+SlideTrans(trans_mode.goto, MenuScreen)
 </string>
           </argument>
         </arguments>
@@ -57,17 +89,67 @@
     <event eventtype="9" enumb="78">
       <action>
         <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*-----------------------------
+        Next Toom      
+------------------------------*/
+if room_exists(room_next(room))
+{
+    SlideTrans(trans_mode.next); 
+}
+else
+{
+    SlideTrans(trans_mode.goto, TitleScreen)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*-----------------------------
+        Previous Room      
+------------------------------*/
+if room_exists(room_previous(room))
+{
+    SlideTrans(trans_mode.goto,room_previous(room));
+}
+else
+{
+    SlideTrans(trans_mode.goto, TitleScreen)
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="9" enumb="70">
@@ -87,14 +169,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (window_get_fullscreen())
+            <string>/*-----------------------------
+        Fullscren    
+------------------------------*/
+if (window_get_fullscreen())
 {
     window_set_fullscreen(false);
 }
 else
 {
     window_set_fullscreen(true);
-    window_set_position(0, 0);
 }
 
 </string>
@@ -119,7 +203,10 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_end();
+            <string>/*-----------------------------
+           End Game    
+------------------------------*/
+game_end();
 </string>
           </argument>
         </arguments>

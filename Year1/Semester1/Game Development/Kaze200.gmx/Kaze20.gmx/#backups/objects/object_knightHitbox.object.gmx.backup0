@@ -1,0 +1,29 @@
+// 2020-01-06 20:12:16
+#event step|////////////////////////
+//      REDUCE HP       //
+/////////////////////////
+
+///////////////////////////
+//      ENVIROMENT      //
+/////////////////////////
+if (place_meeting(x, y, object_parenthitable))
+{
+    instance_destroy();
+    with(object_parenthitable)
+    {
+        hp--;
+        flash = 3
+    }
+}
+
+
+#event collision:object_player|///////////////////////////////////////////////
+//      DESTROY WITH COLLISION WITH PLAYER     //
+////////////////////////////////////////////////
+instance_destroy();
+
+
+#event draw_post|////////////////////////////////////////
+//      DESTROY AT END OF ANIMATION     //
+/////////////////////////////////////////
+instance_destroy();

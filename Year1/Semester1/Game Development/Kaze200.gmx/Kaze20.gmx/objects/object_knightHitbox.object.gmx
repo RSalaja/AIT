@@ -25,9 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///     COLLISIONS      ///
+            <string>///////////////////////////
+//      REDUCE HP       //
+/////////////////////////
 
+///////////////////////////
 //      ENVIROMENT      //
+/////////////////////////
 if (place_meeting(x, y, object_parenthitable))
 {
     instance_destroy();
@@ -36,32 +40,8 @@ if (place_meeting(x, y, object_parenthitable))
         hp--;
         flash = 3
     }
-    with(object_newCamera)
-    {
-        shake = 5;
-    }
 }
 
-//      PLAYER      //
-if (place_meeting(x, y, object_player))
-{
-    instance_destroy();
-    spd = 0;
-    with(object_player)
-    {
-        pHealth--;
-        flash = 3
-    }
-    with(object_newCamera)
-    {
-        shake = 5;
-    }
-    repeat(5)
-    with(instance_create(x, y, object_blood))
-    {
-        depth = -100;
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -84,25 +64,11 @@ if (place_meeting(x, y, object_player))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(object_newCamera)
-{
-    shake = 3;
-}
-
-if (instance_exists(object_player))
-{
-    if (place_meeting(x, y, object_player))
-    {
-        with (object_player )
-        {
-            pHealth = pHealth - 2;
-            flash = 3;
-            lastHitBy = 0
-        }
-    }
-}
-
+            <string>//////////////////////////////////////////////////
+//      DESTROY WITH COLLISION WITH PLAYER     //
+////////////////////////////////////////////////
 instance_destroy();
+
 </string>
           </argument>
         </arguments>
@@ -125,7 +91,9 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///     DESTROY AT END OF ANIMATION     //
+            <string>///////////////////////////////////////////
+//      DESTROY AT END OF ANIMATION     //
+/////////////////////////////////////////
 instance_destroy();
 </string>
           </argument>

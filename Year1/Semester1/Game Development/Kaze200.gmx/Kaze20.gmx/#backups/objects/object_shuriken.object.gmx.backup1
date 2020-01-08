@@ -1,0 +1,80 @@
+// 2020-01-06 20:56:06
+#event step_begin
+/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+x += lengthdir_x(spd, direction);
+y += lengthdir_y(spd, direction);
+
+/*------------------------------
+            Collisions
+-------------------------------- 
+       Wall, Crates, Etc.
+------------------------------*/
+if (place_meeting(x, y, object_wall)) && (place_meeting(x, y, object_crate))
+{
+    spd = 0;
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
+}
+
+if (place_meeting(x, y, object_mage or object_knight or object_gunner))
+{
+    spd = 0;
+    repeat(2)
+    with(instance_create(x, y, object_blood))
+    {
+        depth = -100;
+    }
+}
+
+
+
+if (place_meeting(x, y, object_wall))
+{
+    spd = 0;
+    repeat(5)
+    with(instance_create(x, y, object_brownSpark))
+    {
+        depth = -100;
+    }
+}
+
+
+#event collision:object_wall
+audio_play_sound(Hit,202,false)
+
+#event collision:object_platform
+audio_play_sound(Hit,202,false)
+
+#event collision:object_parenthitable
+if (place_meeting(x,y,object_parenthitable))
+{
+    with(instance_place(x,y,object_parenthitable))
+    {
+         hp--;
+         flash = 3
+    }
+    instance_destroy();
+    audio_play_sound(Hit,202,false)
+}
+
+
+
+
+#event collision:object_enemyhitable
+with(other)
+{
+     hp--;
+     flash = 3;
+     hitfrom = other.direction;
+}
+instance_destroy();
+audio_play_sound(Hit,202,false)
+
+
+#event draw_post
+if (place_meeting(x,y,object_wall)) instance_destroy();

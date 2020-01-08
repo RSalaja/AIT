@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1874919423</depth>
+  <depth>-1874919</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,19 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///     SURFACE SIZE        ///
+            <string>/*---------------------------
+        Surface Size              
+---------------------------*/
 
 surface = surface_create(room_width,room_height);
-
 surface_set_target(surface);
 draw_clear_alpha(c_black, 0);
 
-//      RESET       //
+/*---------------------------
+        Surface Reset              
+---------------------------*/
 surface_reset_target();
-
-//      UNDERGROUND     //
-underground = false
-
 </string>
           </argument>
         </arguments>
@@ -60,52 +59,65 @@ underground = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-    if (surface_exists(surface))
-    {
-        surface_set_target(surface);
-        //      SET DARK OVERLAY        //
-        draw_set_colour(c_black);
-        draw_set_alpha(0.6);
-        draw_rectangle(0, 0, room_width, room_height, false);
-        
-        //      SET CIRCLES     //
-        draw_set_blend_mode(bm_subtract);
-        draw_set_colour(c_black);
-        draw_set_alpha(0.2);
-        
-        //      DRAW CIRCLES        //
-        with(object_characters)
-        {
-            draw_circle(x , y , 60 , false)
-        }
-        
-        
-        draw_set_colour(c_white);
-        draw_set_alpha(1);
-        with(object_characters)
-        {
-            draw_circle(x , y , 30 , false)
-        }
-        
-        
-        
-        //      RESET ALL SET DRAWS     //
-        draw_set_blend_mode(bm_normal);
-        draw_set_alpha(1);
-        surface_reset_target();
-        }
-        else
-        {
-            //    SURFACE SIZE        //
-            surface = surface_create(room_width,room_height);
-            surface_set_target(surface);
-            draw_clear_alpha(c_black, 0);
-            
-            //      RESET       //
-            surface_reset_target();
-        }
+            <string>/*---------------------------
+        Surface Draw              
+---------------------------*/
+if (surface_exists(surface))
+{
+    surface_set_target(surface);
+    /*---------------------------
+            Overlay              
+    ---------------------------*/
+    draw_set_colour(c_black);
+    draw_set_alpha(0.6);
+    draw_rectangle(0, 0, room_width, room_height, false);
 
+    /*---------------------------
+            Set Circles             
+    ---------------------------*/
+    draw_set_blend_mode(bm_subtract);
+    draw_set_colour(c_black);
+    draw_set_alpha(0.2);
+
+    /*---------------------------
+            Draw Circles               
+    ---------------------------*/
+    with(object_characters)
+    {
+        draw_circle(x, y, 60, false)
+    }
+
+
+    draw_set_colour(c_white);
+    draw_set_alpha(1);
+    with(object_characters)
+    {
+        draw_circle(x, y, 30, false)
+    }
+
+
+
+    /*---------------------------
+            Reset Draws               
+    ---------------------------*/
+    draw_set_blend_mode(bm_normal);
+    draw_set_alpha(1);
+    surface_reset_target();
+}
+else
+{
+    /*---------------------------
+            Surface Size              
+    ---------------------------*/
+    surface = surface_create(room_width, room_height);
+    surface_set_target(surface);
+    draw_clear_alpha(c_black, 0);
+
+    /*---------------------------
+            Surface Reset              
+    ---------------------------*/
+    surface_reset_target();
+}
 </string>
           </argument>
         </arguments>
@@ -128,7 +140,9 @@ underground = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///     DESTROY SURFACE     ///
+            <string>/*---------------------------
+        Surface Destroy              
+---------------------------*/
 if  (surface_exists(surface))
 {
     surface_free(surface);
@@ -155,8 +169,10 @@ if  (surface_exists(surface))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///     DRAW SURFACE        ///
-
+            <string>/// 
+/*---------------------------
+        Surface Draw              
+---------------------------*/
 if (!surface_exists(surface))
 {
     surface = surface_create(room_width, room_height);

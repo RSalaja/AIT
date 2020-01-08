@@ -1,0 +1,96 @@
+// 2020-01-06 21:23:27
+#event create
+/*----------------------------------
+        Initialize Variables        
+----------------------------------*/
+w = display_get_gui_width(); 
+h = display_get_gui_height(); 
+h_half = h * 0.5;
+
+/*------------------
+        States                        
+------------------*/
+enum trans_mode
+{
+    off,
+    next,
+    goto,
+    restart,
+    intro,
+    roomRestart
+}
+mode = trans_mode.intro
+percent = 1;
+target = room
+
+
+#event step
+/*------------------
+        States                        
+------------------*/
+if (mode != trans_mode.off)
+{
+    if (mode == trans_mode.intro)
+    {
+        percent = max(0, percent - max((percent/10),0.005))
+    }
+    else
+    {
+        percent = min(1.2, percent + max(((1 - percent)/10),0.005))
+    }
+    
+    if (percent == 1.2) || (percent == 0)
+    {
+        switch (mode)
+        {
+        
+            case trans_mode.intro:
+            {
+                mode = trans_mode.off
+                break;
+            }
+            
+            
+            case trans_mode.next:
+            {
+                room_goto_next();
+                mode = trans_mode.intro
+                break;
+            }
+            
+            
+            case trans_mode.goto:
+            {
+                
+                room_goto(target);
+                mode = trans_mode.intro
+                break;
+            }
+            
+            
+            case trans_mode.restart:
+            {
+                game_restart();
+                break;
+            }
+            case trans_mode.roomRestart:
+            {
+                mode = trans_mode.goto
+                break;
+            }
+            
+        }
+    }
+}
+
+
+#event draw_gui
+/*---------------------
+        Draw Bars                           
+---------------------*/
+if (mode != trans_mode.off)
+{
+    draw_set_colour(c_black);
+    draw_rectangle (0,0,w,percent*h_half,false)
+    draw_rectangle (0,h,w,h-(percent*h_half),false)
+}

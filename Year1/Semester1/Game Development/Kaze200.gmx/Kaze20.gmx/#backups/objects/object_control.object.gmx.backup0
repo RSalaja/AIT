@@ -1,0 +1,64 @@
+// 2020-01-06 21:12:29
+#event create
+/*-----------------------------
+        Set GUI Size      
+------------------------------*/
+display_set_gui_size(RES_W,RES_H)
+
+#event keypress:vk_escape
+/*-----------------------------
+           End Game    
+------------------------------*/
+game_end();
+
+#event keypress:F
+/*-----------------------------
+        Fullscren    
+------------------------------*/
+if (window_get_fullscreen())
+{
+    window_set_fullscreen(false);
+}
+else
+{
+    window_set_fullscreen(true);
+}
+
+
+#event keypress:M
+/*-----------------------------
+        Previous Room      
+------------------------------*/
+if room_exists(room_previous(room))
+{
+    SlideTrans(trans_mode.goto,room_previous(room));
+}
+else
+{
+    SlideTrans(trans_mode.goto, TitleScreen)
+}
+
+#event keypress:N
+/*-----------------------------
+        Next Toom      
+------------------------------*/
+if room_exists(room_next(room))
+{
+    SlideTrans(trans_mode.next); 
+}
+else
+{
+    SlideTrans(trans_mode.goto, TitleScreen)
+}
+
+#event keypress:P
+/*-----------------------------
+        Go To Menu      
+------------------------------*/
+SlideTrans(trans_mode.goto, MenuScreen)
+
+#event keypress:R
+/*-----------------------------
+        Restart Room      
+------------------------------*/
+room_restart();

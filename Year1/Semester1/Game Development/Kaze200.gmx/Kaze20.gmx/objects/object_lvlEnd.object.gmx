@@ -8,6 +8,32 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*-----------------------------
+        Collected Scrolls      
+------------------------------*/
+allScrolls = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="object_player">
       <action>
         <libid>1</libid>
@@ -25,14 +51,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Move to next room  ///
-
-with(object_player)
+            <string>/*-----------------------------
+        Move To Next Room
+------------------------------*/
+if (instance_number(object_scrolls) &lt;= 0)
 {
-    if (hascontrol)
+    with(object_player)
     {
-        hascontrol = false;
-        SlideTrans(trans_mode.goto,other.target)
+        if (hascontrol)
+        {
+            hascontrol = false;
+            audio_play_sound(Level_End, 100000, false);
+            SlideTrans(trans_mode.goto, other.target)
+        }
     }
 }
 </string>

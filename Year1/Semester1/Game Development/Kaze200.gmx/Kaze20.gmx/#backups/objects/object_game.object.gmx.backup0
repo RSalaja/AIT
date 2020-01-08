@@ -1,0 +1,60 @@
+// 2020-01-06 21:13:36
+#event create
+/*-----------------------------
+        Checkpoint    
+------------------------------*/
+respawn = 0
+globalvar respawnX,respawnY;
+respawnX=0
+respawnY=0
+
+/*-----------------------------
+        Global Variables     
+------------------------------*/
+globalvar pHealth ;
+pHealth = 10;
+globalvar pHealthMax;
+pHealthMax = 10;
+
+
+
+globalvar pHealthBeforeDeath;
+pHealthBeforeDeath = pHealth;
+globalvar dead;
+dead= false
+
+#event step
+/*-----------------------------
+        Update Position
+------------------------------*/
+if (object_exists(object_player))
+{
+    with(object_player)
+    {
+        if (global.grounded)
+        {
+            if (image_xscale > 0)
+            {
+                global.respawnX = (object_player.x) - 16;
+
+            }
+            if (image_xscale < 0)
+            {
+                global.respawnX = (object_player.x) + 16;
+
+            }
+            global.respawnY = (object_player.y) - 16;
+        }
+    }
+}
+
+/*---------------------
+        Respawn      
+----------------------*/
+if (respawn == 1)
+{
+    instance_create(global.respawnX, global.respawnY, object_shurikenInHand)
+    instance_create(global.respawnX, global.respawnY, object_bo)
+
+    respawn = 0
+}
