@@ -23,9 +23,9 @@
     <glyph character="61" x="418" y="266" w="48" h="62" shift="57" offset="5"/>
     <glyph character="77" x="769" y="2" w="48" h="81" shift="57" offset="5"/>
     <glyph character="122" x="819" y="2" w="48" h="81" shift="57" offset="5"/>
+    <glyph character="115" x="394" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="56" x="443" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="35" x="149" y="266" w="48" h="76" shift="57" offset="5"/>
-    <glyph character="115" x="394" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="105" x="785" y="266" w="29" h="81" shift="57" offset="14"/>
     <glyph character="47" x="345" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="80" x="2" y="183" w="47" h="81" shift="57" offset="5"/>
@@ -34,12 +34,12 @@
     <glyph character="48" x="149" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="32" x="2" y="2" w="56" h="95" shift="56" offset="0"/>
     <glyph character="91" x="630" y="266" w="29" h="82" shift="57" offset="19"/>
+    <glyph character="79" x="492" y="183" w="47" h="81" shift="57" offset="5"/>
+    <glyph character="97" x="2" y="99" w="47" h="82" shift="57" offset="5"/>
     <glyph character="114" x="835" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="57" x="51" y="183" w="47" h="81" shift="57" offset="5"/>
-    <glyph character="98" x="933" y="183" w="47" h="81" shift="57" offset="5"/>
-    <glyph character="79" x="492" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="107" x="884" y="183" w="47" h="81" shift="57" offset="5"/>
-    <glyph character="97" x="2" y="99" w="47" h="82" shift="57" offset="5"/>
+    <glyph character="98" x="933" y="183" w="47" h="81" shift="57" offset="5"/>
     <glyph character="46" x="134" y="350" w="10" h="82" shift="57" offset="19"/>
     <glyph character="38" x="119" y="2" w="48" h="82" shift="57" offset="5"/>
     <glyph character="100" x="169" y="2" w="48" h="81" shift="57" offset="5"/>
